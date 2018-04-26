@@ -2,8 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.util.Optional;
 
@@ -16,14 +14,15 @@ public class TetrisPanel extends JPanel {
     private Block b;
 
     public TetrisPanel() {
-        myImage = new BufferedImage(400, 401, BufferedImage.TYPE_INT_RGB );
-        myBuffer = (Graphics2D) myImage.getGraphics();
-        b = new Block(0, 200,Optional.empty(), Optional.empty(), 1);
-        t = new Timer(5, new Listener());
+        this.myImage = new BufferedImage(400, 401, BufferedImage.TYPE_INT_RGB );
+        this.myBuffer = (Graphics2D) myImage.getGraphics();
+        this.b = new Block(0, 200,Optional.empty(), Optional.empty(), 1);
+        this.t = new Timer(5, new Listener());
 
-        t.start();
-        b.draw(myBuffer);
-        setFocusable(true);
+        this.t.start();
+        this.b.draw(myBuffer);
+        this.addKeyListener(new KeyInput());
+        this.setFocusable(true);
     }
 
     @Override
