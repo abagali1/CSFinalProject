@@ -5,6 +5,7 @@ public class Block {
     private int myX, myY, myType, myWidth, myHeight;
     private Integer myX2, myY2, myW2, myH2;
     private Color myColor;
+    private boolean lacc, racc;
 
     public Block(int x, int y, Optional<Integer> x2, Optional<Integer> y2, int t) {
         myX = x;
@@ -12,18 +13,22 @@ public class Block {
         myType = t;
         myX2 = x2.isPresent() ? x2.get() : null;
         myY2 = y2.isPresent() ? y2.get() : null;
+        if((myX2 == null || myY2 == null) && t > 1)
+            throw new NullPointerException();
         switch (myType) {
             case 0:
                 myWidth = 20;
                 myHeight = 20;
                 myW2 = null;
                 myH2 = null;
+                myColor = Color.yellow;
                 break;
             case 1:
                 myHeight = 10;
                 myWidth = 40;
                 myW2 = null;
                 myH2 = null;
+                myColor = Color.blue.brighter();
                 break;
             case 2:
                 myWidth = 30;
@@ -32,6 +37,7 @@ public class Block {
                 myY2 = myY + 10;
                 myW2 = 10;
                 myH2 = 10;
+                myColor = Color.orange;
                 break;
             case 3:
                 myWidth = 30;
@@ -40,6 +46,7 @@ public class Block {
                 myY2 = myY + 10;
                 myW2 = 10;
                 myH2 = 10;
+                myColor = Color.blue;
                 break;
             case 4:
                 myWidth = 20;
@@ -48,6 +55,7 @@ public class Block {
                 myY2 = myY + 10;
                 myW2 = myWidth;
                 myH2 = myHeight;
+                myColor = Color.green;
                 break;
             case 5:
                 myWidth = 20;
@@ -56,6 +64,7 @@ public class Block {
                 myY2 = myY - 10;
                 myW2 = myWidth;
                 myH2 = myHeight;
+                myColor = Color.red;
                 break;
             case 6:
                 myWidth = 30;
@@ -64,10 +73,11 @@ public class Block {
                 myY2 = myY + 10;
                 myW2 = 10;
                 myH2 = 10;
+                myColor = Color.magenta;
                 break;
             default:
-                System.out.println("ERROR AT BLOCK CLASS LINE 42 IN CONSTRUCTOR");
-                System.exit(10);
+                System.out.println("ERROR AT BLOCK CLASS LINE 76 IN CONSTRUCTOR");
+                System.exit(76);
         }
     }
 
@@ -93,6 +103,23 @@ public class Block {
 
     public void setColor(Color c) {
         myColor = c;
+    }
+
+    public boolean getRAcc(boolean a){ return racc; }
+
+    public boolean getLAcc(boolean a){ return lacc; }
+
+    public void setRAcc(boolean a){ racc = a;}
+
+    public void setLAcc(boolean a){ lacc = a; }
+
+    public int getWidth() {
+        if(myType <= 3)
+            return myWidth;
+        else if(myType == 4 || myType == 5)
+            return 30;
+        else
+            return 30;
     }
 
     public void rebuild(int a) {
@@ -150,22 +177,31 @@ public class Block {
                 myH2 = 10;
                 break;
             default:
-                System.out.println("ERROR AT BLOCK CLASS LINE 42 IN CONSTRUCTOR");
-                System.exit(10);
+                System.out.println("ERROR AT BLOCK CLASS LINE 160 IN REBUILD");
+                System.exit(160);
         }
     }
 
     public void draw(Graphics myBuffer){
+        myBuffer.setColor(myColor);
         if(myType <= 1){
-            myBuffer.drawRect(myX,myY,myWidth,myHeight);
+            myBuffer.fillRect(myX,myY,myWidth,myHeight);
         }else{
-            myBuffer.drawRect(myX,myY,myWidth,myHeight);
-            myBuffer.drawRect(myX2, myY2, myW2, myH2);
+            myBuffer.fillRect(myX,myY,myWidth,myHeight);
+            myBuffer.fillRect(myX2, myY2, myW2, myH2);
         }
     }
 
-    public void move(int x, int y){
-
+    public void move(int x){
+        if(racc){
+            myX += 10;
+            myX2 = (myX2!=null) ? myX2+10 : null;
+        }
+        if(lacc){
+            myX -= 10;
+            myX2 = (myX2 != null) ? myX2-10 : null;
+        }
     }
+
 
 }

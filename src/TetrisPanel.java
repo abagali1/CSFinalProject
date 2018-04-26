@@ -16,9 +16,9 @@ public class TetrisPanel extends JPanel {
     private Block b;
 
     public TetrisPanel() {
-        myImage = new BufferedImage(401, 401, BufferedImage.TYPE_INT_RGB );
+        myImage = new BufferedImage(400, 401, BufferedImage.TYPE_INT_RGB );
         myBuffer = (Graphics2D) myImage.getGraphics();
-        b = new Block(5, 200,Optional.of(200), Optional.of(200), 2);
+        b = new Block(0, 200,Optional.empty(), Optional.empty(), 1);
         t = new Timer(5, new Listener());
 
         t.start();
@@ -43,6 +43,7 @@ public class TetrisPanel extends JPanel {
             }
             myBuffer.drawLine(400,0, 400,400);
             myBuffer.drawLine(0,400,400,400);
+            b.draw(myBuffer);
             repaint();
         }
     }
