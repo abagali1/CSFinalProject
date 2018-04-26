@@ -1,3 +1,6 @@
+package tetris.tetris.anupb.driver;
+
+import tetris.anupb.panels.BigPanel;
 import javax.swing.JFrame;
 
 public class TetDriver

@@ -1,3 +1,7 @@
+package tetris.anupb.panels;
+
+import tetris.anup.resources.*;
+import tetris.input.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
