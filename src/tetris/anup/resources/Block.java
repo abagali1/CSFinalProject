@@ -10,7 +10,7 @@ public class Block {
     private boolean lacc, racc;
 
     public Block(int x, int y, Optional<Integer> x2, Optional<Integer> y2, int t) {
-        myX = x;
+        this.myX = x;
         myY = y;
         myType = t;
         myX2 = x2.isPresent() ? x2.get() : null;
