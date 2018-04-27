@@ -13,7 +13,7 @@ public class BlockPanel extends JPanel {
     private static final Color BACKGROUND = Color.BLACK;
     public BlockPanel(){
         myImage = new BufferedImage(400,400,1);
-        myBuffer = (Graphics2D)myImage.getGraphics();
+        this.myBuffer = (Graphics2D)myImage.getGraphics();
         myBuffer.setBackground(BACKGROUND);
         t = new Timer(5, new Starter());
         t.start();
