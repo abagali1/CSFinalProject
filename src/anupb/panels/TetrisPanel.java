@@ -31,6 +31,7 @@ public class TetrisPanel extends JPanel {
         this.b.draw(myBuffer);
         this.addKeyListener(new KeyInput());
         this.setFocusable(true);
+        //asfd;ajsdf
     }
 
     @Override
