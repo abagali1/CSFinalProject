@@ -26,7 +26,7 @@ public class TetrisPanel extends JPanel {
         try {
             song = new Audio("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\panels\\TetrisTheme.wav");
         }catch(Exception e){ e.printStackTrace(); }
-        song.start();
+        this.song.play();
         this.t.start();
         this.b.draw(myBuffer);
         this.addKeyListener(new KeyInput());
