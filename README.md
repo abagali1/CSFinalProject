@@ -14,3 +14,4 @@
 # type "git push origin kevin"
 # enter github username & password
 # Ask anup w/ questions 
+# For mac users press command + space and type in terminal instead of windows key + cmd
