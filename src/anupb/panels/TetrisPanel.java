@@ -17,26 +17,28 @@ import java.util.Optional;
 public class TetrisPanel extends JPanel {
     private BufferedImage myImage;
     private Graphics2D myBuffer;
-    private static final int HEIGHT = JFrame.MAXIMIZED_VERT;
-    private static final int WIDTH = JFrame.MAXIMIZED_HORIZ;
+    private final int HEIGHT = this.getHeight();
+    private final int WIDTH = this.getWidth()/3;
     private Timer t;
     private Block b;
     private Audio song;
 
     public TetrisPanel() {
-        this.myImage = new BufferedImage(400, 401, BufferedImage.TYPE_INT_RGB );
+        this.myImage = new BufferedImage(201, 401, BufferedImage.TYPE_INT_RGB );
         this.myBuffer = (Graphics2D) myImage.getGraphics();
         this.b = new Block(0, 200,Optional.of(6), Optional.of(5), 2);
-        this.t = new Timer(5, new Listener());
+        this.t = new Timer(1, new Listener());
         /*
         try {
             song = new Audio("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\audio\\TetrisTheme.wav");
             this.song.play();
         }catch(Exception e){ e.getCause(); } */
 
-        this.t.start();
+
         this.addKeyListener(new KeyInput(b));
         this.setFocusable(true);
+
+        this.t.start();
         //asfd;ajsdf
     }
 
@@ -52,7 +54,7 @@ public class TetrisPanel extends JPanel {
             myBuffer.setColor(Color.WHITE);
             for(int i=0;i<=400;i+=10) {
                 myBuffer.drawLine(i, 0, i, 400 );
-                myBuffer.drawLine(0, i, 400, i);
+                myBuffer.drawLine(0, i, 401, i);
             }
             myBuffer.drawLine(400,0, 400,400);
             myBuffer.drawLine(0,400,400,400);

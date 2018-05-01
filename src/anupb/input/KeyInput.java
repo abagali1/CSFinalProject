@@ -1,11 +1,10 @@
 package anupb.input;
 
 import anupb.resources.Block;
-
+import anupb.panels.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
+
 
 
 public class KeyInput implements KeyListener {
@@ -37,8 +36,11 @@ public class KeyInput implements KeyListener {
     public void keyPressed(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_LEFT){
             b.setLAcc(true);
-        }else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+            System.out.println("L");
+        }
+        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
             b.setRAcc(true);
+            System.out.println("R");
         }
     }
 
@@ -54,7 +56,8 @@ public class KeyInput implements KeyListener {
         if(e.getKeyCode() == KeyEvent.VK_A){
             b.setLAcc(true);
             System.out.println("L");
-        }else if(e.getKeyCode() == KeyEvent.VK_D){
+        }
+        if(e.getKeyCode() == KeyEvent.VK_D){
             b.setRAcc(true);
             System.out.println("R");
         }

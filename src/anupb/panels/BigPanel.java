@@ -13,7 +13,6 @@ public class BigPanel extends JPanel {
     private ScorePanel score;
     private BlockPanel block;
     private JPanel left,center,right;
-
     public BigPanel(){
         setLayout(new GridLayout(1,3));
 
