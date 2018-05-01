@@ -4,6 +4,9 @@ import anupb.resources.Block;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
+
 
 public class KeyInput implements KeyListener {
     private Block b;

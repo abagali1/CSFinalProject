@@ -199,11 +199,12 @@ public class Block {
             myX += 10;
             myX2 = (myX2!=null) ? myX2+10 : null;
         }
-        if(lacc){
+        else if(lacc){
             myX -= 10;
             myX2 = (myX2 != null) ? myX2-10 : null;
         }
     }
+
 
 
 }

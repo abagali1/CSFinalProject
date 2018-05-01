@@ -1,5 +1,6 @@
 package anupb.panels;
 
+import anupb.input.KeyInput;
 import anupb.resources.Audio;
 import anupb.resources.Block;
 
@@ -34,7 +35,7 @@ public class TetrisPanel extends JPanel {
         }catch(Exception e){ e.getCause(); } */
 
         this.t.start();
-        addKeyListener(new Key());
+        this.addKeyListener(new KeyInput(b));
         this.setFocusable(true);
         //asfd;ajsdf
     }
@@ -43,40 +44,6 @@ public class TetrisPanel extends JPanel {
     public void paintComponent(Graphics g){
         g.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
     }
-
-
-    private class Key extends KeyAdapter{
-        /**
-         * Checks if a key has been pressed and which key has been pressed
-         * e KeyEvent
-         */
-
-        public void keyPressed(KeyEvent e)
-        {
-            if ((e.getKeyCode() == KeyEvent.VK_LEFT)){// && (b.getX() > 10)) {
-                System.out.println("L");
-                b.setLAcc(true);
-            } else if ((e.getKeyCode()== KeyEvent.VK_RIGHT)){// && (b.getX() < 290)) {
-                System.out.println("R");
-                b.setRAcc(true);
-            }
-        }
-        /**
-         * Checks if a key has been released and which key is released
-         * @param e KeyEvent
-         */
-        public void keyReleased(KeyEvent e){
-            if ((e.getKeyCode() == KeyEvent.VK_LEFT)){// && (bbot.getX() > 10)) {
-                System.out.println("L");
-                b.setLAcc(false);
-            }
-            else if ((e.getKeyCode()== KeyEvent.VK_RIGHT)){// && (bbot.getX() < 290)) {
-                System.out.println("R");
-                b.setRAcc(false);
-            }
-        }
-    }
-
 
     private class Listener implements ActionListener{
         public void actionPerformed(ActionEvent e){
