@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.Optional;
 
+
 public class TetrisPanel extends JPanel {
     private BufferedImage myImage;
     private Graphics2D myBuffer;
@@ -21,12 +22,14 @@ public class TetrisPanel extends JPanel {
     public TetrisPanel() {
         this.myImage = new BufferedImage(400, 401, BufferedImage.TYPE_INT_RGB );
         this.myBuffer = (Graphics2D) myImage.getGraphics();
-        this.b = new Block(0, 200,Optional.empty(), Optional.empty(), 1);
-        this.t = new Timer(5, new Listener());
+        this.b = new Block(0, 200,Optional.of(6), Optional.of(5), 2);
+        this.t = new Timer(2000, new Listener());
+        /*
         try {
-            song = new Audio("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\panels\\TetrisTheme.wav");
-        }catch(Exception e){ e.printStackTrace(); }
-        this.song.play();
+            song = new Audio("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\audio\\TetrisTheme.wav");
+            this.song.play();
+        }catch(Exception e){ e.getCause(); } */
+
         this.t.start();
         this.b.draw(myBuffer);
         this.addKeyListener(new KeyInput());
@@ -52,6 +55,8 @@ public class TetrisPanel extends JPanel {
             myBuffer.drawLine(400,0, 400,400);
             myBuffer.drawLine(0,400,400,400);
             b.draw(myBuffer);
+            b.setRAcc(true);
+            b.move(10);
             repaint();
         }
     }
