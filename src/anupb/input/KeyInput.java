@@ -48,10 +48,13 @@ public class KeyInput implements KeyListener {
      */
     @Override
     public void keyReleased(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_LEFT){
+        if(e.getKeyCode() == KeyEvent.VK_A){
             b.setLAcc(true);
-        }else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+            System.out.println("L");
+        }else if(e.getKeyCode() == KeyEvent.VK_D){
             b.setRAcc(true);
+            System.out.println("R");
         }
+
     }
 }
