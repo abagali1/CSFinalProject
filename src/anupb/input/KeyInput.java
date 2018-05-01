@@ -1,9 +1,16 @@
 package anupb.input;
 
+import anupb.resources.Block;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyInput implements KeyListener {
+    private Block b;
+
+    public KeyInput(Block b){
+        this.b = b;
+    }
     /**
      * Invoked when a key has been typed.
      * See the class description for {@link KeyEvent} for a definition of
@@ -25,7 +32,11 @@ public class KeyInput implements KeyListener {
      */
     @Override
     public void keyPressed(KeyEvent e) {
-        int a = 3;
+        if(e.getKeyCode() == KeyEvent.VK_LEFT){
+            b.setLAcc(true);
+        }else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+            b.setRAcc(true);
+        }
     }
 
     /**
@@ -37,6 +48,10 @@ public class KeyInput implements KeyListener {
      */
     @Override
     public void keyReleased(KeyEvent e) {
-
+        if(e.getKeyCode() == KeyEvent.VK_LEFT){
+            b.setLAcc(true);
+        }else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+            b.setRAcc(true);
+        }
     }
 }
