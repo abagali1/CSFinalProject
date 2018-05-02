@@ -27,7 +27,8 @@ public class TetrisPanel extends JPanel {
         this.myImage = new BufferedImage(201, 401, BufferedImage.TYPE_INT_RGB );
         this.myBuffer = (Graphics2D) myImage.getGraphics();
         this.b = new Block(0, 200,Optional.of(6), Optional.of(5), 2);
-        this.t = new Timer(1, new Listener());
+        this.t = new Timer(70, new Listener());
+        System.out.println(myImage.getWidth());
         /*
         try {
             song = new Audio("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\audio\\TetrisTheme.wav");
@@ -49,6 +50,7 @@ public class TetrisPanel extends JPanel {
 
     private class Listener implements ActionListener{
         public void actionPerformed(ActionEvent e){
+            revalidate();
             myBuffer.setColor(Color.black);
             myBuffer.fillRect(0,0,getWidth(), getHeight());
             myBuffer.setColor(Color.WHITE);
