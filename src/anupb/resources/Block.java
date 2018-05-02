@@ -1,6 +1,9 @@
 package anupb.resources;
 
+import org.jetbrains.annotations.Contract;
+
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class Block {
@@ -8,6 +11,7 @@ public class Block {
     private Integer myX2, myY2, myW2, myH2;
     private Color myColor;
     private boolean lacc, racc;
+    private static boolean fall;
 
     public Block(int x, int y, Optional<Integer> x2, Optional<Integer> y2, int t) {
         this.myX = x;
@@ -115,6 +119,11 @@ public class Block {
 
     public void setLAcc(boolean a){ lacc = a; }
 
+    @Contract(pure = true)
+    public static boolean getFall(){ return fall; }
+
+    public static void setFall(boolean a){ fall = a;   }
+
     public int getWidth() {
         if(myType <= 3)
             return myWidth;
@@ -196,12 +205,26 @@ public class Block {
 
     public void move(int x){
         if(racc){
-            myX += 10;
-            myX2 = (myX2!=null) ? myX2+10 : null;
+            myX += x;
+            myX2 = (myX2!=null) ? myX2+x : null;
         }
         else if(lacc){
-            myX -= 10;
-            myX2 = (myX2 != null) ? myX2-10 : null;
+            myX -= x;
+            myX2 = (myX2 != null) ? myX2-x : null;
+        }
+    }
+    private void move(int x, String a){
+        myY += x;
+        myY2 = (myY2 != null) ? myY2+x : null;
+    }
+    public static void rain(ArrayList<Block> blocks, int index, Graphics myBuffer){
+        Block current;
+        int count = index;
+        if(getFall()){
+            current = blocks.get(index);
+            current.draw(myBuffer);
+            if(current.getX() != 400)
+                current.move(10, null);
         }
     }
 
