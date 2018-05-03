@@ -1,11 +1,8 @@
 package anupb.resources;
 
 import javax.sound.sampled.*;
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
 
-
-public class Audio{
+public class Audio {
 
     private Clip clip;
 
@@ -13,8 +10,7 @@ public class Audio{
 
         try {
 
-            AudioInputStream ais = AudioSystem.getAudioInputStream(new BufferedInputStream(this.getClass().getResourceAsStream(s)));
-            //AudioInputStream ais = AudioSystem.getAudioInputStream(new BufferedInputStream(Audio.class.getResourceAsStream(s)));
+            AudioInputStream ais = AudioSystem.getAudioInputStream(getClass().getResource(s));
             AudioFormat baseFormat = ais.getFormat();
             AudioFormat decodeFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, baseFormat.getSampleRate(), 16,
                     baseFormat.getChannels(), baseFormat.getChannels() * 2, baseFormat.getSampleRate(), false);
