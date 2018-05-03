@@ -1,7 +1,7 @@
 package anupb.input;
 
 import anupb.resources.Block;
-import anupb.panels.*;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -12,6 +12,7 @@ public class KeyInput implements KeyListener {
 
     public KeyInput(Block b){
         this.b = b;
+
     }
     /**
      * Invoked when a key has been typed.
