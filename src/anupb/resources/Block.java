@@ -1,6 +1,5 @@
 package anupb.resources;
 
-import org.jetbrains.annotations.Contract;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -119,9 +118,12 @@ public class Block {
 
     public void setLAcc(boolean a){ lacc = a; }
 
+<<<<<<< HEAD
     public int getType(){ return myType; }
 
     @Contract(pure = true)
+=======
+>>>>>>> refs/remotes/origin/master
     public static boolean getFall(){ return fall; }
 
     public static void setFall(boolean a){ fall = a;   }

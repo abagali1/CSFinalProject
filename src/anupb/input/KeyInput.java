@@ -35,7 +35,7 @@ public class KeyInput implements KeyListener {
      */
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_A && b.getX()>0){
+        if(e.getKeyCode() == KeyEvent.VK_A) {
             b.setLAcc(true);
             System.out.println("L");
         }
