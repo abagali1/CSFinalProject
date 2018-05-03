@@ -20,12 +20,13 @@ public class TetrisPanel extends JPanel {
     private ArrayList<Block> blocks;
     private Audio song;
     private int blockCount = 0;
+    private Block temp;
 
     public TetrisPanel() {
         this.myImage = new BufferedImage(201, 401, BufferedImage.TYPE_INT_RGB );
         this.myBuffer = (Graphics2D) myImage.getGraphics();
         blocks = new ArrayList<>();
-        this.t = new Timer(70, new Listener());
+        this.t = new Timer(150, new Listener());
 
         this.setFocusable(true);
         requestFocus();
@@ -44,23 +45,34 @@ public class TetrisPanel extends JPanel {
 
     private class Listener implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            revalidate();
-            Block temp = new Block(((int)(Math.random()*401)),((int)(Math.random()*401)), Optional.of(((int)(Math.random()*401))), Optional.of(((int)(Math.random()*401))), ((int)(Math.random()*7)) );
+
+            Block temp = new Block(((int)(Math.random()*401)),0, Optional.of(((int)(Math.random()*401))),
+                    Optional.of(((int)(Math.random()*401))), ((int)(Math.random()*7)) );
+
             blocks.add(temp);
             setKeyListener(temp);
+
             myBuffer.setColor(Color.black);
             myBuffer.fillRect(0,0,getWidth(), getHeight());
             myBuffer.setColor(Color.WHITE);
+
             for(int i=0;i<=400;i+=10) {
                 myBuffer.drawLine(i, 0, i, 400 );
                 myBuffer.drawLine(0, i, 401, i);
             }
+
             myBuffer.drawLine(400,0, 400,400);
             myBuffer.drawLine(0,400,400,400);
+
             blocks.get(blockCount).draw(myBuffer);
             blocks.get(blockCount).move(10);
+
             Block.setFall(true);
             Block.rain(blocks,blockCount, myBuffer);
+
+            System.out.println(blocks.get(blockCount).toString());
+            if(blocks.get(blockCount).getY() == ((blocks.get(blockCount).getType() != 2) ? 380:390))
+                blockCount++;
             repaint();
             revalidate();
         }

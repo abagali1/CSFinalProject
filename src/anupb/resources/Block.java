@@ -119,6 +119,8 @@ public class Block {
 
     public void setLAcc(boolean a){ lacc = a; }
 
+    public int getType(){ return myType; }
+
     @Contract(pure = true)
     public static boolean getFall(){ return fall; }
 
@@ -221,11 +223,16 @@ public class Block {
         Block current;
         int count = index;
         if(getFall()){
-            current = blocks.get(index);
+            current = blocks.get(count);
             current.draw(myBuffer);
-            if(current.getX() != 400)
+            if(current.getY() != ((current.getType() != 2) ? (380):(390)))
                 current.move(10, null);
+            count++;
         }
+    }
+
+    public String toString(){
+        return "Type: " + myType + " X: " + myX + " Y: " + myY + " Height: " + myHeight + " Width: " + myWidth;
     }
 
 

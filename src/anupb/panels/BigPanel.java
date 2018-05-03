@@ -16,7 +16,7 @@ public class BigPanel extends JPanel {
     public BigPanel(){
         setLayout(new GridLayout(1,3));
 
-         left = new JPanel();
+        left = new JPanel();
         this.add(left);
 
          center = new JPanel();
