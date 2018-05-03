@@ -34,19 +34,11 @@ public class KeyInput implements KeyListener {
      */
     @Override
     public void keyPressed(KeyEvent e) {
-<<<<<<< HEAD
-        if(e.getKeyCode() == KeyEvent.VK_A){
-            b.setLAcc(true);
-            System.out.println("L");
-        }
-        if(e.getKeyCode() == KeyEvent.VK_D){
-=======
-        if(e.getKeyCode() == KeyEvent.VK_A && b.getX()>0){
+        if(e.getKeyCode() == KeyEvent.VK_A) {
             b.setLAcc(true);
             System.out.println("L");
         }
         if(e.getKeyCode() == KeyEvent.VK_D && b.getX()+b.getWidth()<200 ){
->>>>>>> d87ebeb76c05d4910ff00f359412e4f72c349bd0
             b.setRAcc(true);
             System.out.println("R");
         }

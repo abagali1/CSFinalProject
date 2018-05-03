@@ -8,12 +8,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-<<<<<<< HEAD
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-=======
->>>>>>> d87ebeb76c05d4910ff00f359412e4f72c349bd0
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Optional;
