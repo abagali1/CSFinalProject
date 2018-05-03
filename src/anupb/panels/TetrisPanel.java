@@ -8,39 +8,33 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.Optional;
 
 
 public class TetrisPanel extends JPanel {
     private BufferedImage myImage;
     private Graphics2D myBuffer;
-    private final int HEIGHT = this.getHeight();
-    private final int WIDTH = this.getWidth()/3;
     private Timer t;
-    private Block b;
+    private ArrayList<Block> blocks;
     private Audio song;
+    private int blockCount = 0;
 
     public TetrisPanel() {
         this.myImage = new BufferedImage(201, 401, BufferedImage.TYPE_INT_RGB );
         this.myBuffer = (Graphics2D) myImage.getGraphics();
-        this.b = new Block(0, 200,Optional.of(6), Optional.of(5), 2);
+        blocks = new ArrayList<>();
         this.t = new Timer(70, new Listener());
-        System.out.println(myImage.getWidth());
-        /*
-        try {
-            song = new Audio("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\audio\\TetrisTheme.wav");
-            this.song.play();
-        }catch(Exception e){ e.getCause(); } */
 
-
-        this.addKeyListener(new KeyInput(b));
         this.setFocusable(true);
+        requestFocus();
 
         this.t.start();
         //asfd;ajsdf
+    }
+    public void setKeyListener(Block b){
+        this.addKeyListener(new KeyInput(b));
     }
 
     @Override
@@ -51,6 +45,9 @@ public class TetrisPanel extends JPanel {
     private class Listener implements ActionListener{
         public void actionPerformed(ActionEvent e){
             revalidate();
+            Block temp = new Block(((int)(Math.random()*401)),((int)(Math.random()*401)), Optional.of(((int)(Math.random()*401))), Optional.of(((int)(Math.random()*401))), ((int)(Math.random()*7)) );
+            blocks.add(temp);
+            setKeyListener(temp);
             myBuffer.setColor(Color.black);
             myBuffer.fillRect(0,0,getWidth(), getHeight());
             myBuffer.setColor(Color.WHITE);
@@ -60,8 +57,10 @@ public class TetrisPanel extends JPanel {
             }
             myBuffer.drawLine(400,0, 400,400);
             myBuffer.drawLine(0,400,400,400);
-            b.draw(myBuffer);
-            b.move(10);
+            blocks.get(blockCount).draw(myBuffer);
+            blocks.get(blockCount).move(10);
+            Block.setFall(true);
+            Block.rain(blocks,blockCount, myBuffer);
             repaint();
             revalidate();
         }
