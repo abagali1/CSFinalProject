@@ -2,7 +2,7 @@ package anupb.driver;
 
 import anupb.panels.BigPanel;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class TetDriver
 {
