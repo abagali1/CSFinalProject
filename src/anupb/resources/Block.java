@@ -24,6 +24,7 @@ public class Block {
     private boolean lacc, racc;
     private static boolean fall;
     private boolean ifFinished;
+    private static int[] yPos = new int[] {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 0};
 
 
     /**
@@ -364,5 +365,11 @@ public class Block {
             arr.add(new Rectangle2D.Double(myX2, myY2, myW2, myH2));
         }
         return arr;
+    }
+
+    public static void automaticRain(Graphics myBuffer){
+         Block temp = new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
+                Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7)));
+         rain(temp, myBuffer);
     }
 }

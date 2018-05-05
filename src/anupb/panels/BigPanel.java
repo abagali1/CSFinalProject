@@ -24,6 +24,7 @@ public class BigPanel extends JPanel {
     private ScorePanel score;
     private BlockPanel block;
     private JPanel left,center,right;
+    private Timer t, s;
 
     /**
      * Creates a new BigPanel
@@ -31,11 +32,7 @@ public class BigPanel extends JPanel {
     public BigPanel(){
         setLayout(new GridLayout(1,3));
 
-        left = new JPanel();
-        left.setLayout(new GridLayout(1,1));
-        JLabel ic = new JLabel();
-        ic.setIcon(new ImageIcon("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\images\\giphy.gif"));
-        left.add(ic);
+        left = new leftPanel();
         this.add(left);
 
          center = new JPanel();
@@ -52,6 +49,7 @@ public class BigPanel extends JPanel {
         left.setBackground(Color.BLACK);
         right.setBackground(Color.BLACK);
 
+        t = new Timer(5, new Listener());
 //        Audio song = new Audio();
 
     }
@@ -89,5 +87,17 @@ public class BigPanel extends JPanel {
         this.add(block);
         repaint();
         revalidate();
+    }
+
+    private class Listener implements ActionListener {
+        /**
+         * Invoked when an action occurs.
+         *
+         * @param e the event to be processed
+         */
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
     }
 }
