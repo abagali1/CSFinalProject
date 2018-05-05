@@ -73,7 +73,7 @@ public class TetrisPanel extends JPanel{
      * Sets the current <code>KeyListener</code> new a new <code>KeyListener</code> to adjust to a new Block
      * @param b Block to be changed to
      * @see KeyInput
-     * @see java.awt.event.KeyListener@
+     * @see java.awt.event.KeyListener
      * @see Block
      */
     public void setKeyListener(Block b) {

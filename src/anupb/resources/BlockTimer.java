@@ -23,7 +23,7 @@ public class BlockTimer extends Timer {
 
     /**
      * Starts the <code>AddingListener</code> with a new Block object
-     * @param a <code></code>AddingListener</code> to be called
+     * @param a <code>AddingListener</code> to be called
      * @param b Block to be added
      * @see AddingListener
      * @see Block
