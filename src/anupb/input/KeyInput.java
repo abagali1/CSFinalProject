@@ -10,7 +10,7 @@ import java.awt.event.KeyListener;
 public class KeyInput implements KeyListener {
     private Block b;
 
-    public KeyInput(Block b){
+        public KeyInput(Block b){
         this.b = b;
 
     }
