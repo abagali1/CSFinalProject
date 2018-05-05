@@ -6,10 +6,21 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
-
+/**
+ * KeyInput reads input from a keyboard and adjusts a Block respectively
+ * @author Anup Bagali
+ * @author Teja Kocherla
+ * @author Kevin Liu
+ * @author Amit Rajesh
+ * @see Block
+ */
 public class KeyInput implements KeyListener {
     private Block b;
 
+    /**
+     * Creates a new KeyInput object
+     * @param b Block to be adjusted
+     */
         public KeyInput(Block b){
         this.b = b;
 

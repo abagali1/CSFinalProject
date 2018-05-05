@@ -5,6 +5,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The BigPanel encapsulates the <code>TetrisPanel</code>, <code>ScorePanel</code>, and <code>BlockPanel</code>
+ * @see TetrisPanel
+ * @see ScorePanel
+ * @see BlockPanel
+ * @author Anup Bagali
+ * @author Kevin Liu
+ * @author Teja Kocherla
+ * @author Amit Rajesh
+ * @see JPanel
+ */
 public class BigPanel extends JPanel {
 
     private JButton begin;
@@ -13,6 +24,10 @@ public class BigPanel extends JPanel {
     private ScorePanel score;
     private BlockPanel block;
     private JPanel left,center,right;
+
+    /**
+     * Creates a new BigPanel
+     */
     public BigPanel(){
         setLayout(new GridLayout(1,3));
 
@@ -41,11 +56,26 @@ public class BigPanel extends JPanel {
 
     }
 
+    /**
+     * Nested <code>ActionListener</code> class. Switches from home panel to Tetris game
+      */
     private class Starter implements ActionListener{
-        public void actionPerformed(ActionEvent e){
+
+
+        /**
+         * Invoked when an action occurs.
+         *
+         * @param e the event to be processed
+         */
+        @Override
+        public void actionPerformed(ActionEvent e) {
             start();
         }
     }
+
+    /**
+     * Facilitates the transition from the home panel to the Tetris game
+     */
     public void start(){
         setLayout(new GridLayout(1,3));
         this.remove(left);
