@@ -2,6 +2,7 @@ package anupb.resources;
 
 
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -11,6 +12,7 @@ public class Block {
     private Color myColor;
     private boolean lacc, racc;
     private static boolean fall;
+    private boolean ifFinished;
 
     public Block(int x, int y, Optional<Integer> x2, Optional<Integer> y2, int t) {
         this.myX = x;
@@ -64,7 +66,7 @@ public class Block {
                 break;
             case 5:
                 myWidth = 20;
-                myHeight = 20;
+                myHeight = 10;
                 myX2 = myX + 10;
                 myY2 = myY - 10;
                 myW2 = myWidth;
@@ -223,16 +225,32 @@ public class Block {
         if(getFall()){
             current = blocks.get(count);
             current.draw(myBuffer);
-            if(current.getY() != ((current.getType() != 2) ? (380):(390)))
+            if(current.getY() != ((current.getType() != 1) ? (380):(390)))
                 current.move(10, null);
-            count++;
+            if(current.getY() == ((current.getType() != 1) ? (380):(390)))
+                current.setFinished(current);
+                count++;
         }
     }
+    public void setFinished(Block a){
+        Block temp = a;
 
+        
+    }
     public String toString(){
         return "Type: " + myType + " X: " + myX + " Y: " + myY + " Height: " + myHeight + " Width: " + myWidth;
     }
 
+    public ArrayList<Rectangle2D.Double> convert() {
+        ArrayList<Rectangle2D.Double> arr = new ArrayList<>();
+        if (myX2 != null) {
+            arr.add(new Rectangle2D.Double(myX, myY, myWidth, myHeight));
+        } else {
+            arr.add(new Rectangle2D.Double(myX, myY, myWidth, myHeight));
+            arr.add(new Rectangle2D.Double(myX2, myY2, myW2, myH2));
+        }
+        return arr;
+    }
 
+    }
 
-}
