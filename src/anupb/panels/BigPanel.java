@@ -17,6 +17,10 @@ public class BigPanel extends JPanel {
         setLayout(new GridLayout(1,3));
 
         left = new JPanel();
+        left.setLayout(new GridLayout(1,1));
+        JLabel ic = new JLabel();
+        ic.setIcon(new ImageIcon("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\images\\giphy.gif"));
+        left.add(ic);
         this.add(left);
 
          center = new JPanel();
@@ -32,6 +36,8 @@ public class BigPanel extends JPanel {
 
         left.setBackground(Color.BLACK);
         right.setBackground(Color.BLACK);
+
+//        Audio song = new Audio();
 
     }
 

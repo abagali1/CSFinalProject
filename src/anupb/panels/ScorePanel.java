@@ -67,19 +67,23 @@ public class ScorePanel extends JPanel {
     }
 
     private class Saver implements ActionListener{
-        public void actionPerformed(ActionEvent e){
+        public void actionPerformed(ActionEvent e) {
+            String name;
             try {
                 System.setOut(new PrintStream(new FileOutputStream("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\files\\scores.txt")));
-
-                String name = JOptionPane.showInputDialog("What is your name?(name is case-sensitive)");
+                do {
+                    name = JOptionPane.showInputDialog("What is your name?(name is case-sensitive)");
+                } while (name.isEmpty());
                 System.out.println(name);
                 System.out.println(high);
                 System.out.println("------");
 
-                JOptionPane.showMessageDialog(null,"Save Successful!");
-
-            }catch(Exception ex){ JOptionPane.showMessageDialog(null, "Your scores were not able to save" +
-                    "\nIts probably Alex Lin's fault"); ex.printStackTrace(); }
+                JOptionPane.showMessageDialog(null, "Save Successful!");
+            } catch (NullPointerException ex) {
+                JOptionPane.showMessageDialog(null, "Your scores were not able to save");
+            } catch(FileNotFoundException ef){
+                JOptionPane.showMessageDialog(null, "Your scores were not able to save");
+            }
         }
     }
 
@@ -120,12 +124,8 @@ public class ScorePanel extends JPanel {
 
             }catch (RuntimeException re){
                 JOptionPane.showMessageDialog(null, "Specified Player was not found!");
-                re.printStackTrace();
-
             } catch(FileNotFoundException ex){
-                JOptionPane.showMessageDialog(null, "Uh-oh! Something went wrong, your file could not be saved!" +
-                        "It's probably Alex Lin's fault!");
-                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Uh-oh! Something went wrong, your file could not be saved!");
             }
 
         }

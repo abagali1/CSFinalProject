@@ -27,12 +27,15 @@ public class TetrisPanel extends JPanel{
     private int blockCount = 0;
     private Block temp;
     private Keeper keep;
+    private int[] yPos;
 
     public TetrisPanel() {
         this.myImage = new BufferedImage(201, 401, BufferedImage.TYPE_INT_RGB);
         this.myBuffer = (Graphics2D) myImage.getGraphics();
         blocks = new ArrayList<>();
+
         this.t = new Timer(75, new Listener());
+
         this.keep = new Keeper();
         this.k = new BlockTimer(1, keep);
 
@@ -43,6 +46,10 @@ public class TetrisPanel extends JPanel{
             }
         }
 
+        yPos = new int[18];
+        for(int r=0;r<=200-30;r+=10)
+            yPos[r/10] = r;
+        System.out.println(java.util.Arrays.toString(yPos));
 
         this.setFocusable(true);
         requestFocus();
@@ -69,7 +76,7 @@ public class TetrisPanel extends JPanel{
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-            temp = new Block(((int) (Math.random() * 401)), 0, Optional.of(((int) (Math.random() * 401))),
+            temp = new Block(((int) (Math.random() * 401)), 0, Optional.of(yPos[((int) (Math.random() * 19))]),
                     Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7)));
 
             blocks.add(temp);
@@ -91,9 +98,9 @@ public class TetrisPanel extends JPanel{
             blocks.get(blockCount).move(10);
 
             Block.setFall(true);
-            Block.rain(blocks, blockCount, myBuffer);
+            Block.rain(blocks.get(blockCount), myBuffer);
 
-            //System.out.println(blocks.get(blockCount).toString());
+            System.out.println(blocks.get(blockCount).toString());
             if (blocks.get(blockCount).getY() == ((blocks.get(blockCount).getType() != 1) ? 380 : 390))
                 blockCount++;
 
