@@ -6,6 +6,17 @@ import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * A Block is a combination of one or two rectangles to resemble a Tetrimino block. Two blocks only require one rectangle
+ * while the others require two rectangles. A block knows its x and y coordinate along with its width and height. If the block
+ * requires two rectangles then it also knows its second x and y coordinate along with its second width and height.
+ *
+ * @author Anup Bagali
+ * @author Teja Kocherla
+ * @author Kevin Liu
+ * @author Amit Rajesh
+ * @version 1.1
+ */
 public class Block {
     private int myX, myY, myType, myWidth, myHeight;
     private Integer myX2, myY2, myW2, myH2;
@@ -14,6 +25,15 @@ public class Block {
     private static boolean fall;
     private boolean ifFinished;
 
+
+    /**
+     * Constructor for a block.
+     * @param x Starting x1 coordinate
+     * @param y Starting y1 coordinate
+     * @param x2 Optional parameter for x2 coordinate
+     * @param y2 Optional parameter for y2 coordinate
+     * @param t Type of tetrimino to be created
+     */
     public Block(int x, int y, Optional<Integer> x2, Optional<Integer> y2, int t) {
         this.myX = x;
         myY = y;
@@ -88,44 +108,100 @@ public class Block {
         }
     }
 
+    /**
+     * Accessor method for the x1 coordinate
+     * @return current x1 coordinate
+     */
     public int getX() {
         return myX;
     }
 
+    /**
+     * Accessor method for the y1 coordinate
+     * @return current y1 coordinate
+     */
     public int getY() {
         return myY;
     }
 
+    /**
+     * Accessor method for the color
+     * @return Current color of the block
+     */
     public Color getColor() {
         return myColor;
     }
 
+    /**
+     * Modifier method for the x1 coordinate
+     * @param x desired new x1 coordinate
+     */
     public void setX(int x) {
         myX = x;
     }
 
+    /**
+     * Modifier method for the y1 coordinate
+     * @param y desired new y1 coordinate
+     */
     public void setY(int y) {
         myY = y;
     }
 
+    /**
+     * Modifier method for the color
+     * @param c desired new color
+     */
     public void setColor(Color c) {
         myColor = c;
     }
 
-    public boolean getRAcc(boolean a){ return racc; }
+    /**
+     * Accessor method for the right acceleration
+     * @return current right acceleration
+     */
+    public boolean getRAcc(){ return racc; }
 
-    public boolean getLAcc(boolean a){ return lacc; }
+    /**
+     * Accessor method for the left acceleration
+     * @return current left acceleration
+     */
+    public boolean getLAcc(){ return lacc; }
 
+    /**
+     * Modifier method for the right acceleration
+     * @param a desired right acceleration
+     */
     public void setRAcc(boolean a){ racc = a;}
 
+    /**
+     * Modifier method for the left acceleration
+     * @param a desired left acceleration
+     */
     public void setLAcc(boolean a){ lacc = a; }
 
+    /**
+     * Accessor method for the type
+     * @return current block type
+     */
     public int getType(){ return myType; }
 
+    /**
+     * Accessor method for the fall variable
+     * @return current fall state
+     */
     public static boolean getFall(){ return fall; }
 
+    /**
+     * Modifier method for the fall variable
+     * @param a desired fall starte
+     */
     public static void setFall(boolean a){ fall = a;   }
 
+    /**
+     * Accessor method for the block width
+     * @return the current width
+     */
     public int getWidth() {
         if(myType <= 3)
             return myWidth;
@@ -135,6 +211,10 @@ public class Block {
             return 30;
     }
 
+    /**
+     * Redraws the block to adjust for any changes
+     * @param a type of block to be redrawn
+     */
     public void rebuild(int a) {
         switch (a) {
             case 0:
@@ -195,6 +275,11 @@ public class Block {
         }
     }
 
+    /**
+     * Draws the block onto a buffered image
+     * @param myBuffer desired buffered image to be drawn on
+     * @see java.awt.image.BufferedImage
+     */
     public void draw(Graphics myBuffer){
         myBuffer.setColor(myColor);
         if(myType <= 1){
@@ -205,6 +290,10 @@ public class Block {
         }
     }
 
+    /**
+     * Moves the block to the left or right
+     * @param x amount of spaces to be moved
+     */
     public void move(int x){
         if(racc){
             myX += x;
@@ -215,10 +304,23 @@ public class Block {
             myX2 = (myX2 != null) ? myX2-x : null;
         }
     }
+
+    /**
+     * Moves the block down
+     * @param x amount of spaces to be moved
+     * @param a null
+     */
     private void move(int x, String a){
         myY += x;
         myY2 = (myY2 != null) ? myY2+x : null;
     }
+
+    /**
+     * Facilitates the automatic downward movement of the blocks during the Tetris game
+     * @param block block to be rainfallen
+     * @param myBuffer BufferedImage to be drawn on
+     * @see java.awt.image.BufferedImage
+     */
     public static void rain(Block block, Graphics myBuffer){
         Block current;
         if(getFall()){
@@ -230,15 +332,29 @@ public class Block {
                 current.setFinished(current);
         }
     }
+
+    /**
+     * Serts a block to be in a finished state
+     * @param a block to be adjusted
+     */
     public void setFinished(Block a){
         Block temp = a;
 
         
     }
+
+    /**
+     * Prints current type, x1, y1, width, and height of the block
+     * @return String of current state
+     */
     public String toString(){
         return "Type: " + myType + " X: " + myX + " Y: " + myY + " Height: " + myHeight + " Width: " + myWidth;
     }
 
+    /**
+     * Converts the block into an <code>ArrayList</code> of <code>Rectangle2D.Double</code>
+     * @return <code>ArrayList</code> of new <code>Rectangle2D.Double</code>
+     */
     public ArrayList<Rectangle2D.Double> convert() {
         ArrayList<Rectangle2D.Double> arr = new ArrayList<>();
         if (myX2 != null) {
@@ -249,6 +365,4 @@ public class Block {
         }
         return arr;
     }
-
-    }
-
+}
