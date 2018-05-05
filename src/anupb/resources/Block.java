@@ -219,17 +219,15 @@ public class Block {
         myY += x;
         myY2 = (myY2 != null) ? myY2+x : null;
     }
-    public static void rain(ArrayList<Block> blocks, int index, Graphics myBuffer){
+    public static void rain(Block block, Graphics myBuffer){
         Block current;
-        int count = index;
         if(getFall()){
-            current = blocks.get(count);
+            current = block;
             current.draw(myBuffer);
             if(current.getY() != ((current.getType() != 1) ? (380):(390)))
                 current.move(10, null);
             if(current.getY() == ((current.getType() != 1) ? (380):(390)))
                 current.setFinished(current);
-                count++;
         }
     }
     public void setFinished(Block a){
