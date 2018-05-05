@@ -93,7 +93,7 @@ public class TetrisPanel extends JPanel{
             Block.setFall(true);
             Block.rain(blocks, blockCount, myBuffer);
 
-            System.out.println(blocks.get(blockCount).toString());
+            //System.out.println(blocks.get(blockCount).toString());
             if (blocks.get(blockCount).getY() == ((blocks.get(blockCount).getType() != 1) ? 380 : 390))
                 blockCount++;
 
