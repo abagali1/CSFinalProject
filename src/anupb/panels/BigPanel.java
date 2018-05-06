@@ -23,7 +23,8 @@ public class BigPanel extends JPanel {
     private TetrisPanel tetris;
     private ScorePanel score;
     private BlockPanel block;
-    private JPanel left,center,right;
+    private JPanel center;
+    private leftPanel left, right;
     private Timer t, s;
 
     /**
@@ -38,7 +39,7 @@ public class BigPanel extends JPanel {
          center = new JPanel();
         this.add(center);
 
-         right = new JPanel();
+         right = new leftPanel();
         this.add(right);
 
         center.setLayout(new BorderLayout());
