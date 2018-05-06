@@ -6,10 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
+import java.io.*;
 import java.util.Scanner;
 
 /**
@@ -41,8 +38,8 @@ public class ScorePanel extends JPanel {
         highscores = new JLabel(
                 "<html>" +
                         "<ol>" +
-                        "   <li><b>Highscore: " + high + "</b></li>" +
-                        "   <li><b>Current Score: " + curr + "</b></li>"+
+                        "   <li><h1>Highscore: " + high + "</h1></li>" +
+                        "   <li><h1>Current Score: " + curr + "</h1></li>"+
                         "</ol>" +
                         "</html>"
         );
@@ -55,7 +52,7 @@ public class ScorePanel extends JPanel {
         logo.setHorizontalAlignment(0);
         add(logo);
 
-        save = new JButton("Save Currnet Game");
+        save = new JButton("Save Current Game");
         save.setBackground(Color.BLACK);
         save.setForeground(Color.white);
         save.addActionListener(new Saver());
@@ -119,18 +116,23 @@ public class ScorePanel extends JPanel {
         public void actionPerformed(ActionEvent e) {
                 String name;
                 try {
-                    System.setOut(new PrintStream(new FileOutputStream("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\files\\scores.txt")));
+                    //System.setOut(new PrintStream(new FileOutputStream("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\files\\scores.txt")));
+                    Writer out = new FileWriter("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\files\\scores.txt");
                     do {
                         name = JOptionPane.showInputDialog("What is your name?(name is case-sensitive)");
                     } while (name.isEmpty());
-                    System.out.println(name);
-                    System.out.println(high);
-                    System.out.println("------");
+                    out.write(name+"\n");
+                    out.write(String.valueOf(high)+"\n");
+                    out.write("------");
+                    out.flush();
+                    out.close();
 
                     JOptionPane.showMessageDialog(null, "Save Successful!");
                 } catch (NullPointerException ex) {
                     JOptionPane.showMessageDialog(null, "Your scores were not able to save");
                 } catch(FileNotFoundException ef){
+                    JOptionPane.showMessageDialog(null, "Your scores were not able to save");
+                } catch(IOException ie){
                     JOptionPane.showMessageDialog(null, "Your scores were not able to save");
                 }
             }

@@ -60,7 +60,6 @@ public class TetrisPanel extends JPanel{
         yPos = new int[19];
         for(int r=0;r<=200-30;r+=10)
             yPos[r/10] = r;
-        System.out.println(java.util.Arrays.toString(yPos));
 
         this.setFocusable(true);
         requestFocus();
@@ -149,7 +148,6 @@ public class TetrisPanel extends JPanel{
             Block.setFall(true);
             Block.rain(blocks.get(blockCount), myBuffer);
 
-            System.out.println(blocks.get(blockCount).toString());
             if (blocks.get(blockCount).getY() == ((blocks.get(blockCount).getType() != 1) ? 380 : 390))
                 blockCount++;
 
