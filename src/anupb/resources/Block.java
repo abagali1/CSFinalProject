@@ -56,7 +56,7 @@ public class Block {
                 myWidth = 40;
                 myW2 = null;
                 myH2 = null;
-                myColor = Color.blue.brighter();
+                myColor = Color.cyan;
                 break;
             case 2:
                 myWidth = 30;
@@ -365,11 +365,5 @@ public class Block {
             arr.add(new Rectangle2D.Double(myX2, myY2, myW2, myH2));
         }
         return arr;
-    }
-
-    public static void automaticRain(Graphics myBuffer){
-         Block temp = new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7)));
-         rain(temp, myBuffer);
     }
 }
