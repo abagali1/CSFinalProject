@@ -26,11 +26,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TetDriver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/anupb/driver/TetDriver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="BigPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/anupb/panels/BigPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
+            <state relative-caret-position="-351">
+              <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,28 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Block.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/anupb/resources/Block.java">
+      <file leaf-file-name="BlockPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/anupb/panels/BlockPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1014">
-              <caret line="213" column="21" lean-forward="true" selection-start-line="213" selection-start-column="21" selection-end-line="213" selection-end-column="21" />
-              <folding>
-                <element signature="method#Block#0;class#Block#0" />
-                <element signature="method#getWidth#0;class#Block#0" />
-                <element signature="method#rebuild#0;class#Block#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Audio.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/anupb/resources/Audio.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="163" lean-forward="true" selection-start-line="12" selection-start-column="163" selection-end-line="12" selection-end-column="163" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-657">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -67,11 +62,32 @@
       <file leaf-file-name="ScorePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/anupb/panels/ScorePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="898">
-              <caret line="127" column="112" selection-start-line="127" selection-start-column="112" selection-end-line="127" selection-end-column="112" />
+            <state relative-caret-position="123">
+              <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="leftPanel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/anupb/panels/leftPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="158" column="26" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JComponent.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/javax/swing/JComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="764" selection-start-line="764" selection-end-line="791" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -79,27 +95,6 @@
       <file leaf-file-name="scores.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/anupb/files/scores.txt">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="TetrisPanel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/anupb/panels/TetrisPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="82" column="33" lean-forward="true" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KeyInput.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/anupb/input/KeyInput.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -116,6 +111,8 @@
       <find>e</find>
       <find>abstract</find>
       <find>3s</find>
+      <find>System.</find>
+      <find>System</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,17 +136,20 @@
         <option value="$PROJECT_DIR$/src/tetris/tetris/anupb/driver/TetDriver.java" />
         <option value="$PROJECT_DIR$/src/tetris/anupb/panels/TetrisPanel.java" />
         <option value="$PROJECT_DIR$/src/TetrisPanel.java" />
-        <option value="$PROJECT_DIR$/src/anupb/input/KeyInput.java" />
-        <option value="$PROJECT_DIR$/src/anupb/driver/TetDriver.java" />
-        <option value="$PROJECT_DIR$/src/anupb/resources/AddingListener.java" />
-        <option value="$PROJECT_DIR$/src/anupb/resources/BlockTimer.java" />
         <option value="$PROJECT_DIR$/src/anupb/resources/Audio.java" />
+        <option value="$PROJECT_DIR$/src/anupb/input/KeyInput.java" />
+        <option value="$PROJECT_DIR$/src/anupb/input/KeyInput.java" />
+        <option value="$PROJECT_DIR$/src/anupb/resources/AddingListener.java" />
+        <option value="$PROJECT_DIR$/src/anupb/panels/BlockPanel.java" />
+        <option value="$PROJECT_DIR$/src/anupb/resources/BlockTimer.java" />
+        <option value="$PROJECT_DIR$/src/anupb/driver/TetDriver.java" />
+        <option value="$PROJECT_DIR$/src/anupb/resources/ImageColor.java" />
         <option value="$PROJECT_DIR$/src/anupb/resources/Block.java" />
         <option value="$PROJECT_DIR$/src/anupb/panels/BigPanel.java" />
-        <option value="$PROJECT_DIR$/src/anupb/input/KeyInput.java" />
+        <option value="$PROJECT_DIR$/src/anupb/panels/TetrisPanel.java" />
         <option value="$PROJECT_DIR$/src/anupb/files/scores.txt" />
         <option value="$PROJECT_DIR$/src/anupb/panels/ScorePanel.java" />
-        <option value="$PROJECT_DIR$/src/anupb/panels/TetrisPanel.java" />
+        <option value="$PROJECT_DIR$/src/anupb/panels/leftPanel.java" />
       </list>
     </option>
   </component>
@@ -163,7 +163,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
+    <option name="x" value="585" />
+    <option name="y" value="52" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -173,6 +174,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -183,11 +185,6 @@
             <path>
               <item name="CSProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="CSProject" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -195,13 +192,6 @@
               <item name="CSProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="anupb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="anupb" type="462c0819:PsiDirectoryNode" />
-              <item name="audio" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CSProject" type="b2602c69:ProjectViewProjectNode" />
@@ -216,13 +206,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="anupb" type="462c0819:PsiDirectoryNode" />
               <item name="files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="anupb" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CSProject" type="b2602c69:ProjectViewProjectNode" />
@@ -245,22 +228,28 @@
               <item name="anupb" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cs_project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/uml" />
     <property name="settings.editor.selected.configurable" value="com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="anupb.panels" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anupb\Desktop\CSProject\src\anupb\audio" />
       <recent name="C:\Users\anupb\Desktop\CSProject\src\anupb\panels" />
@@ -362,14 +351,22 @@
       <workItem from="1525401186017" duration="1685000" />
       <workItem from="1525474114485" duration="2373000" />
       <workItem from="1525476668916" duration="13559000" />
+      <workItem from="1525537027643" duration="3102000" />
+      <workItem from="1525541004693" duration="1798000" />
+      <workItem from="1525553689098" duration="2775000" />
+      <workItem from="1525568444695" duration="1297000" />
+      <workItem from="1525571329714" duration="78000" />
+      <workItem from="1525576848515" duration="289000" />
+      <workItem from="1525625597351" duration="2070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38880000" />
+    <option name="totallyTimeSpent" value="50289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -381,12 +378,13 @@
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.47086614" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.6456693" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.14934114" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21449487" />
       <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -398,35 +396,34 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47086614" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14934114" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30866143" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32755905" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.090043925" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.6456693" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info id="Capture Tool" order="6" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32755905" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info id="Favorites" order="5" side_tool="true" />
     </layout-to-restore>
@@ -444,105 +441,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/anupb/panels/BigPanel.java</url>
-          <line>39</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="12" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/tetris/anup/resources/Block.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/BigPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/TetrisPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/tetris/anupb/driver/TetDriver.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/BlockPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/ScorePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/TetrisPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/anup/resources/Block.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/BigPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/tetris/anupb/driver/TetDriver.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/BigPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/ScorePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/TetrisPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/anup/resources/Block.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/BlockPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.desktop/java/awt/Container.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.desktop/java/awt/event/ActionListener.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.desktop/javax/swing/JComponent.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.desktop/java/awt/event/KeyListener.java" />
     <entry file="file://$PROJECT_DIR$/../Foundations/Unit2/Pong2/PongPanel.java" />
@@ -586,115 +488,563 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/BlockPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/driver/TetDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/resources/BlockTimer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#177#178#0" expanded="true" />
-            <element signature="e#197#198#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/javax/swing/Timer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5607">
           <caret line="558" column="9" lean-forward="true" selection-start-line="558" selection-start-column="9" selection-end-line="558" selection-end-column="9" />
-          <folding>
-            <element signature="e#17753#17754#0" expanded="true" />
-            <element signature="e#17815#17816#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/resources/AddingListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/images/giphy.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/files/asdf">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/BigPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/anupb/resources/Audio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="163" lean-forward="true" selection-start-line="12" selection-start-column="163" selection-end-line="12" selection-end-column="163" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/files/scores.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/anupb/input/KeyInput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        <state relative-caret-position="550">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/ScorePanel.java">
+    <entry file="file://$PROJECT_DIR$/Documentation/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="898">
-          <caret line="127" column="112" selection-start-line="127" selection-start-column="112" selection-end-line="127" selection-end-column="112" />
+        <state relative-caret-position="-2917" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Documentation/anupb/driver/TetDriver.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102" />
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">images</node>
+            <node x="" y="">netscape</node>
+            <node x="" y="">oracle</node>
+            <node x="" y="">org</node>
+            <node x="" y="">toolbarButtonGraphics</node>
+            <node x="" y="">sun</node>
+            <node x="" y="">anupb</node>
+            <node x="" y="">META-INF</node>
+            <node x="" y="">jdk</node>
+            <node x="" y="">groovyjarjarasm</node>
+            <node x="" y="">java</node>
+            <node x="" y="">groovy</node>
+            <node x="" y="">javax</node>
+            <node x="" y="">groovyjarjarcommonscli</node>
+            <node x="" y="">javafx</node>
+            <node x="" y="">groovyjarjarantlr</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="234.0" y="240.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/anupb/Desktop/CSProject/src/anupb">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/anupb</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="537.0" y="290.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/anupb/resources/ImageColor.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/java/awt/event/ActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/anupb/resources/BlockTimer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#593#594#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/anupb/resources/Block.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1014">
-          <caret line="213" column="21" lean-forward="true" selection-start-line="213" selection-start-column="21" selection-end-line="213" selection-end-column="21" />
+        <state relative-caret-position="3332">
+          <caret line="218" column="31" selection-start-line="218" selection-start-column="31" selection-end-line="218" selection-end-column="31" />
           <folding>
-            <element signature="method#Block#0;class#Block#0" />
             <element signature="method#getWidth#0;class#Block#0" />
             <element signature="method#rebuild#0;class#Block#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/anupb/resources/AddingListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb</OriginalElement>
+          <nodes>
+            <node x="" y="">anupb.files</node>
+            <node x="" y="">anupb.panels</node>
+            <node x="" y="">anupb.resources</node>
+            <node x="" y="">anupb.driver</node>
+            <node x="" y="">anupb.input</node>
+            <node x="" y="">anupb.audio</node>
+            <node x="" y="">anupb.images</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="138.0" y="128.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb.driver.TetDriver">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb.driver.TetDriver</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">anupb.driver.TetDriver</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-266.0" y="-34.0" />
+          <SelectedNodes>
+            <node>anupb.driver.TetDriver</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb.input.KeyInput">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb.input.KeyInput</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">java.util.EventListener</node>
+            <node x="5.0" y="80.0">java.awt.event.KeyListener</node>
+            <node x="11.5" y="160.0">anupb.input.KeyInput</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="java.awt.event.KeyListener" target="java.util.EventListener">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="anupb.input.KeyInput" target="java.awt.event.KeyListener">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-255.0" y="46.0" />
+          <SelectedNodes>
+            <node>anupb.input.KeyInput</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb.panels.BigPanel">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb.panels.BigPanel</OriginalElement>
+          <nodes>
+            <node x="356.7142857142857" y="240.0">javax.swing.JComponent</node>
+            <node x="580.0" y="160.0">java.beans.JavaBean</node>
+            <node x="0.0" y="0.0">java.awt.MenuContainer</node>
+            <node x="389.0" y="160.0">javax.swing.TransferHandler.HasGetTransferHandler</node>
+            <node x="159.48809523809518" y="160.0">java.awt.Container</node>
+            <node x="233.71428571428572" y="240.0">javax.accessibility.Accessible</node>
+            <node x="153.48809523809518" y="80.0">java.awt.Component</node>
+            <node x="379.4999999999999" y="400.0">anupb.panels.BigPanel</node>
+            <node x="150.99999999999997" y="0.0">java.awt.image.ImageObserver</node>
+            <node x="385.9999999999999" y="320.0">javax.swing.JPanel</node>
+            <node x="299.0" y="0.0">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="javax.swing.JPanel" target="javax.swing.JComponent">
+              <point x="5.6843418860808015E-14" y="-15.0" />
+              <point x="426.5" y="295.0" />
+              <point x="414.7142857142857" y="295.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="javax.swing.JComponent" target="javax.swing.TransferHandler.HasGetTransferHandler">
+              <point x="14.5" y="-15.0" />
+              <point x="429.2142857142857" y="210.0" />
+              <point x="474.5" y="210.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="javax.swing.JComponent" target="java.awt.Container">
+              <point x="-43.5" y="-15.0" />
+              <point x="371.2142857142857" y="220.0" />
+              <point x="209.48809523809518" y="220.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="javax.swing.JComponent" target="java.beans.JavaBean">
+              <point x="43.5" y="-15.0" />
+              <point x="458.2142857142857" y="220.0" />
+              <point x="604.0" y="220.0" />
+              <point x="-24.0" y="15.0" />
+            </edge>
+            <edge source="anupb.panels.BigPanel" target="javax.swing.JPanel">
+              <point x="5.6843418860808015E-14" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.awt.Component" target="java.awt.MenuContainer">
+              <point x="-37.33333333333334" y="-15.0" />
+              <point x="172.15476190476184" y="55.0" />
+              <point x="65.5" y="55.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="javax.swing.JPanel" target="javax.accessibility.Accessible">
+              <point x="-26.999999999999943" y="-15.0" />
+              <point x="399.5" y="295.0" />
+              <point x="285.2142857142857" y="295.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="javax.swing.JPanel" target="java.beans.JavaBean">
+              <point x="27.000000000000057" y="-15.0" />
+              <point x="453.5" y="295.0" />
+              <point x="652.0" y="295.0" />
+              <point x="24.0" y="15.0" />
+            </edge>
+            <edge source="java.awt.Container" target="java.awt.Component">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.awt.Component" target="java.awt.image.ImageObserver">
+              <point x="0.0" y="-15.0" />
+              <point x="209.48809523809518" y="55.0" />
+              <point x="214.99999999999997" y="55.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.awt.Component" target="java.io.Serializable">
+              <point x="37.333333333333314" y="-15.0" />
+              <point x="246.8214285714285" y="55.0" />
+              <point x="325.5" y="55.0" />
+              <point x="-26.5" y="15.0" />
+            </edge>
+            <edge source="javax.swing.JComponent" target="java.io.Serializable">
+              <point x="-14.5" y="-15.0" />
+              <point x="400.2142857142857" y="220.0" />
+              <point x="378.5" y="220.0" />
+              <point x="26.5" y="15.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="24.0" y="166.0" />
+          <SelectedNodes>
+            <node>anupb.panels.BigPanel</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb.panels.BlockPanel">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb.panels.BlockPanel</OriginalElement>
+          <nodes>
+            <node x="" y="">javax.swing.JComponent</node>
+            <node x="" y="">anupb.panels.BlockPanel</node>
+            <node x="" y="">java.beans.JavaBean</node>
+            <node x="" y="">java.awt.MenuContainer</node>
+            <node x="" y="">javax.swing.TransferHandler.HasGetTransferHandler</node>
+            <node x="" y="">java.awt.Container</node>
+            <node x="" y="">javax.accessibility.Accessible</node>
+            <node x="" y="">java.awt.Component</node>
+            <node x="" y="">java.awt.image.ImageObserver</node>
+            <node x="" y="">javax.swing.JPanel</node>
+            <node x="" y="">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="258.0" y="215.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb.panels.leftPanel">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb.panels.leftPanel</OriginalElement>
+          <nodes>
+            <node x="" y="">javax.swing.JComponent</node>
+            <node x="" y="">anupb.panels.leftPanel</node>
+            <node x="" y="">java.beans.JavaBean</node>
+            <node x="" y="">java.awt.MenuContainer</node>
+            <node x="" y="">javax.swing.TransferHandler.HasGetTransferHandler</node>
+            <node x="" y="">java.awt.Container</node>
+            <node x="" y="">javax.accessibility.Accessible</node>
+            <node x="" y="">java.awt.Component</node>
+            <node x="" y="">java.awt.image.ImageObserver</node>
+            <node x="" y="">javax.swing.JPanel</node>
+            <node x="" y="">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="258.0" y="215.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb.panels.ScorePanel">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb.panels.ScorePanel</OriginalElement>
+          <nodes>
+            <node x="" y="">javax.swing.JComponent</node>
+            <node x="" y="">anupb.panels.ScorePanel</node>
+            <node x="" y="">java.beans.JavaBean</node>
+            <node x="" y="">java.awt.MenuContainer</node>
+            <node x="" y="">javax.swing.TransferHandler.HasGetTransferHandler</node>
+            <node x="" y="">java.awt.Container</node>
+            <node x="" y="">javax.accessibility.Accessible</node>
+            <node x="" y="">java.awt.Component</node>
+            <node x="" y="">java.awt.image.ImageObserver</node>
+            <node x="" y="">javax.swing.JPanel</node>
+            <node x="" y="">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="258.0" y="215.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb.panels.TetrisPanel">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb.panels.TetrisPanel</OriginalElement>
+          <nodes>
+            <node x="" y="">javax.swing.JComponent</node>
+            <node x="" y="">anupb.panels.TetrisPanel</node>
+            <node x="" y="">java.beans.JavaBean</node>
+            <node x="" y="">java.awt.MenuContainer</node>
+            <node x="" y="">javax.swing.TransferHandler.HasGetTransferHandler</node>
+            <node x="" y="">java.awt.Container</node>
+            <node x="" y="">javax.accessibility.Accessible</node>
+            <node x="" y="">java.awt.Component</node>
+            <node x="" y="">java.awt.image.ImageObserver</node>
+            <node x="" y="">javax.swing.JPanel</node>
+            <node x="" y="">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="258.0" y="215.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb.resources.AddingListener">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb.resources.AddingListener</OriginalElement>
+          <nodes>
+            <node x="" y="">java.util.EventListener</node>
+            <node x="" y="">anupb.resources.AddingListener</node>
+            <node x="" y="">java.awt.event.ActionListener</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-16.0" y="95.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb.resources.Audio">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb.resources.Audio</OriginalElement>
+          <nodes>
+            <node x="" y="">anupb.resources.Audio</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-40.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb.resources.Block">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb.resources.Block</OriginalElement>
+          <nodes>
+            <node x="" y="">anupb.resources.Block</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-41.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/anupb.resources.BlockTimer">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>anupb.resources.BlockTimer</OriginalElement>
+          <nodes>
+            <node x="0.0" y="160.0">anupb.resources.BlockTimer</node>
+            <node x="14.5" y="80.0">javax.swing.Timer</node>
+            <node x="1.0" y="0.0">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="anupb.resources.BlockTimer" target="javax.swing.Timer">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="javax.swing.Timer" target="java.io.Serializable">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-26.0" y="95.0" />
+          <SelectedNodes>
+            <node>anupb.resources.BlockTimer</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/anupb/panels/BigPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-351">
+          <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/anupb/panels/TetrisPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="82" column="33" lean-forward="true" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+        <state relative-caret-position="184">
+          <caret line="63" column="12" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/anupb/driver/TetDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/anupb/panels/BlockPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-657">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/anupb/files/scores.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/anupb/panels/ScorePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/javax/swing/JComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="764" selection-start-line="764" selection-end-line="791" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/anupb/panels/leftPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="158" column="26" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
