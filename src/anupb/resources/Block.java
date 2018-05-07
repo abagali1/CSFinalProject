@@ -346,6 +346,12 @@ public class Block {
         }
     }
 
+    /**
+     * Rainfall animation used solely for decoration
+     * @param blocks blocks to be used
+     * @param myBuffer BufferedImage to be drawn on
+     * @see java.awt.image.BufferedImage
+     */
     public static void prettyRain(ArrayList<Block> blocks, Graphics myBuffer) {
         if (getFall()) {
             Block temp;
