@@ -107,9 +107,8 @@ public class leftPanel extends javax.swing.JPanel {
             blocks.get(count).move(10);
 
             Block.setFall(true);
-            Block.rain(blocks.get(count), myBuffer);
+            Block.rain(blocks, myBuffer);
 
-            System.out.println(blocks.get(count).toString());
             if (blocks.get(count).getY() == ((blocks.get(count).getType() != 1) ? 380 : 390))
                 count++;
 
@@ -143,9 +142,8 @@ public class leftPanel extends javax.swing.JPanel {
             blocks.get(count).move(10);
 
             Block.setFall(true);
-            Block.rain(blocks.get(count), myBuffer);
+            Block.rain(blocks, myBuffer);
 
-            System.out.println(blocks.get(count).toString());
             if (blocks.get(count).getY() == ((blocks.get(count).getType() != 1) ? 380 : 390))
                 count++;
 
@@ -179,14 +177,18 @@ public class leftPanel extends javax.swing.JPanel {
             blocks.get(count).move(10);
 
             Block.setFall(true);
-            Block.rain(blocks.get(count), myBuffer);
+            Block.rain(blocks, myBuffer);
 
-            System.out.println(blocks.get(count).toString());
             if (blocks.get(count).getY() == ((blocks.get(count).getType() != 1) ? 380 : 390))
                 count++;
 
             repaint();
             revalidate();
         }
+    }
+    public void stop(){
+        t.stop();
+        t1.stop();
+        t2.stop();
     }
 }

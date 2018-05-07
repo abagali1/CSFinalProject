@@ -27,9 +27,9 @@ import java.util.Optional;
 public class TetrisPanel extends JPanel{
     private BufferedImage myImage;
     private Graphics2D myBuffer;
-    private Timer t;
+    private Timer t, l;
     private BlockTimer k;
-    private ArrayList<Block> blocks;
+    private ArrayList<Block> blocks, kblocks;
     private boolean[][] gameboard;
     private Audio song;
     private int blockCount = 0;
@@ -44,11 +44,13 @@ public class TetrisPanel extends JPanel{
         this.myImage = new BufferedImage(201, 401, BufferedImage.TYPE_INT_RGB);
         this.myBuffer = (Graphics2D) myImage.getGraphics();
         blocks = new ArrayList<>();
+        kblocks = new ArrayList<>();
 
         this.t = new Timer(75, new Listener());
 
         this.keep = new Keeper();
         this.k = new BlockTimer(1, keep);
+
 
         gameboard = new boolean[20][40];
         for(int r=0;r<=gameboard.length-1;r++){
@@ -64,8 +66,24 @@ public class TetrisPanel extends JPanel{
         this.setFocusable(true);
         requestFocus();
 
+        for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
+            blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
+                Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
+
+        myBuffer.setColor(Color.black);
+        myBuffer.fillRect(0, 0, getWidth(), getHeight());
+        myBuffer.setColor(Color.WHITE);
+
+        for (int i = 0; i <= 400; i += 10) {
+            myBuffer.drawLine(i, 0, i, 400);
+            myBuffer.drawLine(0, i, 401, i);
+        }
+
+        myBuffer.drawLine(400, 0, 400, 400);
+        myBuffer.drawLine(0, 400, 400, 400);
+
+
         this.t.start();
-        //asfd;ajsdf
     }
 
     /**
@@ -124,35 +142,14 @@ public class TetrisPanel extends JPanel{
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-            temp = new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                    Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7)));
 
-            blocks.add(temp);
-            setKeyListener(temp);
-
-            myBuffer.setColor(Color.black);
-            myBuffer.fillRect(0, 0, getWidth(), getHeight());
-            myBuffer.setColor(Color.WHITE);
-
-            for (int i = 0; i <= 400; i += 10) {
-                myBuffer.drawLine(i, 0, i, 400);
-                myBuffer.drawLine(0, i, 401, i);
-            }
-
-            myBuffer.drawLine(400, 0, 400, 400);
-            myBuffer.drawLine(0, 400, 400, 400);
 
             blocks.get(blockCount).draw(myBuffer);
-            blocks.get(blockCount).move(10);
 
             Block.setFall(true);
-            Block.rain(blocks.get(blockCount), myBuffer);
+            Block.rain(blocks, myBuffer);
 
-            if (blocks.get(blockCount).getY() == ((blocks.get(blockCount).getType() != 1) ? 380 : 390))
-                blockCount++;
-
-            if(blocks.get(blockCount).getY() == 400)
-                k.start(keep,blocks.get(blockCount));
+            System.out.println(blocks.get(blockCount).toString());
 
             repaint();
             revalidate();
@@ -197,10 +194,10 @@ public class TetrisPanel extends JPanel{
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            for(Block b: constantBlocks){
+                b.draw(myBuffer);
+            }
         }
     }
-
-
 }
 

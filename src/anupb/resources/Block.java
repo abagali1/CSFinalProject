@@ -309,29 +309,72 @@ public class Block {
     /**
      * Moves the block down
      * @param x amount of spaces to be moved
-     * @param a null
+     * @param a Direction to move
      */
-    private void move(int x, String a){
-        myY += x;
-        myY2 = (myY2 != null) ? myY2+x : null;
+    private void move(int x, String a) {
+        if (a.toLowerCase().equals("down")) {
+            myY += x;
+            myY2 = (myY2 != null) ? myY2 + x : null;
+        }
+        if(a.toLowerCase().equals("up")){
+            myY -= x;
+            myY2 = (myY2 != null) ? myY2 - x:null;
+        }
     }
 
     /**
      * Facilitates the automatic downward movement of the blocks during the Tetris game
-     * @param block block to be rainfallen
+     * @param blocks blocks to be rainfallen
      * @param myBuffer BufferedImage to be drawn on
      * @see java.awt.image.BufferedImage
      */
-    public static void rain(Block block, Graphics myBuffer){
-        Block current;
-        if(getFall()){
-            current = block;
+    public static void rain(ArrayList<Block> blocks, Graphics myBuffer){
+       if(getFall()) {
+           Block temp;
+           for (Block b : blocks) {
+               temp = b;
+               temp.draw(myBuffer);
+               if (temp.getY() != ((temp.getType() != 1) ? (380) : (390))) {
+                   temp.move(10,"down");
+                   temp.draw(myBuffer);
+               }else{
+                   continue;
+               }
+           }
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*Block current;
+        int count = 0;
+        if(getFall()) {
+            current = blocks.get(count);
             current.draw(myBuffer);
-            if(current.getY() != ((current.getType() != 1) ? (380):(390)))
+            if (current.getY() != ((current.getType() != 1) ? (380) : (390))) {
                 current.move(10, null);
-            if(current.getY() == ((current.getType() != 1) ? (380):(390)))
+                current.draw(myBuffer);
+            }
+            if (current.getY() == ((current.getType() != 1) ? (380) : (390))) {
                 current.setFinished(current);
-        }
+                count++;
+            }
+        }*/
     }
 
     /**
