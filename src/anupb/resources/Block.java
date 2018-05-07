@@ -24,8 +24,10 @@ public class Block {
     private boolean lacc, racc;
     private static boolean fall;
     private boolean ifFinished;
-    private static int[] yPos = new int[] {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 0};
-
+    private static int[] yPos = new int[] {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140,
+            150, 160, 170, 0};
+    public static int count = 0;
+    public static ArrayList<Block> constantBlocks = new ArrayList<>();
 
     /**
      * Constructor for a block.
@@ -328,20 +330,37 @@ public class Block {
      * @param myBuffer BufferedImage to be drawn on
      * @see java.awt.image.BufferedImage
      */
-    public static void rain(ArrayList<Block> blocks, Graphics myBuffer){
-       if(getFall()) {
-           Block temp;
-           for (Block b : blocks) {
-               temp = b;
-               temp.draw(myBuffer);
-               if (temp.getY() != ((temp.getType() != 1) ? (380) : (390))) {
-                   temp.move(10,"down");
-                   temp.draw(myBuffer);
-               }else{
-                   continue;
-               }
-           }
-       }
+    public static void rain(ArrayList<Block> blocks, Graphics myBuffer) {
+        Block temp;
+        if(getFall()){
+            temp = blocks.get(count);
+            temp.draw(myBuffer);
+            if(temp.getY() != ((temp.getType()!=1)?(380):(390))){
+                temp.move(10, "down");
+            }else{
+                constantBlocks.add(temp);
+                count++;
+            }
+            for(Block b: constantBlocks)
+                b.draw(myBuffer);
+        }
+    }
+
+    public static void prettyRain(ArrayList<Block> blocks, Graphics myBuffer) {
+        if (getFall()) {
+            Block temp;
+            for (Block b : blocks) {
+                temp = b;
+                temp.draw(myBuffer);
+                if (temp.getY() != ((temp.getType() != 1) ? (380) : (390))) {
+                    temp.move(10, "down");
+                    temp.draw(myBuffer);
+                }else{
+                    continue;
+                }
+            }
+        }
+    }
 
 
 
@@ -361,7 +380,7 @@ public class Block {
 
 
 
-        /*Block current;
+            /*Block current;
         int count = 0;
         if(getFall()) {
             current = blocks.get(count);
@@ -375,7 +394,7 @@ public class Block {
                 count++;
             }
         }*/
-    }
+
 
     /**
      * Serts a block to be in a finished state
@@ -384,7 +403,7 @@ public class Block {
     public void setFinished(Block a){
         Block temp = a;
 
-        
+
     }
 
     /**

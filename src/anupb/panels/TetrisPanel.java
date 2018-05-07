@@ -68,20 +68,7 @@ public class TetrisPanel extends JPanel{
 
         for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
             blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
-
-        myBuffer.setColor(Color.black);
-        myBuffer.fillRect(0, 0, getWidth(), getHeight());
-        myBuffer.setColor(Color.WHITE);
-
-        for (int i = 0; i <= 400; i += 10) {
-            myBuffer.drawLine(i, 0, i, 400);
-            myBuffer.drawLine(0, i, 401, i);
-        }
-
-        myBuffer.drawLine(400, 0, 400, 400);
-        myBuffer.drawLine(0, 400, 400, 400);
-
+                    Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
 
         this.t.start();
     }
@@ -143,6 +130,18 @@ public class TetrisPanel extends JPanel{
         @Override
         public void actionPerformed(ActionEvent e) {
 
+            myBuffer.setColor(Color.black);
+            myBuffer.fillRect(0, 0, getWidth(), getHeight());
+            myBuffer.setColor(Color.WHITE);
+
+            for (int i = 0; i <= 400; i += 10) {
+                myBuffer.drawLine(i, 0, i, 400);
+                myBuffer.drawLine(0, i, 401, i);
+            }
+
+            myBuffer.drawLine(400, 0, 400, 400);
+            myBuffer.drawLine(0, 400, 400, 400);
+
 
             blocks.get(blockCount).draw(myBuffer);
 
@@ -151,6 +150,9 @@ public class TetrisPanel extends JPanel{
 
             System.out.println(blocks.get(blockCount).toString());
 
+            for(int i = Block.count-1; i>=blocks.size();i--) {
+                blocks.get(i).draw(myBuffer);
+            }
             repaint();
             revalidate();
         }
@@ -200,4 +202,3 @@ public class TetrisPanel extends JPanel{
         }
     }
 }
-
