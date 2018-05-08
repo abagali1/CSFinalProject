@@ -358,12 +358,8 @@ public class Block {
             for (Block b : blocks) {
                 temp = b;
                 temp.draw(myBuffer);
-                if (temp.getY() != ((temp.getType() != 1) ? (380) : (390))) {
-                    temp.move(10, "down");
-                    temp.draw(myBuffer);
-                }else{
-                    continue;
-                }
+                temp.move(10, "down");
+                temp.draw(myBuffer);
             }
         }
     }

@@ -144,6 +144,7 @@ public class TetrisPanel extends JPanel{
 
 
             blocks.get(blockCount).draw(myBuffer);
+            setKeyListener(blocks.get(blockCount));
 
             Block.setFall(true);
             Block.rain(blocks, myBuffer);
@@ -200,5 +201,12 @@ public class TetrisPanel extends JPanel{
                 b.draw(myBuffer);
             }
         }
+    }
+    public Block[] getNext5Blocks(){
+        Block[] temp = new Block[5];
+        for(int i =0;i<=temp.length-1;i++){
+            temp[i] = blocks.get(blockCount + i + 1);
+        }
+        return temp;
     }
 }

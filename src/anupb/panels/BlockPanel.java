@@ -1,11 +1,14 @@
 package anupb.panels;
 
+import anupb.resources.Block;
+
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
 
 /**
  * A BlockPanel shows which Blocks are coming next in a Tetris game
@@ -21,17 +24,28 @@ public class BlockPanel extends JPanel {
     private Graphics2D myBuffer;
     private Timer t;
     private static final Color BACKGROUND = Color.BLACK;
+    private Block[] nextBlocks;
+    private HashMap<String, ImageIcon> images;
 
     /**
      * Creates a new BlockPanel
      */
-    public BlockPanel(){
+    public BlockPanel(Block[] nextBlocks){
         myImage = new BufferedImage(400,400,1);
         this.myBuffer = (Graphics2D)myImage.getGraphics();
         myBuffer.setBackground(BACKGROUND);
         t = new Timer(5, new Starter());
+        this.nextBlocks = nextBlocks;
+        images = new HashMap<>();
+        images.put("cyan", new ImageIcon("anupb/images/cyan.png"));
+        images.put("blue", new ImageIcon("anupb/images/blue.png"));
+        //images.put("red", new ImageIcon("anupb/images/red.png"));
+
         t.start();
 
+    }
+    public void updateNextBlocks(Block[] arr){
+        this.nextBlocks = arr;
     }
     @Override
     /**
@@ -79,7 +93,12 @@ public class BlockPanel extends JPanel {
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            myBuffer.setColor(Color.white);
+            myBuffer.drawRect(50,50,250,250);
+            myBuffer.setFont(new Font("Arial",Font.BOLD,35));
+            myBuffer.drawString("Next Blocks:", 80,75);
+            repaint();
+            revalidate();
         }
     }
 }

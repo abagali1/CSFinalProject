@@ -1,5 +1,7 @@
 package anupb.panels;
 
+import anupb.resources.Block;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,6 +28,7 @@ public class BigPanel extends JPanel {
     private JPanel center;
     private leftPanel left, right;
     private Timer t, s;
+    private Block[] nextBlocks;
 
     /**
      * Creates a new BigPanel
@@ -83,8 +86,9 @@ public class BigPanel extends JPanel {
         score = new ScorePanel();
         this.add(score);
         tetris = new TetrisPanel();
+        nextBlocks = tetris.getNext5Blocks();
         this.add(tetris);
-        block = new BlockPanel();
+        block = new BlockPanel(nextBlocks);
         this.add(block);
         repaint();
         revalidate();
@@ -98,7 +102,13 @@ public class BigPanel extends JPanel {
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            check();
         }
     }
+    public void check(){
+        if(!(java.util.Arrays.equals(nextBlocks,tetris.getNext5Blocks()))){
+            block.updateNextBlocks(tetris.getNext5Blocks());
+        }
+    }
+
 }
