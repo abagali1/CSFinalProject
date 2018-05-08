@@ -116,14 +116,13 @@ public class ScorePanel extends JPanel {
         public void actionPerformed(ActionEvent e) {
                 String name;
                 try {
-                    //System.setOut(new PrintStream(new FileOutputStream("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\files\\scores.txt")));
-                    Writer out = new FileWriter("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\files\\scores.txt");
+                    Writer out = new FileWriter("src/anupb/files/scores.txt",true);
                     do {
                         name = JOptionPane.showInputDialog("What is your name?(name is case-sensitive)");
                     } while (name.isEmpty());
                     out.write(name+"\n");
                     out.write(String.valueOf(high)+"\n");
-                    out.write("------");
+                    out.write("------\n");
                     out.flush();
                     out.close();
 
@@ -155,7 +154,7 @@ public class ScorePanel extends JPanel {
                 int count = 0;
                 int h = 0;
                 RuntimeException pnf;
-                infile = new Scanner(new File("C:\\Users\\anupb\\Desktop\\CSProject\\src\\anupb\\files\\scores.txt"));
+                infile = new Scanner(new File("src/anupb/files/scores.txt"));
 
                 String name = JOptionPane.showInputDialog("Which player do you want to load?(name is case-sensitive)" +
                         "\n*WARNING* THIS ACTION WILL RESET YOUR CURRENT SCORE TO 0");
