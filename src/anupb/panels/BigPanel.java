@@ -105,6 +105,10 @@ public class BigPanel extends JPanel {
             check();
         }
     }
+
+    /**
+     * Checks if the next 5 blocks have changed then updates accordingly
+     */
     public void check(){
         if(!(java.util.Arrays.equals(nextBlocks,tetris.getNext5Blocks()))){
             block.updateNextBlocks(tetris.getNext5Blocks());

@@ -202,6 +202,11 @@ public class TetrisPanel extends JPanel{
             }
         }
     }
+
+    /**
+     * Gets the next 5 blocks after the <code>blockCount</code> index in the <code>blocks</code> ArrayList
+     * @return Array of the next 5 blocks
+     */
     public Block[] getNext5Blocks(){
         Block[] temp = new Block[5];
         for(int i =0;i<=temp.length-1;i++){

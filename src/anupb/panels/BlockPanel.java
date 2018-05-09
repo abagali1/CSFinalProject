@@ -29,6 +29,8 @@ public class BlockPanel extends JPanel {
 
     /**
      * Creates a new BlockPanel
+     * @param nextBlocks upcoming 5 blocks in the <code>TetrisPanel</code> ArrayList block queue
+     * @see TetrisPanel
      */
     public BlockPanel(Block[] nextBlocks){
         myImage = new BufferedImage(400,400,1);
