@@ -21,10 +21,18 @@ public class KeyInput implements KeyListener {
      * Creates a new KeyInput object
      * @param b Block to be adjusted
      */
-        public KeyInput(Block b){
+    public KeyInput(Block b){
         this.b = b;
-
     }
+
+    /**
+     * Sets the current block to a new block
+     * @see Block
+     * @param b Block to be set to
+     */
+    public void setBlock(Block b){
+            this.b = b;
+        }
     /**
      * Invoked when a key has been typed.
      * See the class description for {@link KeyEvent} for a definition of
@@ -46,11 +54,11 @@ public class KeyInput implements KeyListener {
      */
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_A && b.getX()>0){
+        if(e.getKeyCode() == KeyEvent.VK_A ){
             b.setLAcc(true);
             System.out.println("L");
         }
-        if(e.getKeyCode() == KeyEvent.VK_D && b.getX()+b.getWidth()<200 ){
+        if(e.getKeyCode() == KeyEvent.VK_D){
             b.setRAcc(true);
             System.out.println("R");
         }

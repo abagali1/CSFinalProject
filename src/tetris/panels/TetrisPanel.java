@@ -81,6 +81,8 @@ public class TetrisPanel extends JPanel{
      */
     private int[] yPos;
 
+    private KeyInput key;
+
     /**
      * Creates a new TetrisPanel
      * Initializes a new BufferedImage, and Graphics2D object
@@ -93,11 +95,10 @@ public class TetrisPanel extends JPanel{
         blocks = new ArrayList<>();
         kblocks = new ArrayList<>();
 
-        this.t = new Timer(75, new Listener());
+        this.t = new Timer(750, new Listener());
 
         this.keep = new Keeper();
         this.k = new BlockTimer(1, keep);
-
 
         gameboard = new boolean[20][40];
         for(int r=0;r<=gameboard.length-1;r++){
@@ -110,12 +111,16 @@ public class TetrisPanel extends JPanel{
         for(int r=0;r<=200-30;r+=10)
             yPos[r/10] = r;
 
-        this.setFocusable(true);
-        requestFocus();
 
         for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
             blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
                     Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
+
+        this.key = new KeyInput(blocks.get(0));
+
+        this.addKeyListener(key);
+        this.setFocusable(true);
+        requestFocus();
 
         this.t.start();
     }
@@ -128,7 +133,7 @@ public class TetrisPanel extends JPanel{
      * @see Block
      */
     public void setKeyListener(Block b) {
-        this.addKeyListener(new KeyInput(b));
+        key.setBlock(b);
     }
 
     @Override
@@ -191,10 +196,13 @@ public class TetrisPanel extends JPanel{
 
 
             blocks.get(blockCount).draw(myBuffer);
-            setKeyListener(blocks.get(blockCount));
+            blocks.get(blockCount).move(10);
+
 
             Block.setFall(true);
             Block.rain(blocks, myBuffer);
+
+            setKeyListener(blocks.get(blockCount));
 
             System.out.println(blocks.get(blockCount).toString());
 
