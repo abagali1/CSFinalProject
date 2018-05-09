@@ -39,9 +39,14 @@ public class BlockPanel extends JPanel {
         t = new Timer(5, new Starter());
         this.nextBlocks = nextBlocks;
         images = new HashMap<>();
+
         images.put("cyan", new ImageIcon("anupb/images/cyan.png"));
         images.put("blue", new ImageIcon("anupb/images/blue.png"));
-        //images.put("red", new ImageIcon("anupb/images/red.png"));
+        images.put("red", new ImageIcon("anupb/images/red.png"));
+        images.put("purple", new ImageIcon("anupb/images/purple.png"));
+        images.put("green", new ImageIcon("anupb/images/green.png"));
+        images.put("orange", new ImageIcon("anupb/images/orange.png"));
+        images.put("yellow", new ImageIcon("anupb/images/yellow.png"));
 
         t.start();
 
