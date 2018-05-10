@@ -11,6 +11,8 @@ import javax.swing.plaf.ComponentUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -116,25 +118,79 @@ public class TetrisPanel extends JPanel{
             blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
                     Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
 
-        this.key = new KeyInput(blocks.get(0));
+       // this.key = new KeyInput(blocks.get(0));
 
-        this.addKeyListener(key);
+        this.addKeyListener(new Key());
         this.setFocusable(true);
         requestFocus();
 
         this.t.start();
     }
 
-    /**
+    private class Key implements KeyListener{
+
+        /**
+         * Invoked when a key has been typed.
+         * See the class description for {@link KeyEvent} for a definition of
+         * a key typed event.
+         *
+         * @param e the event to be processed
+         */
+        @Override
+        public void keyTyped(KeyEvent e) {
+
+        }
+
+        /**
+         * Invoked when a key has been pressed.
+         * See the class description for {@link KeyEvent} for a definition of
+         * a key pressed event.
+         *
+         * @param e the event to be processed
+         */
+        @Override
+        public void keyPressed(KeyEvent e) {
+            if(e.getKeyCode() == KeyEvent.VK_A ){
+                blocks.get(blockCount).setLAcc(true);
+                System.out.println("L");
+            }
+            if(e.getKeyCode() == KeyEvent.VK_D){
+                blocks.get(blockCount).setRAcc(true);
+                System.out.println("R");
+            }
+        }
+
+        /**
+         * Invoked when a key has been released.
+         * See the class description for {@link KeyEvent} for a definition of
+         * a key released event.
+         *
+         * @param e the event to be processed
+         */
+        @Override
+        public void keyReleased(KeyEvent e) {
+            if(e.getKeyCode() == KeyEvent.VK_A ){
+                blocks.get(blockCount).setLAcc(false);
+                System.out.println("L");
+            }
+            if(e.getKeyCode() == KeyEvent.VK_D){
+                blocks.get(blockCount).setRAcc(false);
+                System.out.println("R");
+            }
+        }
+    }
+
+
+    /*/**
      * Sets the current <code>KeyListener</code> new a new <code>KeyListener</code> to adjust to a new Block
      * @param b Block to be changed to
      * @see KeyInput
      * @see java.awt.event.KeyListener
      * @see Block
      */
-    public void setKeyListener(Block b) {
+   /* public void setKeyListener(Block b) {
         key.setBlock(b);
-    }
+    }*/
 
     @Override
     /**
@@ -202,9 +258,9 @@ public class TetrisPanel extends JPanel{
             Block.setFall(true);
             Block.rain(blocks, myBuffer);
 
-            setKeyListener(blocks.get(blockCount));
+            //setKeyListener(blocks.get(blockCount));
 
-            System.out.println(blocks.get(blockCount).toString());
+            //System.out.println(blocks.get(blockCount).toString());
 
             for(int i = Block.count-1; i>=blocks.size();i--) {
                 blocks.get(i).draw(myBuffer);
