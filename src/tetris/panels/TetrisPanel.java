@@ -9,10 +9,7 @@ import tetris.resources.BlockTimer;
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -122,24 +119,11 @@ public class TetrisPanel extends JPanel{
 
         this.addKeyListener(new Key());
         this.setFocusable(true);
-        requestFocus();
 
         this.t.start();
     }
 
-    private class Key implements KeyListener{
-
-        /**
-         * Invoked when a key has been typed.
-         * See the class description for {@link KeyEvent} for a definition of
-         * a key typed event.
-         *
-         * @param e the event to be processed
-         */
-        @Override
-        public void keyTyped(KeyEvent e) {
-
-        }
+    private class Key extends KeyAdapter {
 
         /**
          * Invoked when a key has been pressed.
@@ -150,11 +134,11 @@ public class TetrisPanel extends JPanel{
          */
         @Override
         public void keyPressed(KeyEvent e) {
-            if(e.getKeyCode() == KeyEvent.VK_A ){
+            if(e.getKeyCode() == KeyEvent.VK_LEFT ){
                 blocks.get(blockCount).setLAcc(true);
                 System.out.println("L");
             }
-            if(e.getKeyCode() == KeyEvent.VK_D){
+            if(e.getKeyCode() == KeyEvent.VK_RIGHT){
                 blocks.get(blockCount).setRAcc(true);
                 System.out.println("R");
             }
@@ -169,11 +153,11 @@ public class TetrisPanel extends JPanel{
          */
         @Override
         public void keyReleased(KeyEvent e) {
-            if(e.getKeyCode() == KeyEvent.VK_A ){
+            if(e.getKeyCode() == KeyEvent.VK_LEFT ){
                 blocks.get(blockCount).setLAcc(false);
                 System.out.println("L");
             }
-            if(e.getKeyCode() == KeyEvent.VK_D){
+            if(e.getKeyCode() == KeyEvent.VK_RIGHT  ){
                 blocks.get(blockCount).setRAcc(false);
                 System.out.println("R");
             }
