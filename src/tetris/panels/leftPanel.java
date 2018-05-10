@@ -176,6 +176,10 @@ public class leftPanel extends javax.swing.JPanel {
             decorate();
         }
     }
+
+    /**
+     * Stops all timers
+     */
     public void stop(){
         t.stop();
         t1.stop();

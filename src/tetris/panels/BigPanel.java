@@ -112,6 +112,8 @@ public class BigPanel extends JPanel {
      */
     public void start(){
         setLayout(new GridLayout(1,3));
+        left.stop();
+        right.stop();
         this.remove(left);
         this.remove(right);
         this.remove(center);
