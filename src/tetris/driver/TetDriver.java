@@ -30,6 +30,7 @@ public class TetDriver
         b.requestFocus();
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setUndecorated(true);
+        frame.setFocusable(true);
         frame.setVisible(true);
     }
 }
