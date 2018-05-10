@@ -23,12 +23,33 @@ import java.util.Optional;
  *
  */
 public class leftPanel extends javax.swing.JPanel {
+    /**
+     * BufferedImage to draw onto
+     */
     private BufferedImage myImage;
+    /**
+     * Graphics2D object which draws onto myImage
+     */
     private Graphics2D myBuffer;
+    /**
+     * Timers to control decorations
+     */
     private Timer t, t1, t2;
+    /**
+     * Large <code>ArrayList</code> of blocks. Used in decorations
+     */
     private ArrayList<Block> blocks;
+    /**
+     * Used to index <code>blocks</code>
+     */
     private int count = 0;
+    /**
+     * Used to rainfall blocks
+     */
     private Block temp;
+    /**
+     * Stores all possible y positions for new blocks
+     */
     private int[] yPos = new int[] {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 0};
 
     /**
@@ -83,6 +104,32 @@ public class leftPanel extends javax.swing.JPanel {
     }
 
     /**
+     * Shows the decorations onto the panel
+     */
+    public void decorate(){
+        temp = new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
+                Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7)));
+
+        blocks.add(temp);
+
+        myBuffer.setColor(Color.black);
+        myBuffer.fillRect(0, 0, getWidth(), getHeight());
+        myBuffer.setColor(Color.WHITE);
+
+        blocks.get(count).draw(myBuffer);
+        blocks.get(count).move(10);
+
+        Block.setFall(true);
+        Block.prettyRain(blocks, myBuffer);
+
+        if (blocks.get(count).getY() == ((blocks.get(count).getType() != 1) ? 380 : 390))
+            count++;
+
+        repaint();
+        revalidate();
+    }
+
+    /**
      * A nested class for decorations
      * @see ActionListener
      */
@@ -94,26 +141,7 @@ public class leftPanel extends javax.swing.JPanel {
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-            temp = new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                    Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7)));
-
-            blocks.add(temp);
-
-            myBuffer.setColor(Color.black);
-            myBuffer.fillRect(0, 0, getWidth(), getHeight());
-            myBuffer.setColor(Color.WHITE);
-
-            blocks.get(count).draw(myBuffer);
-            blocks.get(count).move(10);
-
-            Block.setFall(true);
-            Block.prettyRain(blocks, myBuffer);
-
-            if (blocks.get(count).getY() == ((blocks.get(count).getType() != 1) ? 380 : 390))
-                count++;
-
-            repaint();
-            revalidate();
+            decorate();
         }
     }
 
@@ -129,26 +157,7 @@ public class leftPanel extends javax.swing.JPanel {
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-            temp = new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                    Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7)));
-
-            blocks.add(temp);
-
-            myBuffer.setColor(Color.black);
-            myBuffer.fillRect(0, 0, getWidth(), getHeight());
-            myBuffer.setColor(Color.WHITE);
-
-            blocks.get(count).draw(myBuffer);
-            blocks.get(count).move(10);
-
-            Block.setFall(true);
-            Block.prettyRain(blocks, myBuffer);
-
-            if (blocks.get(count).getY() == ((blocks.get(count).getType() != 1) ? 380 : 390))
-                count++;
-
-            repaint();
-            revalidate();
+            decorate();
         }
     }
 
@@ -164,26 +173,7 @@ public class leftPanel extends javax.swing.JPanel {
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-            temp = new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                    Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7)));
-
-            blocks.add(temp);
-
-            myBuffer.setColor(Color.black);
-            myBuffer.fillRect(0, 0, getWidth(), getHeight());
-            myBuffer.setColor(Color.WHITE);
-
-            blocks.get(count).draw(myBuffer);
-            blocks.get(count).move(10);
-
-            Block.setFall(true);
-            Block.prettyRain(blocks, myBuffer);
-
-            if (blocks.get(count).getY() == ((blocks.get(count).getType() != 1) ? 380 : 390))
-                count++;
-
-            repaint();
-            revalidate();
+            decorate();
         }
     }
     public void stop(){

@@ -18,12 +18,42 @@ import java.util.Scanner;
  * @see JPanel
  */
 public class ScorePanel extends JPanel {
+    /**
+     * BufferedImage to draw onto
+     */
     private BufferedImage myImage;
+    /**
+     * Graphics2D object which draws onto myImage
+     */
     private Graphics2D myBuffer;
+    /**
+     * Constant background for the entire panel
+     */
     private static final Color BACKGROUND = Color.BLACK;
-    private JLabel highscores, logo;
-    private JButton save, load;
-    private int high, curr;
+    /**
+     * Displays the scores
+     */
+    private JLabel highscores;
+    /**
+     * Displays the Tetris logo
+     */
+    private JLabel logo;
+    /**
+     * When pressed the current highscore, along with a name is saved to a txt file
+     */
+    private JButton save;
+    /**
+     * When pressed, a previous game can be referenced by name and loaded to the current game
+     */
+    private JButton load;
+    /**
+     * Stores the current highscore
+     */
+    private int high;
+    /**
+     * Stores the current score
+     */
+    private int curr;
 
     /**
      * Creates a new ScorePanel

@@ -20,14 +20,46 @@ import java.awt.event.ActionListener;
  */
 public class BigPanel extends JPanel {
 
+    /**
+     * Facilitates the transition from introduction panels to game panels
+     */
     private JButton begin;
+    /**
+     * Displays the title logo
+     */
     private JLabel title;
+    /**
+     * JPanel for the actual tetris game
+     */
     private TetrisPanel tetris;
+    /**
+     * JPanel which shows the highscore, current score, and provides functionality for saving and loading games from
+     * .txt file
+     */
     private ScorePanel score;
+    /**
+     * JPanel which shows the upcoming blocks in the game
+     */
     private BlockPanel block;
+    /**
+     * Formatting JPanel
+     */
     private JPanel center;
+    /**
+     * Decoration JPanels
+     */
     private leftPanel left, right;
-    private Timer t, s;
+    /**
+     * Calls the start() method which changes the introduction over to the game
+     */
+    private Timer t;
+    /**
+     * Called every 5 milliseconds to check if the next 5 blocks have changed
+     */
+    private Timer s;
+    /**
+     * Stores the next 5 blocks
+     */
     private Block[] nextBlocks;
 
     /**

@@ -20,11 +20,30 @@ import java.util.HashMap;
  * @see JPanel
  */
 public class BlockPanel extends JPanel {
+    /**
+     * BufferedImage to draw onto
+     */
     private BufferedImage myImage;
+    /**
+     * Graphics2D object which draws onto myImage
+     */
     private Graphics2D myBuffer;
+    /**
+     * Displays the next blocks onto the JPanel
+     */
     private Timer t;
+    /**
+     * Constant background for the entire panel
+     */
     private static final Color BACKGROUND = Color.BLACK;
+    /**
+     * Stores the next 5 blocks
+     */
     private Block[] nextBlocks;
+    /**
+     * Used to easily reference ImageIcons for the 7 Tetriminos
+     * @see ImageIcon
+     */
     private HashMap<String, ImageIcon> images;
 
     /**

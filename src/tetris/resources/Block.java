@@ -19,17 +19,78 @@ import java.util.Optional;
  */
 public class Block {
     /**
-     *
+     * Starting x-coordinate for all blocks
      */
-    private int myX, myY, myType, myWidth, myHeight;
-    private Integer myX2, myY2, myW2, myH2;
+    private int myX;
+    /**
+     * Starting y-coordinate for all blocks
+     */
+    private int myY;
+    /**
+     * Starting type for all blocks
+     * Types can only be from 0-6
+     */
+    private int myType;
+    /**
+     * Width for all blocks
+     * Width cannot be changed for any block
+     */
+    private int myWidth;
+    /**
+     * Height for all blocks
+     * Height cannot be changed for any block
+     */
+    private int myHeight;
+    /**
+     * Starting x-coordinate for blocks which require two rectangles
+     */
+    private Integer myX2;
+    /**
+     * Starting y-coordinate for blocks which require two rectangles
+     */
+    private Integer myY2;
+    /**
+     * Width for blocks which require two rectangles
+     * Width cannot be changed for any block
+     */
+    private Integer myW2;
+    /**
+     * Height for blocks which require two rectangles
+     * Heigh cannot be changed for any block
+     */
+    private Integer myH2;
+    /**
+     * Color for all blocks
+     */
     private Color myColor;
-    private boolean lacc, racc;
+    /**
+     * Determines whether block can move left
+     */
+    private boolean lacc;
+    /**
+     * Determines whether block can move right
+     */
+    private boolean racc;
+    /**
+     * Determines whether the rainfall motion should activate
+     */
     private static boolean fall;
+    /**
+     * Determines whether a block is in the finished state
+     */
     private boolean ifFinished;
+    /**
+     * Stores all the possible y positions for new blocks
+     */
     private static int[] yPos = new int[] {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140,
             150, 160, 170, 0};
+    /**
+     * Used to index <code>ArrayLists</code> of blocks
+     */
     public static int count = 0;
+    /**
+     * Stores all the blocks in the finished state
+     */
     public static ArrayList<Block> constantBlocks = new ArrayList<>();
 
     /**
