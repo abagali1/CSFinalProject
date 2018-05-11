@@ -62,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/src/tetris/panels/BlockPanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="67">
-              <caret line="48" column="7" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+              <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -415,12 +415,12 @@
       <workItem from="1525930430621" duration="938000" />
       <workItem from="1525931869681" duration="137000" />
       <workItem from="1525932053248" duration="266000" />
-      <workItem from="1525995688142" duration="502000" />
+      <workItem from="1525995688142" duration="1265000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73005000" />
+    <option name="totallyTimeSpent" value="73768000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -437,7 +437,7 @@
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32673267" />
       <window_info anchor="bottom" id="Floobits" order="12" weight="0.3290938" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.5874587" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.5874587" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2246596" />
@@ -975,6 +975,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-373">
           <caret line="91" column="50" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
+          <folding>
+            <element signature="e#5503#5504#0" expanded="true" />
+            <element signature="e#5530#5531#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1045,7 +1049,7 @@
     <entry file="file://$PROJECT_DIR$/src/tetris/panels/BlockPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
-          <caret line="48" column="7" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+          <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
         </state>
       </provider>
     </entry>
