@@ -86,6 +86,7 @@ public class BigPanel extends JPanel {
         right.setBackground(Color.BLACK);
 
         t = new Timer(5, new Listener());
+        setFocusable(true);
 //        Audio song = new Audio();
 
     }
@@ -121,6 +122,7 @@ public class BigPanel extends JPanel {
         this.add(score);
         tetris = new TetrisPanel();
         nextBlocks = tetris.getNext5Blocks();
+        tetris.requestFocus();
         this.add(tetris);
         block = new BlockPanel(nextBlocks);
         this.add(block);

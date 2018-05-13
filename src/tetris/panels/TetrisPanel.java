@@ -9,7 +9,10 @@ import tetris.resources.BlockTimer;
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -115,30 +118,34 @@ public class TetrisPanel extends JPanel{
             blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
                     Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
 
-       // this.key = new KeyInput(blocks.get(0));
-
-        this.addKeyListener(new Key());
-        this.setFocusable(true);
+        // this.key = new KeyInput(blocks.get(0));
 
         this.t.start();
+
+        addKeyListener(new Key());
+        requestFocus();
+        setFocusable(true);
+
     }
 
     private class Key extends KeyAdapter {
-
+        public Key(){
+            System.out.println("new key");
+        }
         /**
          * Invoked when a key has been pressed.
          * See the class description for {@link KeyEvent} for a definition of
          * a key pressed event.
          *
-         * @param e the event to be processed
+         * @param ek the event to be processed
          */
         @Override
-        public void keyPressed(KeyEvent e) {
-            if(e.getKeyCode() == KeyEvent.VK_LEFT ){
+        public void keyPressed(KeyEvent ek) {
+            if(ek.getKeyCode() == KeyEvent.VK_LEFT ){
                 blocks.get(blockCount).setLAcc(true);
                 System.out.println("L");
             }
-            if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+            if(ek.getKeyCode() == KeyEvent.VK_RIGHT){
                 blocks.get(blockCount).setRAcc(true);
                 System.out.println("R");
             }
@@ -149,15 +156,15 @@ public class TetrisPanel extends JPanel{
          * See the class description for {@link KeyEvent} for a definition of
          * a key released event.
          *
-         * @param e the event to be processed
+         * @param ekk the event to be processed
          */
         @Override
-        public void keyReleased(KeyEvent e) {
-            if(e.getKeyCode() == KeyEvent.VK_LEFT ){
+        public void keyReleased(KeyEvent ekk) {
+            if(ekk.getKeyCode() == KeyEvent.VK_LEFT ){
                 blocks.get(blockCount).setLAcc(false);
                 System.out.println("L");
             }
-            if(e.getKeyCode() == KeyEvent.VK_RIGHT  ){
+            if(ekk.getKeyCode() == KeyEvent.VK_RIGHT){
                 blocks.get(blockCount).setRAcc(false);
                 System.out.println("R");
             }
@@ -172,9 +179,9 @@ public class TetrisPanel extends JPanel{
      * @see java.awt.event.KeyListener
      * @see Block
      */
-   /* public void setKeyListener(Block b) {
-        key.setBlock(b);
-    }*/
+  /* public void setKeyListener(Block b) {
+       key.setBlock(b);
+   }*/
 
     @Override
     /**
