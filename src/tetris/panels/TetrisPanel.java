@@ -1,6 +1,5 @@
 package tetris.panels;
 
-import tetris.input.KeyInput;
 import tetris.resources.AddingListener;
 import tetris.resources.Audio;
 import tetris.resources.Block;
@@ -82,8 +81,6 @@ public class TetrisPanel extends JPanel{
      * Stores all the possible y positions for a new block
      */
     private int[] yPos;
-
-    private KeyInput key;
 
     /**
      * Creates a new TetrisPanel
