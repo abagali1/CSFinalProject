@@ -248,11 +248,16 @@ public class TetrisPanel extends JPanel{
 
             //setKeyListener(blocks.get(blockCount));
 
-            //System.out.println(blocks.get(blockCount).toString());
+            System.out.println(blocks.get(blockCount).toString() + "fasdfa:" + blockCount);
 
             for(int i = Block.count-1; i>=blocks.size();i--) {
                 blocks.get(i).draw(myBuffer);
             }
+
+            if(blocks.get(blockCount).getY() == ((blocks.get(blockCount).getType()!=1)?(380):(390)))
+                blockCount++;
+
+
             repaint();
             revalidate();
         }

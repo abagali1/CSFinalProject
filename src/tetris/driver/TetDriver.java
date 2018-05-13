@@ -26,9 +26,10 @@ public class TetDriver
       frame.setLocation(400, 100);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setUndecorated(true);
-      BigPanel b = new BigPanel();
+      BigPanel b = new BigPanel(frame);
       frame.setContentPane(b);
       b.requestFocus();
       frame.setVisible(true);
+      //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
    }
 }

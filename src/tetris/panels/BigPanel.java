@@ -67,7 +67,7 @@ public class BigPanel extends JPanel {
     /**
      * Creates a new BigPanel
      */
-    public BigPanel(){
+    public BigPanel(JFrame a){
         setLayout(new GridLayout(1,3));
 
         left = new leftPanel();
@@ -84,6 +84,7 @@ public class BigPanel extends JPanel {
         begin.addActionListener(new Starter());
         center.add(begin, BorderLayout.SOUTH);
 
+        myFrame = a;
 
 //        Audio song = new Audio();    left.setBackground(Color.BLACK);
 //        right.setBackground(Color.BLACK);
@@ -114,16 +115,14 @@ public class BigPanel extends JPanel {
      * Facilitates the transition from the home panel to the Tetris game
      */
     public void start(){
-        myFrame = new JFrame("Tetris");
-        myFrame.setSize(400,400);
-        myFrame.setLocation(100,50);
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        myFrame.setUndecorated(true);
+        left.stop();
+        right.stop();
+        this.remove(left);
+        this.remove(center);
+        this.remove(right);
         tetris = new TetrisPanel();
         myFrame.setContentPane(tetris);
         tetris.requestFocus();
-        myFrame.setVisible(true);
     }
 
     private class Listener implements ActionListener {

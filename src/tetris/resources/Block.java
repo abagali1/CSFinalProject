@@ -428,40 +428,6 @@ public class Block {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /*Block current;
-        int count = 0;
-        if(getFall()) {
-            current = blocks.get(count);
-            current.draw(myBuffer);
-            if (current.getY() != ((current.getType() != 1) ? (380) : (390))) {
-                current.move(10, null);
-                current.draw(myBuffer);
-            }
-            if (current.getY() == ((current.getType() != 1) ? (380) : (390))) {
-                current.setFinished(current);
-                count++;
-            }
-        }*/
-
-
     /**
      * Serts a block to be in a finished state
      * @param a block to be adjusted
