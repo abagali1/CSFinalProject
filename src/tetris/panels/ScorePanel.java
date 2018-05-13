@@ -157,11 +157,7 @@ public class ScorePanel extends JPanel {
                     out.close();
 
                     JOptionPane.showMessageDialog(null, "Save Successful!");
-                } catch (NullPointerException ex) {
-                    JOptionPane.showMessageDialog(null, "Your scores were not able to save");
-                } catch(FileNotFoundException ef){
-                    JOptionPane.showMessageDialog(null, "Your scores were not able to save");
-                } catch(IOException ie){
+                } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Your scores were not able to save");
                 }
             }
@@ -183,7 +179,7 @@ public class ScorePanel extends JPanel {
             try{
                 int count = 0;
                 int h = 0;
-                RuntimeException pnf;
+                RuntimeException threw;
                 infile = new Scanner(new File("src/anupb/files/scores.txt"));
 
                 String name = JOptionPane.showInputDialog("Which player do you want to load?(name is case-sensitive)" +
@@ -198,8 +194,8 @@ public class ScorePanel extends JPanel {
                     }
                 }
                 if(h == -1){
-                     pnf = new RuntimeException("PlayerNotFoundException");
-                    throw pnf;
+                     threw = new RuntimeException("PlayerNotFoundException");
+                    throw threw;
                 }else {
                     update(h, 0);
                     JOptionPane.showMessageDialog(null, "Game for player " + name + " was loaded successfully");

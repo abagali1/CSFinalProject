@@ -1,7 +1,6 @@
 package tetris.driver;
 
 import tetris.panels.BigPanel;
-import tetris.panels.TetrisPanel;
 
 import javax.swing.*;
 
@@ -24,11 +23,10 @@ public class TetDriver
    {
       JFrame frame = new JFrame("Tetris");
       frame.setSize(400, 400);
-      frame.setLocation(100, 50);
+      frame.setLocation(400, 100);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
       frame.setUndecorated(true);
-      TetrisPanel b = new TetrisPanel();
+      BigPanel b = new BigPanel();
       frame.setContentPane(b);
       b.requestFocus();
       frame.setVisible(true);

@@ -63,9 +63,9 @@ public class leftPanel extends javax.swing.JPanel {
         blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
                 Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
 
-        t = new Timer(5, new Listener());
-        t1 = new Timer(5, new Listener1());
-        t2 = new Timer(5, new Listener2());
+        t = new Timer(75, new Listener());
+        t1 = new Timer(75, new Listener1());
+        t2 = new Timer(75, new Listener2());
         t.start();
         t1.start();
         t2.start();
