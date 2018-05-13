@@ -86,6 +86,7 @@ public class TetrisPanel extends JPanel{
 
     private BlockPanel blockPanel;
 
+    private TetrisPanel tetrisPanel;
     /**
      * Creates a new TetrisPanel
      * Initializes a new BufferedImage, and Graphics2D object
@@ -93,7 +94,7 @@ public class TetrisPanel extends JPanel{
      * respectively
      */
     public TetrisPanel() {
-        setLayout(new BorderLayout());
+        setLayout(new GridLayout(1,3));
 
         this.myImage = new BufferedImage(200, 400, BufferedImage.TYPE_INT_RGB);
         this.myBuffer = (Graphics2D) myImage.getGraphics();
@@ -123,12 +124,11 @@ public class TetrisPanel extends JPanel{
 
 
         scorePanel = new ScorePanel();
-        this.add(scorePanel, BorderLayout.WEST);
-
+        this.add(scorePanel);
 
 
         blockPanel = new BlockPanel(getNext5Blocks());
-        this.add(blockPanel, BorderLayout.EAST);
+        this.add(blockPanel);
 
 
         this.t.start();
@@ -262,7 +262,7 @@ public class TetrisPanel extends JPanel{
 
             //setKeyListener(blocks.get(blockCount));
 
-            System.out.println(blocks.get(blockCount).toString() + "fasdfa:" + blockCount);
+            System.out.println(blocks.get(blockCount).toString() + "fasdfa:" + blockCount+"\t" + getHeight());
 
             for(int i = Block.count-1; i>=blocks.size();i--) {
                 blocks.get(i).draw(myBuffer);
