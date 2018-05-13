@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"tetris.driver"},{"l":"tetris.input"},{"l":"tetris.panels"},{"l":"tetris.resources"}]
+packageSearchIndex = [{"l":"tetris.driver"},{"l":"tetris.panels"},{"l":"tetris.resources"}]
