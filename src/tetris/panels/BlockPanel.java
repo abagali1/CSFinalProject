@@ -52,12 +52,27 @@ public class BlockPanel extends JPanel {
      * @see TetrisPanel
      */
     public BlockPanel(Block[] nextBlocks){
+        setLayout(new BorderLayout());
         myImage = new BufferedImage(400,400,1);
         this.myBuffer = (Graphics2D)myImage.getGraphics();
+
+
         myBuffer.setBackground(BACKGROUND);
+
         t = new Timer(5, new Starter());
+
         this.nextBlocks = nextBlocks;
         images = new HashMap<>();
+
+
+        JButton exit = new JButton("Exit");
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+        this.add(exit,BorderLayout.SOUTH);
 
         images.put("cyan", new ImageIcon("tetris/images/cyan.png"));
         images.put("blue", new ImageIcon("tetris/images/blue.png"));

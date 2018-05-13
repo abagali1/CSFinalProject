@@ -61,11 +61,15 @@ public class BigPanel extends JPanel {
      * Stores the next 5 blocks
      */
     private Block[] nextBlocks;
-
+    /**
+     * JFrame to be displayed onto
+     */
     private JFrame myFrame;
 
     /**
      * Creates a new BigPanel
+     * @param a JFrame to be displayed onto
+     * @see JFrame
      */
     public BigPanel(JFrame a){
         setLayout(new GridLayout(1,3));
@@ -123,18 +127,6 @@ public class BigPanel extends JPanel {
         tetris = new TetrisPanel();
         myFrame.setContentPane(tetris);
         tetris.requestFocus();
-    }
-
-    private class Listener implements ActionListener {
-        /**
-         * Invoked when an action occurs.
-         *
-         * @param e the event to be processed
-         */
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            check();
-        }
     }
 
     /**

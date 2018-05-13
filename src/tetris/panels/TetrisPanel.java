@@ -82,6 +82,10 @@ public class TetrisPanel extends JPanel{
      */
     private int[] yPos;
 
+    private ScorePanel scorePanel;
+
+    private BlockPanel blockPanel;
+
     /**
      * Creates a new TetrisPanel
      * Initializes a new BufferedImage, and Graphics2D object
@@ -89,7 +93,9 @@ public class TetrisPanel extends JPanel{
      * respectively
      */
     public TetrisPanel() {
-        this.myImage = new BufferedImage(201, 401, BufferedImage.TYPE_INT_RGB);
+        setLayout(new BorderLayout());
+
+        this.myImage = new BufferedImage(200, 400, BufferedImage.TYPE_INT_RGB);
         this.myBuffer = (Graphics2D) myImage.getGraphics();
         blocks = new ArrayList<>();
         kblocks = new ArrayList<>();
@@ -115,7 +121,15 @@ public class TetrisPanel extends JPanel{
             blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
                     Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
 
-        // this.key = new KeyInput(blocks.get(0));
+
+        scorePanel = new ScorePanel();
+        this.add(scorePanel, BorderLayout.WEST);
+
+
+
+        blockPanel = new BlockPanel(getNext5Blocks());
+        this.add(blockPanel, BorderLayout.EAST);
+
 
         this.t.start();
 
