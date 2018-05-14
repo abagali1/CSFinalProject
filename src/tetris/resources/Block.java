@@ -279,8 +279,9 @@ public class Block {
     }
 
     /**
-     * Redraws the block to adjust for any changes
+     * Redraws the block to adjust for any changes--reverts to original structure
      * @param a type of block to be redrawn
+     * @deprecated does not support flipping procedure
      */
     public void rebuild(int a) {
         switch (a) {
@@ -459,5 +460,24 @@ public class Block {
             arr.add(new Rectangle2D.Double(myX2, myY2, myW2, myH2));
         }
         return arr;
+    }
+
+    /**
+     * Flips the current block
+     * @param myBuffer Graphics object to be drawn onto
+     */
+    public void flip(Graphics myBuffer){
+        switch(getType()){
+            case 0: //yellow
+                break;
+            case 1: //cyan
+                int temp = myWidth;
+                myWidth = myHeight;
+                myHeight = temp;
+                break;
+            default:
+                break;
+        }
+        draw(myBuffer);
     }
 }
