@@ -362,11 +362,11 @@ public class Block {
      * @param x amount of spaces to be moved
      */
     public void move(int x){
-        if(racc){
+        if(racc && getX()+getWidth()<200){
             myX += x;
             myX2 = (myX2!=null) ? myX2+x : null;
         }
-        else if(lacc){
+        else if(lacc && getX()>0){
             myX -= x;
             myX2 = (myX2 != null) ? myX2-x : null;
         }
