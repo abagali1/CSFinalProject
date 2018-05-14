@@ -65,12 +65,10 @@ public class BlockPanel extends JPanel {
 
 
         JButton exit = new JButton("Exit");
-        exit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        exit.addActionListener(
+            (ActionEvent e) -> { System.exit(0); }
+        );
+
         this.add(exit,BorderLayout.SOUTH);
 
         images.put("cyan", new ImageIcon("tetris/images/cyan.png"));
