@@ -1,9 +1,7 @@
 package tetris.panels;
 
-import tetris.resources.AddingListener;
 import tetris.resources.Audio;
 import tetris.resources.Block;
-import tetris.resources.BlockTimer;
 
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
@@ -45,10 +43,6 @@ public class TetrisPanel extends JPanel{
     */
    private Timer l;
    /**
-    * Timer to control a <code>Keeper</code> class which draws all the constant blocks
-    */
-   private BlockTimer k;
-   /**
     * <code>ArrayLists</code> of blocks. blocks stores random blocks, kblocks stores constant blocks
     */
    private ArrayList<Block> blocks;
@@ -72,12 +66,7 @@ public class TetrisPanel extends JPanel{
     * Temporary block object for <code>Rainfall</code>
     */
    private Block temp;
-   /**
-    * <code>AddingListener</code> class for drawing constant objects
-    * @see AddingListener
-    */
-   private Keeper keep;
-   /**
+    /**
     * Stores all the possible y positions for a new block
     */
    private int[] yPos;
@@ -99,8 +88,7 @@ public class TetrisPanel extends JPanel{
    
       this.t = new Timer(50, new Listener());
    
-      this.keep = new Keeper();
-      this.k = new BlockTimer(1, keep);
+
    
       gameboard = new boolean[20][40];
       for(int r=0;r<=gameboard.length-1;r++){
@@ -262,38 +250,6 @@ public class TetrisPanel extends JPanel{
       }
    }
 
-   /**
-    * Nested <code>ActionListener</code> class to keep finished blocks set in the gameboard
-    */
-   private class Keeper implements AddingListener{
-      private ArrayList<Block> constantBlocks = new ArrayList<>();
-   
-      /**
-       * Creates a new Keeper
-       */
-      public Keeper() {}
-      /**
-       * Adds block to constant block queue
-       *
-       * @param b Block to be added
-       */
-      @Override
-      public void add(Block b) {
-         constantBlocks.add(b);
-      }
-   
-      /**
-       * Invoked when an action occurs.
-       *
-       * @param e the event to be processed
-       */
-      @Override
-      public void actionPerformed(ActionEvent e) {
-         for(Block b: constantBlocks){
-            b.draw(myBuffer);
-         }
-      }
-   }
 
    /**
     * Gets the next 5 blocks after the <code>blockCount</code> index in the <code>blocks</code> ArrayList

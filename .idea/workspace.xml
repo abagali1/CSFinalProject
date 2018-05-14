@@ -46,7 +46,7 @@
       <file leaf-file-name="ScorePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tetris/panels/ScorePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-478">
+            <state relative-caret-position="1496">
               <caret line="95" selection-start-line="95" selection-end-line="95" />
             </state>
           </provider>
@@ -55,8 +55,33 @@
       <file leaf-file-name="TetrisPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="163" selection-start-line="163" selection-end-line="163" />
+            <state relative-caret-position="241">
+              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageLabel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tetris/resources/ImageLabel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+              <folding>
+                <element signature="e#314#315#0" expanded="true" />
+                <element signature="e#345#346#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlockLabel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tetris/resources/BlockLabel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,14 +92,8 @@
       <file leaf-file-name="BlockPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tetris/panels/BlockPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-              <folding>
-                <element signature="e#2394#2395#0" expanded="true" />
-                <element signature="e#2431#2432#0" expanded="true" />
-                <element signature="e#3873#3874#0" expanded="true" />
-                <element signature="e#3946#3947#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="714">
+              <caret line="50" column="67" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -82,7 +101,7 @@
       <file leaf-file-name="BigPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tetris/panels/BigPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="877">
+            <state relative-caret-position="2040">
               <caret line="127" column="25" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
             </state>
           </provider>
@@ -91,11 +110,8 @@
       <file leaf-file-name="Block.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tetris/resources/Block.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="467" column="7" lean-forward="true" selection-start-line="467" selection-start-column="7" selection-end-line="467" selection-end-column="7" />
-              <folding>
-                <element signature="method#rebuild#0;class#Block#0" />
-              </folding>
+            <state relative-caret-position="67">
+              <caret line="299" column="32" selection-start-line="299" selection-start-column="32" selection-end-line="299" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -103,7 +119,7 @@
       <file leaf-file-name="TetDriver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tetris/driver/TetDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="442">
               <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
@@ -168,10 +184,12 @@
         <option value="$PROJECT_DIR$/src/tetris/files/scores.txt" />
         <option value="$PROJECT_DIR$/src/tetris/panels/leftPanel.java" />
         <option value="$PROJECT_DIR$/src/tetris/driver/TetDriver.java" />
-        <option value="$PROJECT_DIR$/src/tetris/panels/BigPanel.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/ScorePanel.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/BlockPanel.java" />
+        <option value="$PROJECT_DIR$/src/tetris/panels/BigPanel.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java" />
+        <option value="$PROJECT_DIR$/src/tetris/resources/ImageLabel.java" />
+        <option value="$PROJECT_DIR$/src/tetris/resources/BlockLabel.java" />
         <option value="$PROJECT_DIR$/src/tetris/resources/Block.java" />
       </list>
     </option>
@@ -202,9 +220,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -430,16 +448,18 @@
       <workItem from="1526067928321" duration="773000" />
       <workItem from="1526179597644" duration="4634000" />
       <workItem from="1526233660191" duration="9043000" />
-      <workItem from="1526262441931" duration="7599000" />
+      <workItem from="1526262441931" duration="7895000" />
+      <workItem from="1526329539986" duration="63000" />
+      <workItem from="1526329661013" duration="1285000" />
+      <workItem from="1526337067968" duration="2545000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95817000" />
+    <option name="totallyTimeSpent" value="100006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -451,20 +471,20 @@
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.2590759" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.2590759" />
       <window_info anchor="bottom" id="Floobits" order="12" weight="0.32838285" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.5874587" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.5874587" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49665925" visible="true" weight="0.18154311" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49665925" visible="true" weight="0.18986385" />
       <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3227345" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
       <window_info id="Structure" order="1" sideWeight="0.5033408" side_tool="true" weight="0.18154311" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="5" sideWeight="0.5033408" side_tool="true" weight="0.18154311" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.47559056" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47524753" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -473,34 +493,34 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.1320132" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32178217" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Floobits" order="12" weight="0.32838285" />
       <window_info id="Structure" order="1" sideWeight="0.50190115" side_tool="true" weight="0.06959153" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3227345" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49809885" weight="0.18154311" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.47559056" />
+      <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.5874587" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.330033" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47559056" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.330033" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32178217" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49809885" weight="0.18154311" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +536,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="28" />
+      <option name="time" value="29" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -524,21 +544,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/anupb/input/KeyInput.java" />
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="681" column="34" lean-forward="true" selection-start-line="681" selection-start-column="34" selection-end-line="681" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/javax/swing/Timer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5607">
@@ -1024,10 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3">
           <caret line="7506" column="68" lean-forward="true" selection-start-line="7506" selection-start-column="68" selection-end-line="7506" selection-end-column="68" />
-          <folding>
-            <element signature="e#273186#273187#0" expanded="true" />
-            <element signature="e#273233#273234#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1035,10 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="1498" column="16" selection-start-line="1498" selection-start-column="16" selection-end-line="1498" selection-end-column="16" />
-          <folding>
-            <element signature="e#56943#56944#0" expanded="true" />
-            <element signature="e#56979#56980#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1066,15 +1063,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/driver/TetDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="442">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/panels/BigPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="877">
-          <caret line="127" column="25" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1085,32 +1075,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/panels/BlockPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-          <folding>
-            <element signature="e#2394#2395#0" expanded="true" />
-            <element signature="e#2431#2432#0" expanded="true" />
-            <element signature="e#3873#3874#0" expanded="true" />
-            <element signature="e#3946#3947#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/panels/ScorePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-478">
+        <state relative-caret-position="1496">
           <caret line="95" selection-start-line="95" selection-end-line="95" />
         </state>
       </provider>
@@ -1118,13 +1085,62 @@
     <entry file="file://$PROJECT_DIR$/src/tetris/images/orange.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/panels/BigPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="127" column="25" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/panels/BlockPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="50" column="67" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/resources/BlockTimer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/resources/BlockLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/resources/ImageLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+          <folding>
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/resources/Block.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="467" column="7" lean-forward="true" selection-start-line="467" selection-start-column="7" selection-end-line="467" selection-end-column="7" />
-          <folding>
-            <element signature="method#rebuild#0;class#Block#0" />
-          </folding>
+        <state relative-caret-position="67">
+          <caret line="299" column="32" selection-start-line="299" selection-start-column="32" selection-end-line="299" selection-end-column="32" />
         </state>
       </provider>
     </entry>

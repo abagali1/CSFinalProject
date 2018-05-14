@@ -270,7 +270,7 @@ public class Block {
 
    /**
     * Modifier method for the fall variable
-    * @param a desired fall starte
+    * @param a desired fall state
     */
    public static void setFall(boolean a){ fall = a;   }
 
@@ -295,6 +295,10 @@ public class Block {
          return 20;
    }
 
+   /**
+    * Returns the current height of the block
+    * @return the current height
+    */
    public int getHeight(){
    
       if((myType == 1) && (myFlipState == 0))
