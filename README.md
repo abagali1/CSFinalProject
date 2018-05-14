@@ -17,7 +17,7 @@
  For mac users press command + space and type in terminal instead of windows key + cmd.
 
 
-#If you just want to play
+# If you just want to play
 Download entire repo
 Download jgrasp(if you dont already have it)
 Go to downloaded repo folder & click Tetris.gpj
