@@ -319,6 +319,7 @@ public class Block {
     * @param a type of block to be redrawn
     * @deprecated does not support flipping procedure
     */
+   @Deprecated
    public void rebuild(int a) {
       switch (a) {
          case 0:
