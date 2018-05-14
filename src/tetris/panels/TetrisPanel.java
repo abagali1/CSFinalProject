@@ -91,7 +91,7 @@ public class TetrisPanel extends JPanel{
     public TetrisPanel() {
         setLayout(new BorderLayout());
 
-        this.myImage = new BufferedImage(768/3, 401, BufferedImage.TYPE_INT_RGB);
+        this.myImage = new BufferedImage(201 , 402, BufferedImage.TYPE_INT_RGB);
         this.myBuffer = (Graphics2D) myImage.getGraphics();
         blocks = new ArrayList<>();
         kblocks = new ArrayList<>();
@@ -141,11 +141,9 @@ public class TetrisPanel extends JPanel{
         public void keyPressed(KeyEvent ek) {
             if(ek.getKeyCode() == KeyEvent.VK_LEFT ){
                 blocks.get(blockCount).setLAcc(true);
-                System.out.println("L");
             }
             if(ek.getKeyCode() == KeyEvent.VK_RIGHT){
                 blocks.get(blockCount).setRAcc(true);
-                System.out.println("R");
             }
         }
 
@@ -160,11 +158,9 @@ public class TetrisPanel extends JPanel{
         public void keyReleased(KeyEvent ekk) {
             if(ekk.getKeyCode() == KeyEvent.VK_LEFT ){
                 blocks.get(blockCount).setLAcc(false);
-                System.out.println("L");
             }
             if(ekk.getKeyCode() == KeyEvent.VK_RIGHT){
                 blocks.get(blockCount).setRAcc(false);
-                System.out.println("R");
             }
         }
     }
