@@ -294,7 +294,7 @@ public class Block {
       else
          return 20;
    }
-   
+
    public int getHeight(){
    
       if((myType == 1) && (myFlipState == 0))
@@ -438,7 +438,7 @@ public class Block {
       if(getFall()){
          temp = blocks.get(count);
          temp.draw(myBuffer);
-         if(temp.getY() > 400-temp.getHeight()){
+         if(temp.getY() < 400-temp.getHeight()){
             temp.move(10, "down");
          }
          else{
@@ -450,7 +450,7 @@ public class Block {
       }
    }
 
-   /**
+    /**
     * Rainfall animation used solely for decoration
     * @param blocks blocks to be used
     * @param myBuffer BufferedImage to be drawn on
@@ -474,7 +474,7 @@ public class Block {
     */
    public void setFinished(Block a){
       Block temp = a;
-   
+
    
    }
 

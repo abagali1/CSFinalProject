@@ -168,18 +168,6 @@ public class TetrisPanel extends JPanel{
       }
    }
 
-
-   /*/**
-    * Sets the current <code>KeyListener</code> new a new <code>KeyListener</code> to adjust to a new Block
-    * @param b Block to be changed to
-    * @see KeyInput
-    * @see java.awt.event.KeyListener
-    * @see Block
-    */
- /* public void setKeyListener(Block b) {
-      key.setBlock(b);
-  }*/
-
    @Override
    /**
     * Calls the UI delegate's paint method, if the UI delegate
@@ -253,8 +241,8 @@ public class TetrisPanel extends JPanel{
          for(int i = Block.count-1; i>=blocks.size();i--) {
             blocks.get(i).draw(myBuffer);
          }
-      
-         if(blocks.get(blockCount).getY() == ((blocks.get(blockCount).getType()!=1)?(380):(390)))
+
+         if(Block.constantBlocks.contains(blocks.get(blockCount)))
             blockCount++;
       
       
