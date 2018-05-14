@@ -132,9 +132,9 @@ public class BlockPanel extends JPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             myBuffer.setColor(Color.white);
-            myBuffer.drawRect(50,50,250,250);
-            myBuffer.setFont(new Font("Arial",Font.BOLD,35));
-            myBuffer.drawString("Next Blocks:", 80,75);
+            myBuffer.drawRect(5,5,250,250);
+            myBuffer.setFont(new Font("Arial",Font.BOLD,25));
+            myBuffer.drawString("Next Blocks:", 50,35);
             repaint();
             revalidate();
         }
