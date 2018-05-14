@@ -121,11 +121,26 @@ public class BigPanel extends JPanel {
     public void start(){
         left.stop();
         right.stop();
+        setLayout(new GridLayout(1,3));
+
         this.remove(left);
         this.remove(center);
         this.remove(right);
+
+
+        score = new ScorePanel();
+        this.add(score);
+
         tetris = new TetrisPanel();
-        myFrame.setContentPane(tetris);
+        this.add(tetris);
+
+        block = new BlockPanel(tetris.getNext5Blocks());
+        this.add(block);
+
+
+
+
+        myFrame.setContentPane(this);
         tetris.requestFocus();
     }
 

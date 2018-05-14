@@ -59,7 +59,7 @@ public class ScorePanel extends JPanel {
      * Creates a new ScorePanel
      */
     public ScorePanel(){
-        myImage = new BufferedImage(400,400,1);
+        myImage = new BufferedImage(768/3,401,1);
         myBuffer = (Graphics2D) myImage.getGraphics();
         myBuffer.setBackground(BACKGROUND);
 

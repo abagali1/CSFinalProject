@@ -53,9 +53,8 @@ public class BlockPanel extends JPanel {
      */
     public BlockPanel(Block[] nextBlocks){
         setLayout(new BorderLayout());
-        myImage = new BufferedImage(400,400,1);
+        myImage = new BufferedImage(768/3,401,1);
         this.myBuffer = (Graphics2D)myImage.getGraphics();
-
 
         myBuffer.setBackground(BACKGROUND);
 
