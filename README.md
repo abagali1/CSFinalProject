@@ -15,3 +15,10 @@
  enter github username & password.
 # Ask anup w/ questions 
  For mac users press command + space and type in terminal instead of windows key + cmd.
+
+
+# If you just want to play
+Download entire repo
+Download jgrasp(if you dont already have it)
+Go to downloaded repo folder & click Tetris.gpj
+jGRASP should open, click the run button in the bottom left corner area
