@@ -21,15 +21,16 @@ public class TetDriver
     */
    public static void main(String[] args)
    {
-      JFrame frame = new JFrame("Tetris");
-      frame.setSize(400, 400);
-      frame.setLocation(400, 100);
-      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.setUndecorated(true);
-      BigPanel b = new BigPanel(frame);
-      frame.setContentPane(b);
-      b.requestFocus();
-      frame.setVisible(true);
-      //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+         JFrame frame = new JFrame("Tetris");
+         frame.setSize(400, 400);
+         frame.setLocation(400, 100);
+         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         frame.setUndecorated(true);
+         BigPanel b = new BigPanel(frame);
+         frame.setContentPane(b);
+         b.requestFocus();
+         frame.setVisible(true);
+         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
    }
 }

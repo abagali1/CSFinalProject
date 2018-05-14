@@ -94,11 +94,6 @@ public class ScorePanel extends JPanel {
         load.addActionListener(new Loader());
         add(load);
 
-
-
-
-
-
     }
     /**
      * Calls the UI delegate's paint method, if the UI delegate
