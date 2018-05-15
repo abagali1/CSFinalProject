@@ -86,7 +86,7 @@ public class TetrisPanel extends JPanel{
       kblocks = new ArrayList<>();
    
    
-      this.t = new Timer(50, new Listener());
+      this.t = new Timer(750, new Listener());
    
 
    
@@ -104,7 +104,7 @@ public class TetrisPanel extends JPanel{
    
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                Optional.of(((int) (Math.random() * 401))), /*((int) (Math.random() * 7))*/1));
+                Optional.of(((int) (Math.random() * 401))), /*((int) (Math.random() * 7))*/2));
    
       this.t.start();
    
@@ -133,7 +133,7 @@ public class TetrisPanel extends JPanel{
          if(ek.getKeyCode() == KeyEvent.VK_RIGHT){
             blocks.get(blockCount).setRAcc(true);
          }
-         if(ek.getKeyCode() == KeyEvent.VK_SPACE){
+         if(ek.getKeyCode() == KeyEvent.VK_UP){
             blocks.get(blockCount).flip(myBuffer);
          }
       }
@@ -156,7 +156,6 @@ public class TetrisPanel extends JPanel{
       }
    }
 
-   @Override
    /**
     * Calls the UI delegate's paint method, if the UI delegate
     * is non-<code>null</code>.  We pass the delegate a copy of the
@@ -185,6 +184,7 @@ public class TetrisPanel extends JPanel{
     * @see #paint
     * @see ComponentUI
     */
+   @Override
    public void paintComponent(Graphics g) {
       g.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
    }
@@ -224,7 +224,7 @@ public class TetrisPanel extends JPanel{
       
          //setKeyListener(blocks.get(blockCount));
       
-         System.out.println(blocks.get(blockCount).toString() + "fasdfa:" + blockCount+"\t" + getHeight());
+         System.out.println(blocks.get(blockCount).toDeepString() + "fasdfa:" + blockCount+"\t" + getHeight());
       
          for(int i = Block.count-1; i>=blocks.size();i--) {
             blocks.get(i).draw(myBuffer);

@@ -17,7 +17,7 @@ import java.util.Optional;
  * @author Amit Rajesh
  * @version 1.1
  */
-public class Block {
+public class Block implements Blockable{
    /**
     * Starting x-coordinate for all blocks
     */
@@ -43,11 +43,11 @@ public class Block {
    private int myHeight;
    /**
     * Starting x-coordinate for blocks which require two rectangles
-    */    
+    */
    private Integer myX2;
    /**
-   * Retains the flip state of the block
-   */
+    * Retains the flip state of the block
+    */
    private int myFlipState;
    /**
     * Starting y-coordinate for blocks which require two rectangles
@@ -87,7 +87,7 @@ public class Block {
     * Stores all the possible y positions for new blocks
     */
    private static int[] yPos = new int[] {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140,
-          150, 160, 170, 0};
+           150, 160, 170, 0};
    /**
     * Used to index <code>ArrayLists</code> of blocks
     */
@@ -109,8 +109,8 @@ public class Block {
       this.myX = x;
       myY = y;
       myType = t;
-      myX2 = x2.isPresent() ? x2.get() : null;
-      myY2 = y2.isPresent() ? y2.get() : null;
+      myX2 = x2.orElse(null);
+      myY2 = y2.orElse(null);
       myFlipState = 0;
       if((myX2 == null || myY2 == null) && t > 1)
          throw new NullPointerException();
@@ -232,14 +232,14 @@ public class Block {
     * Accessor method for the right acceleration
     * @return current right acceleration
     */
-   public boolean getRAcc(){ 
+   public boolean getRAcc(){
       return racc; }
 
    /**
     * Accessor method for the left acceleration
     * @return current left acceleration
     */
-   public boolean getLAcc(){ 
+   public boolean getLAcc(){
       return lacc; }
 
    /**
@@ -258,14 +258,14 @@ public class Block {
     * Accessor method for the type
     * @return current block type
     */
-   public int getType(){ 
+   public int getType(){
       return myType; }
 
    /**
     * Accessor method for the fall variable
     * @return current fall state
     */
-   public static boolean getFall(){ 
+   public static boolean getFall(){
       return fall; }
 
    /**
@@ -287,9 +287,9 @@ public class Block {
          return 30;
       else if((myType == 2|| myType == 3 || myType == 4 || myType == 5) && (myFlipState == 1 || myFlipState == 3))
          return 20;
-      else if((myType == 6) && (myFlipState == 0 || myFlipState == 2))
+      else if((myType == 6) && (myFlipState == 0 || myFlipState == 2)) {
          return 30;
-      else if((myType == 6) && (myFlipState == 1 || myFlipState == 3))
+      } else if((myType == 6) && (myFlipState == 1 || myFlipState == 3))
          return 20;
       else
          return 20;
@@ -300,7 +300,7 @@ public class Block {
     * @return the current height
     */
    public int getHeight(){
-   
+
       if((myType == 1) && (myFlipState == 0))
          return 10;
       else if((myType == 1) && (myFlipState ==1 ))
@@ -315,8 +315,8 @@ public class Block {
          return 30;
       else
          return 20;
-      
-      
+
+
    }
    /**
     * Redraws the block to adjust for any changes--reverts to original structure
@@ -454,7 +454,7 @@ public class Block {
       }
    }
 
-    /**
+   /**
     * Rainfall animation used solely for decoration
     * @param blocks blocks to be used
     * @param myBuffer BufferedImage to be drawn on
@@ -479,7 +479,7 @@ public class Block {
    public void setFinished(Block a){
       Block temp = a;
 
-   
+
    }
 
    /**
@@ -490,6 +490,12 @@ public class Block {
       return "Type: " + myType + " X: " + myX + " Y: " + myY + " Height: " + myHeight + " Width: " + myWidth;
    }
 
+   public String toDeepString(){
+      return "Type: " + myType + " X: "+ myX + " X2: " +myX2 + " Y: " + myY + " Y2: " + myY2 + " Width: " + myWidth +
+              " Height: " + myHeight + " W2: " + myW2 + " myH2: " + myH2 + " FlipState: " + myFlipState  + " ";
+
+    }
+
    /**
     * Converts the block into an <code>ArrayList</code> of <code>Rectangle2D.Double</code>
     * @return <code>ArrayList</code> of new <code>Rectangle2D.Double</code>
@@ -498,7 +504,7 @@ public class Block {
       ArrayList<Rectangle2D.Double> arr = new ArrayList<>();
       if (myX2 != null) {
          arr.add(new Rectangle2D.Double(myX, myY, myWidth, myHeight));
-      } 
+      }
       else {
          arr.add(new Rectangle2D.Double(myX, myY, myWidth, myHeight));
          arr.add(new Rectangle2D.Double(myX2, myY2, myW2, myH2));
@@ -515,14 +521,69 @@ public class Block {
          case 0: //yellow
             break;
          case 1: //cyan
-            int temp = myWidth;
-            myWidth = myHeight;
-            myHeight = temp;
-            if(myFlipState == 0){
+            if(myFlipState == 0){ //go to straight
                myFlipState++;
-               
+               myY += 30;
+               myWidth = 10;
+               myHeight = 40;
+            }
+            if(myFlipState == 1){ //go to normal
+               myFlipState--;
+               myY -= 30;
+               myWidth = 40;
+               myHeight = 10;
             }
             break;
+         case 2:
+            if(myFlipState == 0){ //go to FS=1
+               myFlipState++;
+               myY += 20;
+               myWidth = 10;
+               myHeight = 30;
+               myX2 = myX;
+               myY2 = myY;
+               myW2 = 20;
+               myH2 = 10;
+               break;
+            }
+            if(myFlipState == 1){ //go to FS =2
+               myFlipState++;
+               myY += 20;
+               myWidth = 10;
+               myHeight = 20;
+               myX2 = myX;
+               myY2 = myY + 10;
+               myW2 = 30;
+               myH2 = 10;
+               break;
+            }
+            if(myFlipState == 2){ //go to FS = 3
+               myFlipState++;
+               myY += 10;
+               myWidth = 20;
+               myHeight = 10;
+               myX2 = myX + 10;
+               myY2 = myY-20;
+               myW2 = 10;
+               myH2 = 30;
+               break;
+            }
+            if(myFlipState == 3) {
+               myFlipState = 0;
+               myX -= 10;
+               myY -= 10;
+               myWidth = 30;
+               myHeight = 10;
+               myX2 = myX + 20;
+               myY2 = myY;
+               myW2 = 10;
+               myH2 = 20;
+               break;
+            }
+         case 3:
+            if(myFlipState == 0){ //go to FS == 1
+
+            }
          default:
             break;
       }
