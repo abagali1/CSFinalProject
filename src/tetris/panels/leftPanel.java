@@ -5,8 +5,6 @@ import tetris.resources.Block;
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -63,9 +61,9 @@ public class leftPanel extends javax.swing.JPanel {
         blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
                 Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
 
-        t = new Timer(75, new Listener());
-        t1 = new Timer(75, new Listener1());
-        t2 = new Timer(75, new Listener2());
+        t = new Timer(75, e -> decorate());
+        t1 = new Timer(75, e -> decorate());
+        t2 = new Timer(75, e -> decorate());
         t.start();
         t1.start();
         t2.start();
@@ -130,66 +128,32 @@ public class leftPanel extends javax.swing.JPanel {
     }
 
     /**
-     * A nested class for decorations
-     * @see ActionListener
-     */
-    private class Listener implements ActionListener {
-        /**
-         * Invoked when an action occurs.
-         *
-         * @param e the event to be processed
-         */
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            decorate();
-        }
-    }
-
-    /**
-     * A nested class for more decorations
-     * @see ActionListener
-     */
-    private class Listener1 implements ActionListener {
-        /**
-         * Invoked when an action occurs.
-         *
-         * @param e the event to be processed
-         */
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            decorate();
-        }
-    }
-
-    /**
-     * A nested for even more decorations
-     * @see ActionListener
-     */
-    private class Listener2 implements ActionListener {
-        /**
-         * Invoked when an action occurs.
-         *
-         * @param e the event to be processed
-         */
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            decorate();
-        }
-    }
-
-    /**
      * Stops all timers
      */
     public void stop(){
         t.stop();
         t1.stop();
         t2.stop();
+        myBuffer.setColor(Color.BLACK);
+        myBuffer.fillRect(0,0,myImage.getWidth(), myImage.getHeight());
+        repaint();
+        revalidate();
+
+
     }
 
     /**
      * Stops the decorations and displays the instructions on how to play tetris
      */
     public void showInstructions(){
+        stop();
+
+    }
+
+    /**
+     * Displays the credits for the construction of this game
+     */
+    public void rollCredits(){
         stop();
 
     }
