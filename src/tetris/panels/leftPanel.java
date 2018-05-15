@@ -147,7 +147,36 @@ public class leftPanel extends javax.swing.JPanel {
      */
     public void showInstructions(){
         stop();
-
+        String content = ("" +
+                "<html>" +
+                "<ol>" +
+                "   <li>Press Begin Game button on starting screen</li>\n" +
+                "   <li>Move blocks left, right using the arrow keys. The blocks move downward automatically</li>\n" +
+                "   <li>Moving the blocks left or right changes the horizontal placement of the block on the board</li>\n" +
+                "   <li>Moving the blocks down accelerates the process of placing a block on the board</li>\n" +
+                "   <li>Once a row is completely filled horizontally, the row will disappear</li>\n" +
+                "   <li>Press the spacebar to oriente the block in different ways</li>\n" +
+                "   <li>The objective of the game is to completely fill " +
+                "   as many rows as possible, and take as long as possible to reach the top of the board</li>\n" +
+                "   <li>Your score increases as you fill more rows</li>\n" +
+                "   <li>Once the top is reached, your game is over</li>\n");
+        myBuffer.setColor(Color.WHITE);
+        myBuffer.setFont(new Font("Arial",Font.ITALIC,10));
+        myBuffer.drawString("" +
+                "<html>" +
+                "<ol>" +
+                "   <li>Press Begin Game button on starting screen</li>\n" +
+                "   <li>Move blocks left, right using the arrow keys. The blocks move downward automatically</li>\n" +
+                "   <li>Moving the blocks left or right changes the horizontal placement of the block on the board</li>\n" +
+                "   <li>Moving the blocks down accelerates the process of placing a block on the board</li>\n" +
+                "   <li>Once a row is completely filled horizontally, the row will disappear</li>\n" +
+                "   <li>Press the spacebar to oriente the block in different ways</li>\n" +
+                "   <li>The objective of the game is to completely fill " +
+                "   as many rows as possible, and take as long as possible to reach the top of the board</li>\n" +
+                "   <li>Your score increases as you fill more rows</li>\n" +
+                "   <li>Once the top is reached, your game is over</li>\n",0,0);
+        repaint();
+        revalidate();
     }
 
     /**

@@ -1,6 +1,7 @@
 package tetris.panels;
 
 import tetris.resources.Block;
+import tetris.resources.BlockLabel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -66,7 +67,11 @@ public class BigPanel extends JPanel {
      */
     private JFrame myFrame;
 
-    private JButton instructions;
+    private JButton instructions = new JButton("Instructions");
+
+    private JButton credits = new JButton("Credits     ");
+
+    private BlockLabel logo = new BlockLabel(new ImageIcon("tetris/images/logo-game.png"),true);
 
     /**
      * Creates a new BigPanel
@@ -90,25 +95,28 @@ public class BigPanel extends JPanel {
         begin.addActionListener(new Starter());
         center.add(begin, BorderLayout.SOUTH);
 
-        instructions = new JButton("Instructions");
         instructions.addActionListener(
-                e -> {
-                    left.showInstructions();
-                }
+                e ->  left.showInstructions()
         );
         instructions.setSize(new Dimension(100,100));
         center.add(instructions, BorderLayout.WEST);
+
+        credits.addActionListener(
+                e -> right.rollCredits()
+        );
+        credits.setSize(new Dimension(100,100));
+        center.add(credits, BorderLayout.EAST);
+
+        logo.showImage(new ImageIcon("tetris/images/logo-game.png"));
+        logo.setVisible(true);
+        center.add(logo,BorderLayout.CENTER);
 
         myFrame = a;
 
 
 
 
-//        Audio song = new Audio();    left.setBackground(Color.BLACK);
-//        right.setBackground(Color.BLACK);
-//
-//        t = new Timer(5, new Listener());
-//        setFocusable(true);
+//        Audio song = new Audio();
 
     }
 
