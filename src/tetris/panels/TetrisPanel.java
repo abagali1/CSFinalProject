@@ -104,7 +104,7 @@ public class TetrisPanel extends JPanel{
    
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
+                Optional.of(((int) (Math.random() * 401))), /*((int) (Math.random() * 7))*/1));
    
       this.t.start();
    

@@ -66,7 +66,7 @@ public class BlockPanel extends JPanel {
 
         JButton exit = new JButton("Exit");
         exit.addActionListener(
-                e -> { System.exit(0); }
+                e ->  System.exit(0)
         );
 
         this.add(exit,BorderLayout.SOUTH);

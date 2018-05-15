@@ -66,6 +66,8 @@ public class BigPanel extends JPanel {
      */
     private JFrame myFrame;
 
+    private JButton instructions;
+
     /**
      * Creates a new BigPanel
      * @param a JFrame to be displayed onto
@@ -88,7 +90,19 @@ public class BigPanel extends JPanel {
         begin.addActionListener(new Starter());
         center.add(begin, BorderLayout.SOUTH);
 
+        instructions = new JButton("Instructions");
+        instructions.addActionListener(
+                e -> {
+                    left.showInstructions();
+                }
+        );
+        instructions.setSize(new Dimension(100,100));
+        center.add(instructions, BorderLayout.WEST);
+
         myFrame = a;
+
+
+
 
 //        Audio song = new Audio();    left.setBackground(Color.BLACK);
 //        right.setBackground(Color.BLACK);

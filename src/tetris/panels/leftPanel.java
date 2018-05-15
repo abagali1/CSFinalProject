@@ -185,4 +185,13 @@ public class leftPanel extends javax.swing.JPanel {
         t1.stop();
         t2.stop();
     }
+
+    /**
+     * Stops the decorations and displays the instructions on how to play tetris
+     */
+    public void showInstructions(){
+        stop();
+
+    }
+
 }
