@@ -192,6 +192,13 @@ public class TetrisPanel extends JPanel{
       g.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
    }
 
+   public void makeChanges(int ty, int del){
+      for(int i =0;i<=blocks.size()-1;i++)
+         blocks.set(i,new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
+                 Optional.of(((int) (Math.random() * 401))), ty));
+      t.setDelay(del);
+   }
+
    /**
     * Neseted <code>ActionListener</code> class to actually run the Tetris game
     */
