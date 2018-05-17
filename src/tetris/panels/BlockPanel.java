@@ -58,8 +58,6 @@ public class BlockPanel extends JPanel {
 
         myBuffer.setBackground(BACKGROUND);
 
-        t = new Timer(5, new Starter());
-
         this.nextBlocks = nextBlocks;
         images = new HashMap<>();
 
@@ -79,13 +77,14 @@ public class BlockPanel extends JPanel {
         images.put("orange", new ImageIcon("tetris/images/orange.png"));
         images.put("yellow", new ImageIcon("tetris/images/yellow.png"));
 
-        t.start();
+        new Timer(5, new Starter()).start();
 
     }
     public void updateNextBlocks(Block[] arr){
         this.nextBlocks = arr;
     }
-    @Override
+
+
     /**
      * Calls the UI delegate's paint method, if the UI delegate
      * is non-<code>null</code>.  We pass the delegate a copy of the
@@ -114,6 +113,7 @@ public class BlockPanel extends JPanel {
      * @see #paint
      * @see ComponentUI
      */
+    @Override
     public void paintComponent(Graphics g){
         g.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
     }

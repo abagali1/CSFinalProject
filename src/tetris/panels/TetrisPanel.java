@@ -86,7 +86,7 @@ public class TetrisPanel extends JPanel{
       kblocks = new ArrayList<>();
    
    
-      this.t = new Timer(750, new Listener());
+      this.t = new Timer(100, new Listener());
    
 
    
@@ -104,7 +104,7 @@ public class TetrisPanel extends JPanel{
    
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                Optional.of(((int) (Math.random() * 401))), /*((int) (Math.random() * 7))*/2));
+                Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
    
       this.t.start();
    
@@ -135,6 +135,9 @@ public class TetrisPanel extends JPanel{
          }
          if(ek.getKeyCode() == KeyEvent.VK_UP){
             blocks.get(blockCount).flip(myBuffer);
+         }
+         if(ek.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
          }
       }
    

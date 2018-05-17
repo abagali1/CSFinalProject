@@ -1,12 +1,15 @@
 package tetris.panels;
 
 import tetris.resources.Block;
-import tetris.resources.BlockLabel;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * The BigPanel encapsulates the <code>TetrisPanel</code>, <code>ScorePanel</code>, and <code>BlockPanel</code>
@@ -71,7 +74,7 @@ public class BigPanel extends JPanel {
 
     private JButton credits = new JButton("Credits     ");
 
-    private BlockLabel logo = new BlockLabel(new ImageIcon("tetris/images/logo-game.png"),true);
+    private JLabel logo;
 
     /**
      * Creates a new BigPanel
@@ -107,9 +110,12 @@ public class BigPanel extends JPanel {
         credits.setSize(new Dimension(100,100));
         center.add(credits, BorderLayout.EAST);
 
-        logo.showImage(new ImageIcon("tetris/images/logo-game.png"));
-        logo.setVisible(true);
-        center.add(logo,BorderLayout.CENTER);
+        try {
+            BufferedImage image = ImageIO.read(new File("tetris/images/logo-game.png"));
+            logo = new JLabel(new ImageIcon(image));
+            center.add(logo);
+        }catch (IOException e){ }
+
 
         myFrame = a;
 

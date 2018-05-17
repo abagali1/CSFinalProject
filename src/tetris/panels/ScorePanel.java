@@ -3,10 +3,11 @@ package tetris.panels;
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.Writer;
 import java.util.Scanner;
 
 /**
@@ -85,13 +86,13 @@ public class ScorePanel extends JPanel {
         save = new JButton("Save Current Game");
         save.setBackground(Color.BLACK);
         save.setForeground(Color.white);
-        save.addActionListener(new Saver());
+        save.addActionListener(e -> save());
         add(save);
 
         load = new JButton("Load Previous Game");
         load.setBackground(Color.BLACK);
         load.setForeground(Color.white);
-        load.addActionListener(new Loader());
+        load.addActionListener(e -> load());
         add(load);
 
     }
@@ -128,86 +129,69 @@ public class ScorePanel extends JPanel {
     }
 
     /**
-     * Nexted <code>ActionListener</code> clss for saving scores to text files
+     * Links the current highscore to a username and saves the information to a external file
      */
-    private class Saver implements ActionListener{
+    public void save(){
+        String name;
+        try {
+            Writer out = new FileWriter("src/tetris/files/scores.txt",true);
+            do {
+                name = JOptionPane.showInputDialog("What is your name?(name is case-sensitive)");
+            } while (name.isEmpty());
+            out.write(name+"\n");
+            out.write(String.valueOf(high)+"\n");
+            out.write("------\n");
+            out.flush();
+            out.close();
 
-        /**
-         * Invoked when an action occurs.
-         *
-         * @param e the event to be processed
-         */
-        @Override
-        public void actionPerformed(ActionEvent e) {
-                String name;
-                try {
-                    Writer out = new FileWriter("src/tetris/files/scores.txt",true);
-                    do {
-                        name = JOptionPane.showInputDialog("What is your name?(name is case-sensitive)");
-                    } while (name.isEmpty());
-                    out.write(name+"\n");
-                    out.write(String.valueOf(high)+"\n");
-                    out.write("------\n");
-                    out.flush();
-                    out.close();
-
-                    JOptionPane.showMessageDialog(null, "Save Successful!");
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Your scores were not able to save");
-                }
-            }
-        }
-
-    /**
-     * Nexted <code>ActionListener</code> class for loading previous games from text files
-     */
-    private class Loader implements ActionListener{
-
-        /**
-         * Invoked when an action occurs.
-         *
-         * @param e the event to be processed
-         */
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            Scanner infile;
-            try{
-                int count = 0;
-                int h = 0;
-                RuntimeException threw;
-                infile = new Scanner(new File("src/tetris/files/scores.txt"));
-
-                String name = JOptionPane.showInputDialog("Which player do you want to load?(name is case-sensitive)" +
-                        "\n*WARNING* THIS ACTION WILL RESET YOUR CURRENT SCORE TO 0");
-
-                while(infile.hasNext()){
-                    if(infile.next().equals(name)){
-                         h = infile.nextInt();
-                         break;
-                    }else{
-                         h = -1;
-                    }
-                }
-                if(h == -1){
-                     threw = new RuntimeException("PlayerNotFoundException");
-                    throw threw;
-                }else {
-                    update(h, 0);
-                    JOptionPane.showMessageDialog(null, "Game for player " + name + " was loaded successfully");
-                }
-
-            }catch (RuntimeException re){
-                JOptionPane.showMessageDialog(null, "Specified Player was not found!");
-            } catch(FileNotFoundException ex){
-                JOptionPane.showMessageDialog(null, "Uh-oh! Something went wrong, your file could not be saved!");
-            }
-
+            JOptionPane.showMessageDialog(null, "Save Successful!");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Your scores were not able to save");
         }
     }
 
+
+    /**
+     * Loads a highscore from an external text file by referencing a username
+     */
+    public void load(){
+        Scanner infile;
+        try{
+            int h = 0;
+            RuntimeException threw;
+            infile = new Scanner(new File("src/tetris/files/scores.txt"));
+
+            String name = JOptionPane.showInputDialog("Which player do you want to load?(name is case-sensitive)" +
+                    "\n*WARNING* THIS ACTION WILL RESET YOUR CURRENT SCORE TO 0");
+
+            while(infile.hasNext()){
+                if(infile.next().equals(name)){
+                    h = infile.nextInt();
+                    break;
+                }else{
+                    h = -1;
+                }
+            }
+            if(h == -1){
+                threw = new RuntimeException("PlayerNotFoundException");
+                throw threw;
+            }else {
+                update(h, 0);
+                JOptionPane.showMessageDialog(null, "Game for player " + name + " was loaded successfully");
+            }
+
+        }catch (RuntimeException re){
+            JOptionPane.showMessageDialog(null, "Specified Player was not found!");
+        } catch(FileNotFoundException ex){
+            JOptionPane.showMessageDialog(null, "Uh-oh! Something went wrong, your file could not be saved!");
+        }
+
+    }
+
+
     /**
      * Updates the scores <code>JLabel</code> to adjust to any changes in scores
-      * @param hi new highscore
+     * @param hi new highscore
      * @param cu new current score
      */
     public void update(int hi, int cu){
