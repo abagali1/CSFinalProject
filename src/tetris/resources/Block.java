@@ -80,15 +80,6 @@ public class Block implements Blockable{
     */
    private static boolean fall;
    /**
-    * Determines whether a block is in the finished state
-    */
-   private boolean ifFinished;
-   /**
-    * Stores all the possible y positions for new blocks
-    */
-   private static int[] yPos = new int[] {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140,
-           150, 160, 170, 0};
-   /**
     * Used to index <code>ArrayLists</code> of blocks
     */
    public static int count = 0;
@@ -473,16 +464,6 @@ public class Block implements Blockable{
    }
 
    /**
-    * Serts a block to be in a finished state
-    * @param a block to be adjusted
-    */
-   public void setFinished(Block a){
-      Block temp = a;
-
-
-   }
-
-   /**
     * Prints current type, x1, y1, width, and height of the block
     * @return String of current state
     */
@@ -582,7 +563,138 @@ public class Block implements Blockable{
             }
          case 3:
             if(myFlipState == 0){ //go to FS == 1
-
+               myFlipState++;
+               myY -= 10;
+               myHeight = 30;
+               myWidth = 10;
+               myX2 = myX + 10;
+               myY2 = myY;
+               myW2 = 10;
+               myH2 = 10;
+               break;
+            }
+            if(myFlipState == 1){ //go to FS == 2
+               myFlipState++;
+               myY += 20;
+               myHeight = 10;
+               myWidth = 30;
+               myX2 = myX + 20;
+               myY2 = myY;
+               myW2 = 10;
+               myH2 = 20;
+               break;
+            }
+            if(myFlipState == 2 ){//go to FS == 3
+               myFlipState++;
+               myY -= 20;
+               myWidth = 20;
+               myHeight = 10;
+               myX2 = myX + 10;
+               myY2 = myY;
+               myH2 = 30;
+               myW2 = 10;
+               break;
+            }
+            if(myFlipState == 3){ //go to FS == 0
+               myFlipState = 0;
+               myY += 10;
+               myHeight = 20;
+               myWidth = 10;
+               myX2 = myX;
+               myY2 = myY;
+               myW2 = 30;
+               myH2 = 10;
+               break;
+         }
+         case 4:
+            if(myFlipState == 0){ //go to FS == 1
+               myFlipState++;
+               myX -= 10;
+               myWidth = 10;
+               myHeight = 20;
+               myX2 = myX + 10;
+               myY2 = myY + 10;
+               myH2 = 20;
+               myW2 = 10;
+               break;
+            }
+            if(myFlipState == 1){ //go to FS == 0
+               myFlipState--;
+               myY += 10;
+               myWidth = 20;
+               myHeight = 10;
+               myX2 = myX + 10;
+               myY2 = myY - 10;
+               myW2 = 20;
+               myH2 = 10;
+               break;
+            }
+         case 5:
+            if(myFlipState == 0){
+               myFlipState++;
+               myHeight = 20;
+               myWidth = 10;
+               myX2 = myX + 10;
+               myY2 = myY - 10;
+               myH2 = 20;
+               myW2 = 10;
+               break;
+            }
+            if(myFlipState == 1){
+               myFlipState--;
+               myY += 10;
+               myWidth = 20;
+               myHeight = 10;
+               myX2 = myX + 10;
+               myY2 = myY - 10;
+               myW2 = 20;
+               myH2 = 10;
+               break;
+            }
+         case 6:
+            if(myFlipState == 0){
+               myFlipState++;
+               myY += 10;
+               myWidth = 10;
+               myHeight = 10;
+               myX2 = myX + 10;
+               myY2 = myY - 10;
+               myH2 = 30;
+               myW2 = 10;
+               break;
+            }
+            if(myFlipState == 1){
+               myFlipState++;
+               myY -= 10;
+               myWidth = 30;
+               myHeight = 10;
+               myX2 = myX + 10;
+               myY2 = myY + 10;
+               myW2 = 10;
+               myH2 = 10;
+               break;
+            }
+            if(myFlipState == 2){
+               myFlipState++;
+               myY -= 10;
+               myHeight = 30;
+               myWidth = 10;
+               myX2 = myX + 10;
+               myY2 = myY + 10;
+               myW2 = 10;
+               myH2 = 10;
+               break;
+            }
+            if(myFlipState == 3){
+               myFlipState = 0;
+               myY += 10;
+               myWidth = 30;
+               myHeight = 10;
+               myX2 = myX + 10;
+               myY2 = myY - 10;
+               myW2 = 10;
+               myH2 = 10;
+               break;
             }
          default:
             break;
