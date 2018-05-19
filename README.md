@@ -20,5 +20,5 @@
 # If you just want to play
 Download entire repo
 Download jgrasp(if you dont already have it)
-Go to downloaded repo folder & click Tetris.gpj
-jGRASP should open, click the run button in the bottom left corner area
+Go to downloaded repo folder & find TetDriver.java in src/tetris/driver folder
+Compile and run that java file
