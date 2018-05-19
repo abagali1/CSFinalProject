@@ -5,12 +5,11 @@ import tetris.resources.Block;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * The BigPanel encapsulates the <code>TetrisPanel</code>, <code>ScorePanel</code>, and <code>BlockPanel</code>
@@ -77,8 +76,6 @@ public class BigPanel extends JPanel {
 
     private JLabel logo;
 
-    private JButton debug;
-
     /**
      * Creates a new BigPanel
      * @param a JFrame to be displayed onto
@@ -90,10 +87,10 @@ public class BigPanel extends JPanel {
         left = new leftPanel();
         this.add(left);
 
-         center = new JPanel();
+        center = new JPanel();
         this.add(center);
 
-         right = new leftPanel();
+        right = new leftPanel();
         this.add(right);
 
         center.setLayout(new BorderLayout());
@@ -113,48 +110,6 @@ public class BigPanel extends JPanel {
         credits.setSize(new Dimension(100,100));
         center.add(credits, BorderLayout.EAST);
 
-        debug = new JButton("Debug");
-        debug.addActionListener(
-                e -> {
-                    center.remove(debug);
-                    JPanel centercenter = new JPanel();
-                    centercenter.setLayout(new FlowLayout());
-                    JTextField type = new JTextField("Type");
-                    JTextField delay = new JTextField("Delay");
-                    JButton analytics = new JButton("Analytics");
-                    analytics.addActionListener(
-                            ef -> {
-                                AtomicInteger pro = new AtomicInteger();
-                                AtomicLong mem = new AtomicLong();
-                                JFrame analysis = new JFrame();
-                                analysis.setSize(new Dimension(400,400));
-                                analysis.setLocation(0,0);
-                                analysis.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                JPanel an = new JPanel();
-                                new Timer(5, ex-> {
-                                     pro.set(Runtime.getRuntime().availableProcessors());
-                                     mem.set(Runtime.getRuntime().freeMemory());
-                                }).start();
-                                an.add(new JLabel("Processors: " + pro));
-                                an.add(new JLabel("Memory" + mem));
-                                analysis.setContentPane(an);
-                                analysis.setVisible(true);
-
-                            }
-                    );
-                    centercenter.add(type);
-                    centercenter.add(delay);
-                    JButton start = new JButton("Make Changes");
-                    start.addActionListener(
-                            exx -> {
-                                start(Integer.parseInt(type.getText()), Integer.parseInt(delay.getText()));
-                            }
-                    );
-                    centercenter.add(analytics);
-                    centercenter.add(start);
-                    center.add(centercenter,BorderLayout.CENTER);
-                }
-        );
         try {
             BufferedImage image = ImageIO.read(new File("tetris/images/logo-game.png"));
             logo = new JLabel(new ImageIcon(image));
@@ -164,25 +119,7 @@ public class BigPanel extends JPanel {
 
         myFrame = a;
 
-        addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode() == KeyEvent.VK_OPEN_BRACKET){
-                    center.add(debug,BorderLayout.CENTER);
-                    repaint();
-                    revalidate();
-                }
-                if(e.getKeyCode() == KeyEvent.VK_CLOSE_BRACKET){
-                    center.remove(debug);
-                    repaint();
-                    revalidate();
-                }
-                if(e.getKeyCode() == KeyEvent.VK_ESCAPE)
-                    System.exit(0);
-            }
-        });
-        setFocusable(true);
-        requestFocus();
+
 
 
 //        Audio song = new Audio();
@@ -191,7 +128,7 @@ public class BigPanel extends JPanel {
 
     /**
      * Nested <code>ActionListener</code> class. Switches from home panel to Tetris game
-      */
+     */
     private class Starter implements ActionListener{
 
 
@@ -223,32 +160,6 @@ public class BigPanel extends JPanel {
         this.add(score);
 
         tetris = new TetrisPanel();
-        this.add(tetris);
-
-        block = new BlockPanel(tetris.getNext5Blocks());
-        this.add(block);
-
-
-
-
-        myFrame.setContentPane(this);
-        tetris.requestFocus();
-    }
-    public void start(int ty, int del){
-        left.stop();
-        right.stop();
-        setLayout(new GridLayout(1,3));
-
-        this.remove(left);
-        this.remove(center);
-        this.remove(right);
-
-
-        score = new ScorePanel();
-        this.add(score);
-
-        tetris = new TetrisPanel();
-        tetris.makeChanges(ty, del);
         this.add(tetris);
 
         block = new BlockPanel(tetris.getNext5Blocks());

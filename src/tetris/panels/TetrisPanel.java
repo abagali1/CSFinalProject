@@ -66,7 +66,7 @@ public class TetrisPanel extends JPanel{
     * Temporary block object for <code>Rainfall</code>
     */
    private Block temp;
-    /**
+   /**
     * Stores all the possible y positions for a new block
     */
    private int[] yPos;
@@ -79,39 +79,39 @@ public class TetrisPanel extends JPanel{
     */
    public TetrisPanel() {
       setLayout(new BorderLayout());
-   
+
       this.myImage = new BufferedImage(201 , 402, BufferedImage.TYPE_INT_RGB);
       this.myBuffer = (Graphics2D) myImage.getGraphics();
       blocks = new ArrayList<>();
       kblocks = new ArrayList<>();
-   
-   
-      this.t = new Timer(100, new Listener());
-   
 
-   
+
+      this.t = new Timer(100, new Listener());
+
+
+
       gameboard = new boolean[20][40];
       for(int r=0;r<=gameboard.length-1;r++){
          for(int c=0;c<=gameboard[0].length-1;c++){
             gameboard[r][c] = false;
          }
       }
-   
+
       yPos = new int[19];
       for(int r=0;r<=200-30;r+=10)
          yPos[r/10] = r;
-   
-   
+
+
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
-   
+                 Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
+
       this.t.start();
-   
+
       addKeyListener(new Key());
       requestFocus();
       setFocusable(true);
-   
+
    }
 
    private class Key extends KeyAdapter {
@@ -140,7 +140,7 @@ public class TetrisPanel extends JPanel{
             System.exit(0);
          }
       }
-   
+
       /**
        * Invoked when a key has been released.
        * See the class description for {@link KeyEvent} for a definition of
@@ -192,18 +192,11 @@ public class TetrisPanel extends JPanel{
       g.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
    }
 
-   public void makeChanges(int ty, int del){
-      for(int i =0;i<=blocks.size()-1;i++)
-         blocks.set(i,new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                 Optional.of(((int) (Math.random() * 401))), ty));
-      t.setDelay(del);
-   }
-
    /**
     * Neseted <code>ActionListener</code> class to actually run the Tetris game
     */
    private class Listener implements ActionListener {
-   
+
       /**
        * Invoked when an action occurs.
        *
@@ -211,39 +204,39 @@ public class TetrisPanel extends JPanel{
        */
       @Override
       public void actionPerformed(ActionEvent e) {
-      
+
          myBuffer.setColor(Color.black);
          myBuffer.fillRect(0, 0, getWidth(), getHeight());
          myBuffer.setColor(Color.WHITE);
-      
+
          for (int i = 0; i <= 400; i += 10) {
             myBuffer.drawLine(i, 0, i, 400);
             myBuffer.drawLine(0, i, 401, i);
          }
-      
+
          myBuffer.drawLine(400, 0, 400, 400);
          myBuffer.drawLine(0, 400, 400, 400);
-      
-      
+
+
          blocks.get(blockCount).draw(myBuffer);
          blocks.get(blockCount).move(10);
-      
-      
+
+
          Block.setFall(true);
          Block.rain(blocks, myBuffer);
-      
+
          //setKeyListener(blocks.get(blockCount));
-      
+
          System.out.println(blocks.get(blockCount).toDeepString() + "fasdfa:" + blockCount+"\t" + getHeight());
-      
+
          for(int i = Block.count-1; i>=blocks.size();i--) {
             blocks.get(i).draw(myBuffer);
          }
 
          if(Block.constantBlocks.contains(blocks.get(blockCount)))
             blockCount++;
-      
-      
+
+
          repaint();
          revalidate();
       }
