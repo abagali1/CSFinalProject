@@ -13,6 +13,7 @@ import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Optional;
 
 /**
@@ -223,7 +224,7 @@ public class TetrisPanel extends JPanel{
 
 
          Block.setFall(true);
-         Block.rain(blocks, myBuffer, gameboard);
+         Block.rain(blocks, myBuffer);
 
          //setKeyListener(blocks.get(blockCount));
 
@@ -233,14 +234,36 @@ public class TetrisPanel extends JPanel{
             blocks.get(i).draw(myBuffer);
          }
 
-         if(Block.constantBlocks.contains(blocks.get(blockCount)))
+         if(Block.constantBlocks.contains(blocks.get(blockCount))) {
+            updateGameboard(blocks.get(blockCount));
             blockCount++;
-
+         }
 
          repaint();
          revalidate();
       }
    }
+
+   private void updateGameboard(Block b) {
+      switch (b.getType()){
+         case 0:
+            gameboard[b.getY()/10][b.getX()/10] = false;
+            gameboard[(b.getY()+b.getWidth())/10][b.getX()/10] = false;
+            gameboard[b.getY()/10][(b.getX()+b.getHeight())/10] = false;
+            gameboard[(b.getY()+b.getWidth())/10][(b.getX()+b.getHeight())/10] = false;
+            break;
+         case 1:
+            gameboard[b.getY()/10][b.getX()/10] = false;
+            for(int i=10;i<=30;i+=10)
+               gameboard[(b.getY()+i)/10][b.getX()/10] = false;
+            break;
+         case 2:
+
+
+      }
+      System.out.println(Arrays.deepToString(gameboard));
+   }
+
 
    /**
     * Sets a block into the finished state

@@ -88,8 +88,6 @@ public class Block implements Blockable{
     */
    public static ArrayList<Block> constantBlocks = new ArrayList<>();
 
-   private boolean active;
-
    /**
     * Constructor for a block.
     * @param x Starting x1 coordinate
@@ -105,7 +103,6 @@ public class Block implements Blockable{
       myX2 = x2.orElse(null);
       myY2 = y2.orElse(null);
       myFlipState = 0;
-      active = false;
       if((myX2 == null || myY2 == null) && t > 1)
          throw new NullPointerException();
       switch (myType) {
@@ -377,27 +374,20 @@ public class Block implements Blockable{
             System.exit(160);
       }
    }
-   public void setActive(boolean a){
-      active = a;
-   }
-   public boolean isActive(){
-      return active;
-   }
 
    /**
     * Draws the block onto a buffered image
     * @param myBuffer desired buffered image to be drawn on
     * @see java.awt.image.BufferedImage
     */
-   public void draw(Graphics myBuffer) {
+   public void draw(Graphics myBuffer){
       myBuffer.setColor(myColor);
-      if (active) {
-         if (myType <= 1) {
-            myBuffer.fillRect(myX, myY, myWidth, myHeight);
-         } else {
-            myBuffer.fillRect(myX, myY, myWidth, myHeight);
-            myBuffer.fillRect(myX2, myY2, myW2, myH2);
-         }
+      if(myType <= 1){
+         myBuffer.fillRect(myX,myY,myWidth,myHeight);
+      }
+      else{
+         myBuffer.fillRect(myX,myY,myWidth,myHeight);
+         myBuffer.fillRect(myX2, myY2, myW2, myH2);
       }
    }
 
@@ -438,7 +428,7 @@ public class Block implements Blockable{
     * @param myBuffer BufferedImage to be drawn on
     * @see java.awt.image.BufferedImage
     */
-   public static void rain(ArrayList<Block> blocks, Graphics myBuffer, boolean[][] board){
+   public static void rain(ArrayList<Block> blocks, Graphics myBuffer) {
       Block temp;
       if(getFall()){
          temp = blocks.get(count);
@@ -449,8 +439,6 @@ public class Block implements Blockable{
          else{
             constantBlocks.add(temp);
 
-            temp.setFinished(board);
-
             count++;
          }
          for(Block b: constantBlocks)
@@ -458,24 +446,6 @@ public class Block implements Blockable{
       }
    }
 
-   public void setFinished(boolean[][] gameboard){
-      switch (getType()){
-         case 0:
-            gameboard[getY()/10][getX()/10] = false;
-            gameboard[(getY()+getHeight())/10][getX()/10] = false;
-            gameboard[getY()/10][(getX()+getWidth())/10] = false;
-            gameboard[(getY()+getHeight())/10][(getX()+getWidth())/10] = false;
-            break;
-         case 1:
-            gameboard[getY()/10][getX()/10] = false;
-            gameboard[getY()/10][(getX()+10)/10] = false;
-            gameboard[getY()/10][(getX()+20)/10] = false;
-            gameboard[getY()/10][(getX()+30)/10] = false;
-            break;
-      }
-      System.out.println(java.util.Arrays.deepToString(gameboard));
-
-   }
    /**
     * Rainfall animation used solely for decoration
     * @param blocks blocks to be used
@@ -529,207 +499,228 @@ public class Block implements Blockable{
     * @param myBuffer Graphics object to be drawn onto
     */
    public void flip(Graphics myBuffer){
-      switch(getType()){
-         case 0: //yellow
-            break;
-         case 1: //cyan
-            if(myFlipState == 0){ //go to straight
-               myFlipState++;
-               myY += 30;
-               myWidth = 10;
-               myHeight = 40;
-            }
-            if(myFlipState == 1){ //go to normal
-               myFlipState--;
-               myY -= 30;
-               myWidth = 40;
-               myHeight = 10;
-            }
-            break;
-         case 2:
-            if(myFlipState == 0){ //go to FS=1
-               myFlipState++;
-               myY += 20;
-               myWidth = 10;
-               myHeight = 30;
-               myX2 = myX;
-               myY2 = myY;
-               myW2 = 20;
-               myH2 = 10;
+      if(getY() < 400-getHeight()) {
+         switch (getType()) {
+            case 0: //yellow
                break;
-            }
-            if(myFlipState == 1){ //go to FS =2
-               myFlipState++;
-               myY += 20;
-               myWidth = 10;
-               myHeight = 20;
-               myX2 = myX;
-               myY2 = myY + 10;
-               myW2 = 30;
-               myH2 = 10;
+            case 1: //cyan
+               if(getY()+30 < 400-getHeight()) {
+
+                  if (myFlipState == 0) { //go to straight
+                     myFlipState++;
+                     myY += 30;
+                     myWidth = 10;
+                     myHeight = 40;
+                  }
+
+                  if (myFlipState == 1) { //go to normal
+                     myFlipState--;
+                     myY -= 30;
+                     myWidth = 40;
+                     myHeight = 10;
+                  }
+               }
                break;
-            }
-            if(myFlipState == 2){ //go to FS = 3
-               myFlipState++;
-               myY += 10;
-               myWidth = 20;
-               myHeight = 10;
-               myX2 = myX + 10;
-               myY2 = myY-20;
-               myW2 = 10;
-               myH2 = 30;
+            case 2:
+               if(getY()+20 < 400-getHeight()) {
+
+                  if (myFlipState == 0) { //go to FS=1
+                     myFlipState++;
+                     myY += 20;
+                     myWidth = 10;
+                     myHeight = 30;
+                     myX2 = myX;
+                     myY2 = myY;
+                     myW2 = 20;
+                     myH2 = 10;
+                     break;
+                  }
+                  if (myFlipState == 1) { //go to FS =2
+                     myFlipState++;
+                     myY += 20;
+                     myWidth = 10;
+                     myHeight = 20;
+                     myX2 = myX;
+                     myY2 = myY + 10;
+                     myW2 = 30;
+                     myH2 = 10;
+                     break;
+                  }
+                  if (myFlipState == 2) { //go to FS = 3
+                     myFlipState++;
+                     myY += 10;
+                     myWidth = 20;
+                     myHeight = 10;
+                     myX2 = myX + 10;
+                     myY2 = myY - 20;
+                     myW2 = 10;
+                     myH2 = 30;
+                     break;
+                  }
+                  if (myFlipState == 3) {
+                     myFlipState = 0;
+                     myX -= 10;
+                     myY -= 10;
+                     myWidth = 30;
+                     myHeight = 10;
+                     myX2 = myX + 20;
+                     myY2 = myY;
+                     myW2 = 10;
+                     myH2 = 20;
+                     break;
+                  }
+               }
+            case 3:
+               if(getY()+10 < 400-getHeight()) {
+
+                  if (myFlipState == 0) { //go to FS == 1
+                     myFlipState++;
+                     myY -= 10;
+                     myHeight = 30;
+                     myWidth = 10;
+                     myX2 = myX + 10;
+                     myY2 = myY;
+                     myW2 = 10;
+                     myH2 = 10;
+                     break;
+                  }
+                  if (myFlipState == 1) { //go to FS == 2
+                     myFlipState++;
+                     myY += 20;
+                     myHeight = 10;
+                     myWidth = 30;
+                     myX2 = myX + 20;
+                     myY2 = myY;
+                     myW2 = 10;
+                     myH2 = 20;
+                     break;
+                  }
+                  if (myFlipState == 2) {//go to FS == 3
+                     myFlipState++;
+                     myY -= 20;
+                     myWidth = 20;
+                     myHeight = 10;
+                     myX2 = myX + 10;
+                     myY2 = myY;
+                     myH2 = 30;
+                     myW2 = 10;
+                     break;
+                  }
+                  if (myFlipState == 3) { //go to FS == 0
+                     myFlipState = 0;
+                     myY += 10;
+                     myHeight = 20;
+                     myWidth = 10;
+                     myX2 = myX;
+                     myY2 = myY;
+                     myW2 = 30;
+                     myH2 = 10;
+                     break;
+                  }
+               }
+            case 4:
+               if(getY()+10 < 400-getHeight()) {
+
+                  if (myFlipState == 0) { //go to FS == 1
+                     myFlipState++;
+                     myX -= 10;
+                     myWidth = 10;
+                     myHeight = 20;
+                     myX2 = myX + 10;
+                     myY2 = myY + 10;
+                     myH2 = 20;
+                     myW2 = 10;
+                     break;
+                  }
+                  if (myFlipState == 1) { //go to FS == 0
+                     myFlipState--;
+                     myY += 10;
+                     myWidth = 20;
+                     myHeight = 10;
+                     myX2 = myX + 10;
+                     myY2 = myY - 10;
+                     myW2 = 20;
+                     myH2 = 10;
+                     break;
+                  }
+               }
+            case 5:
+               if(getY() < 400-getHeight()) {
+
+                  if (myFlipState == 0) {
+                     myFlipState++;
+                     myHeight = 20;
+                     myWidth = 10;
+                     myX2 = myX + 10;
+                     myY2 = myY - 10;
+                     myH2 = 20;
+                     myW2 = 10;
+                     break;
+                  }
+                  if (myFlipState == 1) {
+                     myFlipState--;
+                     myY += 10;
+                     myWidth = 20;
+                     myHeight = 10;
+                     myX2 = myX + 10;
+                     myY2 = myY - 10;
+                     myW2 = 20;
+                     myH2 = 10;
+                     break;
+                  }
+               }
+            case 6:
+               if(getY() + 10 < 400-getHeight()) {
+
+                  if (myFlipState == 0) {
+                     myFlipState++;
+                     myY += 10;
+                     myWidth = 10;
+                     myHeight = 10;
+                     myX2 = myX + 10;
+                     myY2 = myY - 10;
+                     myH2 = 30;
+                     myW2 = 10;
+                     break;
+                  }
+                  if (myFlipState == 1) {
+                     myFlipState++;
+                     myY -= 10;
+                     myWidth = 30;
+                     myHeight = 10;
+                     myX2 = myX + 10;
+                     myY2 = myY + 10;
+                     myW2 = 10;
+                     myH2 = 10;
+                     break;
+                  }
+                  if (myFlipState == 2) {
+                     myFlipState++;
+                     myY -= 10;
+                     myHeight = 30;
+                     myWidth = 10;
+                     myX2 = myX + 10;
+                     myY2 = myY + 10;
+                     myW2 = 10;
+                     myH2 = 10;
+                     break;
+                  }
+                  if (myFlipState == 3) {
+                     myFlipState = 0;
+                     myY += 10;
+                     myWidth = 30;
+                     myHeight = 10;
+                     myX2 = myX + 10;
+                     myY2 = myY - 10;
+                     myW2 = 10;
+                     myH2 = 10;
+                     break;
+                  }
+               }
+            default:
                break;
-            }
-            if(myFlipState == 3) {
-               myFlipState = 0;
-               myX -= 10;
-               myY -= 10;
-               myWidth = 30;
-               myHeight = 10;
-               myX2 = myX + 20;
-               myY2 = myY;
-               myW2 = 10;
-               myH2 = 20;
-               break;
-            }
-         case 3:
-            if(myFlipState == 0){ //go to FS == 1
-               myFlipState++;
-               myY -= 10;
-               myHeight = 30;
-               myWidth = 10;
-               myX2 = myX + 10;
-               myY2 = myY;
-               myW2 = 10;
-               myH2 = 10;
-               break;
-            }
-            if(myFlipState == 1){ //go to FS == 2
-               myFlipState++;
-               myY += 20;
-               myHeight = 10;
-               myWidth = 30;
-               myX2 = myX + 20;
-               myY2 = myY;
-               myW2 = 10;
-               myH2 = 20;
-               break;
-            }
-            if(myFlipState == 2 ){//go to FS == 3
-               myFlipState++;
-               myY -= 20;
-               myWidth = 20;
-               myHeight = 10;
-               myX2 = myX + 10;
-               myY2 = myY;
-               myH2 = 30;
-               myW2 = 10;
-               break;
-            }
-            if(myFlipState == 3){ //go to FS == 0
-               myFlipState = 0;
-               myY += 10;
-               myHeight = 20;
-               myWidth = 10;
-               myX2 = myX;
-               myY2 = myY;
-               myW2 = 30;
-               myH2 = 10;
-               break;
-            }
-         case 4:
-            if(myFlipState == 0){ //go to FS == 1
-               myFlipState++;
-               myX -= 10;
-               myWidth = 10;
-               myHeight = 20;
-               myX2 = myX + 10;
-               myY2 = myY + 10;
-               myH2 = 20;
-               myW2 = 10;
-               break;
-            }
-            if(myFlipState == 1){ //go to FS == 0
-               myFlipState--;
-               myY += 10;
-               myWidth = 20;
-               myHeight = 10;
-               myX2 = myX + 10;
-               myY2 = myY - 10;
-               myW2 = 20;
-               myH2 = 10;
-               break;
-            }
-         case 5:
-            if(myFlipState == 0){
-               myFlipState++;
-               myHeight = 20;
-               myWidth = 10;
-               myX2 = myX + 10;
-               myY2 = myY - 10;
-               myH2 = 20;
-               myW2 = 10;
-               break;
-            }
-            if(myFlipState == 1){
-               myFlipState--;
-               myY += 10;
-               myWidth = 20;
-               myHeight = 10;
-               myX2 = myX + 10;
-               myY2 = myY - 10;
-               myW2 = 20;
-               myH2 = 10;
-               break;
-            }
-         case 6:
-            if(myFlipState == 0){
-               myFlipState++;
-               myY += 10;
-               myWidth = 10;
-               myHeight = 10;
-               myX2 = myX + 10;
-               myY2 = myY - 10;
-               myH2 = 30;
-               myW2 = 10;
-               break;
-            }
-            if(myFlipState == 1){
-               myFlipState++;
-               myY -= 10;
-               myWidth = 30;
-               myHeight = 10;
-               myX2 = myX + 10;
-               myY2 = myY + 10;
-               myW2 = 10;
-               myH2 = 10;
-               break;
-            }
-            if(myFlipState == 2){
-               myFlipState++;
-               myY -= 10;
-               myHeight = 30;
-               myWidth = 10;
-               myX2 = myX + 10;
-               myY2 = myY + 10;
-               myW2 = 10;
-               myH2 = 10;
-               break;
-            }
-            if(myFlipState == 3){
-               myFlipState = 0;
-               myY += 10;
-               myWidth = 30;
-               myHeight = 10;
-               myX2 = myX + 10;
-               myY2 = myY - 10;
-               myW2 = 10;
-               myH2 = 10;
-               break;
-            }
-         default:
-            break;
+         }
+         draw(myBuffer);
       }
-      draw(myBuffer);
    }
 }
