@@ -5,6 +5,9 @@
       <artifact name="BigBlockConstruction" />
     </artifacts-to-build>
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/tetris/resources/Block.java" line="476" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f8df299a-5f3f-42cb-81d6-bccc419d6903" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/src/BlockPanel.java" afterDir="false" />
@@ -50,12 +53,37 @@
     <favorites_list name="CSProject" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Block.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tetris/resources/Block.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6718">
-              <caret line="479" column="6" lean-forward="true" selection-start-line="479" selection-start-column="6" selection-end-line="479" selection-end-column="6" />
+            <state relative-caret-position="531">
+              <caret line="477" column="18" selection-start-line="477" selection-start-column="18" selection-end-line="477" selection-end-column="18" />
+              <folding>
+                <element signature="e#13867#19541#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Blockable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tetris/resources/Blockable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TetrisPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4250">
+              <caret line="267" column="1" selection-start-line="267" selection-start-column="1" selection-end-line="267" selection-end-column="1" />
+              <folding>
+                <element signature="e#3237#3238#0" expanded="true" />
+                <element signature="e#3285#3286#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,15 +152,15 @@
         <option value="$PROJECT_DIR$/src/tetris/resources/ImageLabel.java" />
         <option value="$PROJECT_DIR$/src/tetris/resources/BlockLabel.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/leftPanel.java" />
-        <option value="$PROJECT_DIR$/src/tetris/resources/Block.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/BigPanelTest.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/test.java" />
         <option value="$PROJECT_DIR$/src/tetris/driver/test.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/BigPanel.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/BlockPanel.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/ScorePanel.java" />
-        <option value="$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java" />
         <option value="$PROJECT_DIR$/src/tetris/resources/Blockable.java" />
+        <option value="$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java" />
+        <option value="$PROJECT_DIR$/src/tetris/resources/Block.java" />
       </list>
     </option>
   </component>
@@ -151,7 +179,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="637" />
     <option name="y" value="-18" />
     <option name="width" value="694" />
@@ -163,7 +191,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,6 +243,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
@@ -411,75 +439,82 @@
       <workItem from="1526615318781" duration="320000" />
       <workItem from="1526677405880" duration="328000" />
       <workItem from="1526688004306" duration="2722000" />
-      <workItem from="1526916464799" duration="424000" />
+      <workItem from="1526916464799" duration="2655000" />
+      <workItem from="1526935007531" duration="717000" />
+      <workItem from="1527013739159" duration="38000" />
+      <workItem from="1527013890312" duration="126000" />
+      <workItem from="1527014055298" duration="2013000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133673000" />
+    <option name="totallyTimeSpent" value="138798000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.330033" />
+      <window_info anchor="bottom" auto_hide="true" id="JRebel Console" side_tool="true" weight="0.32838285" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="JRebel Executor" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Designer" order="3" />
+      <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
+      <window_info id="Structure" order="1" sideWeight="0.72109824" side_tool="true" visible="true" weight="0.21104388" />
+      <window_info anchor="right" id="Ant Build" order="5" weight="0.24962178" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47524753" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.330033" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.2647059" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.2647059" />
       <window_info anchor="bottom" id="Floobits" order="12" weight="0.32838285" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.5866013" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.82666665" visible="true" weight="0.19894099" />
-      <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
-      <window_info id="Structure" order="1" sideWeight="0.17333333" side_tool="true" visible="true" weight="0.19894099" />
-      <window_info anchor="right" id="Ant Build" order="5" weight="0.24962178" />
-      <window_info id="UI Designer" order="4" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.27890173" visible="true" weight="0.21104388" />
+      <window_info id="JRebel" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info id="Favorites" order="5" sideWeight="0.5033408" side_tool="true" weight="0.18154311" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.47524753" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32026145" />
+      <window_info id="Favorites" order="6" sideWeight="0.7205882" side_tool="true" weight="0.20801815" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32026145" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.5824508" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.2590759" />
       <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="5" sideWeight="0.5033408" side_tool="true" weight="0.18154311" />
       <window_info anchor="bottom" id="Floobits" order="12" weight="0.32838285" />
       <window_info id="Structure" order="1" sideWeight="0.35634744" side_tool="true" weight="0.19288956" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="5" weight="0.24962178" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.5874587" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.47524753" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.330033" />
       <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32178217" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.64365256" visible="true" weight="0.19288956" />
@@ -815,17 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="267" column="1" selection-start-line="267" selection-start-column="1" selection-end-line="267" selection-end-column="1" />
-          <folding>
-            <element signature="e#3270#3271#0" expanded="true" />
-            <element signature="e#3318#3319#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/panels/BigPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-213">
@@ -854,17 +878,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4250">
+          <caret line="267" column="1" selection-start-line="267" selection-start-column="1" selection-end-line="267" selection-end-column="1" />
+          <folding>
+            <element signature="e#3237#3238#0" expanded="true" />
+            <element signature="e#3285#3286#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/resources/Blockable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="7" selection-end-line="20" />
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/resources/Block.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6718">
-          <caret line="479" column="6" lean-forward="true" selection-start-line="479" selection-start-column="6" selection-end-line="479" selection-end-column="6" />
+        <state relative-caret-position="531">
+          <caret line="477" column="18" selection-start-line="477" selection-start-column="18" selection-end-line="477" selection-end-column="18" />
+          <folding>
+            <element signature="e#13867#19541#0" />
+          </folding>
         </state>
       </provider>
     </entry>

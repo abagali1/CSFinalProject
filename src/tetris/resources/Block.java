@@ -88,6 +88,8 @@ public class Block implements Blockable{
     */
    public static ArrayList<Block> constantBlocks = new ArrayList<>();
 
+   private boolean active;
+
    /**
     * Constructor for a block.
     * @param x Starting x1 coordinate
@@ -103,6 +105,7 @@ public class Block implements Blockable{
       myX2 = x2.orElse(null);
       myY2 = y2.orElse(null);
       myFlipState = 0;
+      active = false;
       if((myX2 == null || myY2 == null) && t > 1)
          throw new NullPointerException();
       switch (myType) {
@@ -374,20 +377,27 @@ public class Block implements Blockable{
             System.exit(160);
       }
    }
+   public void setActive(boolean a){
+      active = a;
+   }
+   public boolean isActive(){
+      return active;
+   }
 
    /**
     * Draws the block onto a buffered image
     * @param myBuffer desired buffered image to be drawn on
     * @see java.awt.image.BufferedImage
     */
-   public void draw(Graphics myBuffer){
+   public void draw(Graphics myBuffer) {
       myBuffer.setColor(myColor);
-      if(myType <= 1){
-         myBuffer.fillRect(myX,myY,myWidth,myHeight);
-      }
-      else{
-         myBuffer.fillRect(myX,myY,myWidth,myHeight);
-         myBuffer.fillRect(myX2, myY2, myW2, myH2);
+      if (active) {
+         if (myType <= 1) {
+            myBuffer.fillRect(myX, myY, myWidth, myHeight);
+         } else {
+            myBuffer.fillRect(myX, myY, myWidth, myHeight);
+            myBuffer.fillRect(myX2, myY2, myW2, myH2);
+         }
       }
    }
 
@@ -428,7 +438,7 @@ public class Block implements Blockable{
     * @param myBuffer BufferedImage to be drawn on
     * @see java.awt.image.BufferedImage
     */
-   public static void rain(ArrayList<Block> blocks, Graphics myBuffer) {
+   public static void rain(ArrayList<Block> blocks, Graphics myBuffer, boolean[][] board){
       Block temp;
       if(getFall()){
          temp = blocks.get(count);
@@ -438,6 +448,9 @@ public class Block implements Blockable{
          }
          else{
             constantBlocks.add(temp);
+
+            temp.setFinished(board);
+
             count++;
          }
          for(Block b: constantBlocks)
@@ -445,6 +458,24 @@ public class Block implements Blockable{
       }
    }
 
+   public void setFinished(boolean[][] gameboard){
+      switch (getType()){
+         case 0:
+            gameboard[getY()/10][getX()/10] = false;
+            gameboard[(getY()+getHeight())/10][getX()/10] = false;
+            gameboard[getY()/10][(getX()+getWidth())/10] = false;
+            gameboard[(getY()+getHeight())/10][(getX()+getWidth())/10] = false;
+            break;
+         case 1:
+            gameboard[getY()/10][getX()/10] = false;
+            gameboard[getY()/10][(getX()+10)/10] = false;
+            gameboard[getY()/10][(getX()+20)/10] = false;
+            gameboard[getY()/10][(getX()+30)/10] = false;
+            break;
+      }
+      System.out.println(java.util.Arrays.deepToString(gameboard));
+
+   }
    /**
     * Rainfall animation used solely for decoration
     * @param blocks blocks to be used
@@ -475,7 +506,7 @@ public class Block implements Blockable{
       return "Type: " + myType + " X: "+ myX + " X2: " +myX2 + " Y: " + myY + " Y2: " + myY2 + " Width: " + myWidth +
               " Height: " + myHeight + " W2: " + myW2 + " myH2: " + myH2 + " FlipState: " + myFlipState  + " ";
 
-    }
+   }
 
    /**
     * Converts the block into an <code>ArrayList</code> of <code>Rectangle2D.Double</code>
@@ -605,7 +636,7 @@ public class Block implements Blockable{
                myW2 = 30;
                myH2 = 10;
                break;
-         }
+            }
          case 4:
             if(myFlipState == 0){ //go to FS == 1
                myFlipState++;

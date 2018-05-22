@@ -223,7 +223,7 @@ public class TetrisPanel extends JPanel{
 
 
          Block.setFall(true);
-         Block.rain(blocks, myBuffer);
+         Block.rain(blocks, myBuffer, gameboard);
 
          //setKeyListener(blocks.get(blockCount));
 
