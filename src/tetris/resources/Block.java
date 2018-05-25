@@ -478,6 +478,10 @@ public class Block implements Blockable{
 
    }
 
+   public int getFlipState(){
+      return  myFlipState;
+   }
+
    /**
     * Converts the block into an <code>ArrayList</code> of <code>Rectangle2D.Double</code>
     * @return <code>ArrayList</code> of new <code>Rectangle2D.Double</code>
@@ -495,6 +499,148 @@ public class Block implements Blockable{
    }
 
    /**
+    * Converts the block into an <code>Array</code> of <code>Points</code>
+    * @return <code>Array</code> of <code>Points</code>
+    * @see Point
+    */
+   public Point[] convertToPoints() {
+      Point[] points = new Point[4];
+
+      switch(getType()){
+         case 0: //yellow
+            points[0] = (new Point(getX(),getY()));
+            points[1] = (new Point(getX()+10, getY()));
+            points[2] = (new Point(getX(),getY()+10));
+            points[3] = (new Point(getX()+10,getY()+10));
+            break;
+         case 1: //cyan
+            if(getFlipState() == 1) {
+               points[0] = (new Point(getX(), getY()));
+               points[1] = (new Point(getX(), getY() + 10));
+               points[2] = (new Point(getX(), getY() + 20));
+               points[3] = (new Point(getX(), getY() + 30));
+            }else if(getFlipState() == 0){
+               points[0] = (new Point(getX(),getY()));
+               points[1] = (new Point(getX()+10,getY()));
+               points[2] = (new Point(getX()+20,getY()));
+               points[3] = (new Point(getX()+30,getY()));
+            }
+            break;
+         case 2: //orange
+            switch(getFlipState()) {
+               case 0:
+                  points[0] = (new Point(getX(), getY()));
+                  points[1] = (new Point(getX() + 10, getY()));
+                  points[2] = (new Point(getX() + 20, getY()));
+                  points[3] = (new Point(getX() + 20, getY() - 10));
+                  break;
+               case 1:
+                  points[0] = (new Point(getX(), getY()));
+                  points[1] = (new Point(getX(), getY() + 10));
+                  points[2] = (new Point(getX(), getY() + 20));
+                  points[3] = (new Point(getX() + 10, getY() + 20));
+                  break;
+               case 2:
+                  points[0] = (new Point(getX(), getY()));
+                  points[1] = (new Point(getX(), getY() + 10));
+                  points[2] = (new Point(getX() + 10, getY()));
+                  points[3] = (new Point(getX() + 20, getY()));
+                  break;
+               case 3:
+                  points[0] = (new Point(getX(), getY()));
+                  points[1] = (new Point(getX() + 10, getY()));
+                  points[2] = (new Point(getX() + 10, getY() + 10));
+                  points[3] = (new Point(getX() + 10, getY() + 20));
+                  break;
+            }
+            break;
+         case 3:
+            switch (getFlipState()){
+               case 0:
+                  points[0] = (new Point(getX(),getY()));
+                  points[1] = (new Point(getX(),getY()+10));
+                  points[2] = (new Point(getX()+10,getY()+10));
+                  points[3] = (new Point(getX()+20,getY()+10));
+                  break;
+               case 1:
+                  points[0] = (new Point(getX(),getY()));
+                  points[1] = (new Point(getX()+10,getY()));
+                  points[2] = (new Point(getX(),getY()+10));
+                  points[3] = (new Point(getX(),getY()+20));
+                  break;
+               case 2:
+                  points[0] = (new Point(getX(),getY()));
+                  points[1] = (new Point(getX()+10,getY()));
+                  points[2] = (new Point(getX()+20,getY()));
+                  points[3] = (new Point(getX()+20,getY()-10));
+                  break;
+               case 3:
+                  points[0] = (new Point(getX(),getY()));
+                  points[1] = (new Point(getX()+10,getY()));
+                  points[2] = (new Point(getX()+10,getY()+10));
+                  points[3] = (new Point(getX()+10,getY()+20));
+                  break;
+            }
+            break;
+         case 4:
+            if(getFlipState() == 0){
+               points[0] = (new Point(getX(),getY()));
+               points[1] = (new Point(getX()+10,getY()));
+               points[2] = (new Point(getX()+10,getY()-10));
+               points[3] = (new Point(getX()+20,getY()-10));
+            }else if(getFlipState() == 1){
+               points[0] = (new Point(getX(),getY()));
+               points[1] = (new Point(getX(),getY()+10));
+               points[2] = (new Point(getX()+10,getY()+10));
+               points[3] = (new Point(getX()+10,getY()+20));
+            }
+            break;
+         case 5:
+            if(getFlipState() == 0){
+               points[0] = (new Point(getX(),getY()));
+               points[1] = (new Point(getX()+10,getY()));
+               points[2] = (new Point(getX()+10,getY()+10));
+               points[3] = (new Point(getX()+20,getY()+10));
+            }else if(getFlipState() == 1){
+               points[0] = (new Point(getX(),getY()));
+               points[1] = (new Point(getX(),getY()+10));
+               points[2] = (new Point(getX()+10,getY()));
+               points[3] = (new Point(getX()+10,getY()-10));
+            }
+            break;
+         case 6:
+            switch (getFlipState()){
+               case 0:
+                  points[0] = (new Point(getX(),getY()));
+                  points[1] = (new Point(getX()+10,getY()));
+                  points[2] = (new Point(getX()+20,getY()));
+                  points[3] = (new Point(getX()+10,getY()-10));
+                  break;
+               case 1:
+                  points[0] = (new Point(getX(),getY()));
+                  points[1] = (new Point(getX()+10,getY()));
+                  points[2] = (new Point(getX()+10,getY()-10));
+                  points[3] = (new Point(getX(), getY()+10));
+                  break;
+               case 2:
+                  points[0] = (new Point(getX(),getY()));
+                  points[1] = (new Point(getX()+10,getY()));
+                  points[2] = (new Point(getX()+20,getY()));
+                  points[3] = (new Point(getX()+10,getY()+10));
+                  break;
+               case 3:
+                  points[0] = (new Point(getX(),getY()));
+                  points[1] = (new Point(getX()+10,getY()+10));
+                  points[2] = (new Point(getX(),getY()+10));
+                  points[3] = (new Point(getX(),getY()+20));
+                  break;
+            }
+            break;
+      }
+      return points;
+}
+
+   /**
     * Flips the current block
     * @param myBuffer Graphics object to be drawn onto
     */
@@ -504,7 +650,7 @@ public class Block implements Blockable{
             case 0: //yellow
                break;
             case 1: //cyan
-               if(getY()+30 < 400-getHeight()) {
+               if(getX()+30 < 400-getWidth()) {
 
                   if (myFlipState == 0) { //go to straight
                      myFlipState++;

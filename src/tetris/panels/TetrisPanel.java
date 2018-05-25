@@ -1,6 +1,5 @@
 package tetris.panels;
 
-import tetris.resources.Audio;
 import tetris.resources.Block;
 
 import javax.swing.*;
@@ -13,7 +12,6 @@ import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Optional;
 
 /**
@@ -40,33 +38,17 @@ public class TetrisPanel extends JPanel{
     */
    private Timer t;
    /**
-    * Timer object to control <code>ActionListener</code> Listener
-    */
-   private Timer l;
-   /**
     * <code>ArrayLists</code> of blocks. blocks stores random blocks, kblocks stores constant blocks
     */
    private ArrayList<Block> blocks;
-   /**
-    * <code>ArrayList</code> of constant blocks. These blocks are in the finished state
-    */
-   private ArrayList<Block> kblocks;
    /**
     * Stores the full and empty spots in the game
     */
    private boolean[][] gameboard;
    /**
-    * EXPERIMENTAL Audio object to play a song
-    */
-   private Audio song;
-   /**
     * Stores the current index of blocks
     */
    private int blockCount = 0;
-   /**
-    * Temporary block object for <code>Rainfall</code>
-    */
-   private Block temp;
    /**
     * Stores all the possible y positions for a new block
     */
@@ -84,14 +66,13 @@ public class TetrisPanel extends JPanel{
       this.myImage = new BufferedImage(201 , 402, BufferedImage.TYPE_INT_RGB);
       this.myBuffer = (Graphics2D) myImage.getGraphics();
       blocks = new ArrayList<>();
-      kblocks = new ArrayList<>();
 
 
       this.t = new Timer(100, new Listener());
 
 
 
-      gameboard = new boolean[20][40];
+      gameboard = new boolean[21][41];
       for(int r=0;r<=gameboard.length-1;r++){
          for(int c=0;c<=gameboard[0].length-1;c++){
             gameboard[r][c] = false;
@@ -105,7 +86,7 @@ public class TetrisPanel extends JPanel{
 
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                 Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
+                 Optional.of(((int) (Math.random() * 401))),1/* ((int) (Math.random() * 7))*/));
 
       this.t.start();
 
@@ -230,12 +211,12 @@ public class TetrisPanel extends JPanel{
 
          System.out.println(blocks.get(blockCount).toDeepString() + "fasdfa:" + blockCount+"\t" + getHeight());
 
-         for(int i = Block.count-1; i>=blocks.size();i--) {
+         for(int i = Block.count-1; i>=blocks.size();i--)
             blocks.get(i).draw(myBuffer);
-         }
 
          if(Block.constantBlocks.contains(blocks.get(blockCount))) {
             updateGameboard(blocks.get(blockCount));
+            finished(blocks.get(blockCount));
             blockCount++;
          }
 
@@ -244,24 +225,10 @@ public class TetrisPanel extends JPanel{
       }
    }
 
-   private void updateGameboard(Block b) {
-      switch (b.getType()){
-         case 0:
-            gameboard[b.getY()/10][b.getX()/10] = false;
-            gameboard[(b.getY()+b.getWidth())/10][b.getX()/10] = false;
-            gameboard[b.getY()/10][(b.getX()+b.getHeight())/10] = false;
-            gameboard[(b.getY()+b.getWidth())/10][(b.getX()+b.getHeight())/10] = false;
-            break;
-         case 1:
-            gameboard[b.getY()/10][b.getX()/10] = false;
-            for(int i=10;i<=30;i+=10)
-               gameboard[(b.getY()+i)/10][b.getX()/10] = false;
-            break;
-         case 2:
-
-
-      }
-      System.out.println(Arrays.deepToString(gameboard));
+   private void updateGameboard(Block block) {
+      Point[] tpoints = block.convertToPoints();
+      for(Point p: tpoints)
+         gameboard[(p.x)/10][(p.y)/10] = false;
    }
 
 
