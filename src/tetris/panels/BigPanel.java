@@ -69,11 +69,17 @@ public class BigPanel extends JPanel {
      * JFrame to be displayed onto
      */
     private JFrame myFrame;
-
+    /**
+     * Shows the instructions once pressed
+     */
     private JButton instructions = new JButton("Instructions");
-
+    /**
+     * Shows the credits once pressed
+     */
     private JButton credits = new JButton("Credits     ");
-
+    /**
+     * Displays the tetris logo
+     */
     private JLabel logo;
 
     /**

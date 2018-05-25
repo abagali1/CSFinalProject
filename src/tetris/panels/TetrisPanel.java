@@ -225,6 +225,10 @@ public class TetrisPanel extends JPanel{
       }
    }
 
+   /**
+    * Updates the gameboard to adjust to any final blocks
+    * @param block block to be inserted into the gameboard
+    */
    private void updateGameboard(Block block) {
       Point[] tpoints = block.convertToPoints();
       for(Point p: tpoints)

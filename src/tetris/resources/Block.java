@@ -472,12 +472,20 @@ public class Block implements Blockable{
       return "Type: " + myType + " X: " + myX + " Y: " + myY + " Height: " + myHeight + " Width: " + myWidth;
    }
 
+   /**
+    * Print all attributes of the current block
+    * @return String of all attributes
+    */
    public String toDeepString(){
       return "Type: " + myType + " X: "+ myX + " X2: " +myX2 + " Y: " + myY + " Y2: " + myY2 + " Width: " + myWidth +
               " Height: " + myHeight + " W2: " + myW2 + " myH2: " + myH2 + " FlipState: " + myFlipState  + " ";
 
    }
 
+   /**
+    * Returns the current flip state of the block
+    * @return current flip state
+    */
    public int getFlipState(){
       return  myFlipState;
    }
