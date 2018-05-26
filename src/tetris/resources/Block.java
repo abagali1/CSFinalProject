@@ -428,12 +428,13 @@ public class Block implements Blockable{
     * @param myBuffer BufferedImage to be drawn on
     * @see java.awt.image.BufferedImage
     */
-   public static void rain(ArrayList<Block> blocks, Graphics myBuffer) {
+   public static void rain(ArrayList<Block> blocks, Graphics myBuffer, boolean[][] board) {
       Block temp;
+      Point p;
       if(getFall()){
          temp = blocks.get(count);
          temp.draw(myBuffer);
-         if(temp.getY() < 400-temp.getHeight()){
+         if(temp.canMove(board)){
             temp.move(10, "down");
          }
          else{
@@ -445,6 +446,18 @@ public class Block implements Blockable{
             b.draw(myBuffer);
       }
    }
+
+   private boolean canMove(boolean[][] board) {
+      Point[] points = convertToPoints();
+      for(Point p: points){
+         if( (board[((p.x)/10)+1][((p.y)/10)+1]) && (getY()+getHeight() < 400))
+         return true;
+         else
+            return false;
+      }
+      return false;
+   }
+
 
    /**
     * Rainfall animation used solely for decoration
