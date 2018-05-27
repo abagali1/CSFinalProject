@@ -87,7 +87,7 @@ public class TetrisPanel extends JPanel{
 
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                 Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
+                 Optional.of(((int) (Math.random() * 401))),  ((int) (Math.random() * 7))));
 
       this.t.start();
 
@@ -98,9 +98,6 @@ public class TetrisPanel extends JPanel{
    }
 
    private class Key extends KeyAdapter {
-      public Key(){
-         System.out.println("new key");
-      }
       /**
        * Invoked when a key has been pressed.
        * See the class description for {@link KeyEvent} for a definition of
@@ -202,7 +199,7 @@ public class TetrisPanel extends JPanel{
 
 
          blocks.get(blockCount).draw(myBuffer);
-         blocks.get(blockCount).move(10);
+         blocks.get(blockCount).move(10,gameboard);
 
 
          Block.setFall(true);
@@ -236,6 +233,7 @@ public class TetrisPanel extends JPanel{
          gameboard[(p.x)/10][(p.y)/10] = false;
 
       System.out.println(Arrays.deepToString(gameboard));
+      System.out.println(Arrays.toString(tpoints));
    }
 
 

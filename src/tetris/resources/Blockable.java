@@ -15,6 +15,6 @@ public interface Blockable {
      * Moves the block to the left or right
      * @param x amount of spaces to be moved
      */
-    void move(int x);
+    void move(int x, boolean[][] board);
 
 }

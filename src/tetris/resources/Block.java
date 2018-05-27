@@ -395,8 +395,19 @@ public class Block implements Blockable{
     * Moves the block to the left or right
     * @param x amount of spaces to be moved
     */
+   public void move(int x, boolean[][] board){
+      if(racc && getX()+getWidth()<190 && board[(getX()/10)+1][(getY())/10]){
+         myX += x;
+         myX2 = (myX2!=null) ? myX2+x : null;
+      }
+      else if(lacc && getX()>0 && board[(getX()/10)-1][(getY())/10]){
+         myX -= x;
+         myX2 = (myX2 != null) ? myX2-x : null;
+      }
+   }
+
    public void move(int x){
-      if(racc && getX()+getWidth()<200){
+      if(racc && getX()+getWidth()<190){
          myX += x;
          myX2 = (myX2!=null) ? myX2+x : null;
       }
@@ -405,18 +416,17 @@ public class Block implements Blockable{
          myX2 = (myX2 != null) ? myX2-x : null;
       }
    }
-
    /**
     * Moves the block down
     * @param x amount of spaces to be moved
-    * @param a Direction to move
+    * @param direction Direction to move
     */
-   private void move(int x, String a) {
-      if (a.toLowerCase().equals("down")) {
+   private void move(int x, String direction) {
+      if (direction.toLowerCase().equals("down")) {
          myY += x;
          myY2 = (myY2 != null) ? myY2 + x : null;
       }
-      if(a.toLowerCase().equals("up")){
+      if(direction.toLowerCase().equals("up")){
          myY -= x;
          myY2 = (myY2 != null) ? myY2 - x:null;
       }
@@ -449,13 +459,62 @@ public class Block implements Blockable{
 
    private boolean canMove(boolean[][] board) {
       Point[] points = convertToPoints();
+      int count = 0;
       for(Point p: points){
-         if( (board[((p.x)/10)+1][((p.y)/10)+1]) && (getY()+getHeight() < 400))
-         return true;
+         if( (board[((p.x)/10)][((p.y)/10)+1]) && (getY()+getHeight() < 400))
+            count++;
          else
             return false;
       }
-      return false;
+      return count==4;
+
+
+
+      /*
+      switch (getType()){
+         case 0:
+            return ((board[(((points[2].x)/10)+1)][(((points[2].y)/10)+1)]) || (board[(((points[3].x)/10)+1)][(((points[3].y)/10)+1)]));
+         case 1:
+            int count = 0;
+            int target = -1;
+            if(getFlipState() == 0){
+               target = 4;
+               for(Point p: points){
+                  if(board[((p.x)/10)+1][((p.y)/10)+1])
+                     count++;
+                  else
+                     return false;
+               }
+            }
+            if(getFlipState() == 1){
+               target = 1;
+               if(board[((points[3].x)/10)+1][((points[3].y)/10)+1])
+                  count++;
+               else
+                  return false;
+            }
+            return count == target;
+         case 2:
+            switch (getFlipState()){
+               case 0:
+                  return ((board[(((points[0].x)/10)+1)][(((points[0].y)/10)+1)]) || (board[(((points[1].x)/10)+1)][(((points[1].y)/10)+1)]))
+                          || (board[(((points[2].x)/10)+1)][(((points[2].y)/10)+1)]);
+               case 1:
+                  return ((board[(((points[2].x)/10)+1)][(((points[2].y)/10)+1)]) || (board[(((points[3].x)/10)+1)][(((points[3].y)/10)+1)]));
+               case 2:
+                  return
+
+            }
+
+            default:
+               return false;
+
+      }
+
+*/
+
+
+
    }
 
 
@@ -659,7 +718,7 @@ public class Block implements Blockable{
             break;
       }
       return points;
-}
+   }
 
    /**
     * Flips the current block
