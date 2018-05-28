@@ -120,10 +120,12 @@ public class BigPanel extends JPanel {
             BufferedImage image = ImageIO.read(new File("tetris/images/logo-game.png"));
             logo = new JLabel(new ImageIcon(image));
             center.add(logo);
-        }catch (IOException e){ }
+        }catch (IOException e){
+            e.addSuppressed(e);
+        }
 
 
-         t = new Timer(5, e ->
+         t = new Timer(3, e ->
                 check()
         );
 
@@ -188,10 +190,23 @@ public class BigPanel extends JPanel {
      * Checks if the next 5 blocks have changed then updates accordingly`
      */
     public void check(){
-        if(!(java.util.Arrays.equals(nextBlocks,tetris.getNext5Blocks()))){
+        if(!(java.util.Arrays.equals(nextBlocks,tetris.getNext5Blocks())))
             block.updateNextBlocks(tetris.getNext5Blocks());
+
+        if(score.isClicked())
+            tetris.requestFocus();
+
+        if(score.getCScore() == tetris.getCScore())
+            score.update(tetris.getHScore(),tetris.getCScore());
+
+        if(updateHighScore(score.getHScore(),tetris.getHScore())){
+            score.update(tetris.getHScore(),tetris.getCScore());
         }
 
+    }
+
+    private boolean updateHighScore(int currentScore, int updatedScore) {
+        return updatedScore > currentScore;
     }
 
 }

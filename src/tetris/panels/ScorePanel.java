@@ -55,7 +55,10 @@ public class ScorePanel extends JPanel {
      * Stores the current score
      */
     private int curr;
-
+    /**
+     * Becomes true if a button was clicked
+     */
+    private boolean buttonClicked;
     /**
      * Creates a new ScorePanel
      */
@@ -95,6 +98,7 @@ public class ScorePanel extends JPanel {
         load.addActionListener(e -> load());
         add(load);
 
+        buttonClicked = false;
     }
     /**
      * Calls the UI delegate's paint method, if the UI delegate
@@ -134,7 +138,7 @@ public class ScorePanel extends JPanel {
     public void save(){
         String name;
         try {
-            Writer out = new FileWriter("tetris/files/scores.txt",true);
+            Writer out = new FileWriter("src/tetris/files/scores.txt",true);
             do {
                 name = JOptionPane.showInputDialog("What is your name?(name is case-sensitive)");
             } while (name.isEmpty());
@@ -146,8 +150,12 @@ public class ScorePanel extends JPanel {
 
             JOptionPane.showMessageDialog(null, "Save Successful!");
         } catch (Exception ex) {
+            ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Your scores were not able to save");
         }
+        buttonClicked = true;
+        repaint();
+        revalidate();
     }
 
 
@@ -159,7 +167,7 @@ public class ScorePanel extends JPanel {
         try{
             int h = 0;
             RuntimeException threw;
-            infile = new Scanner(new File("tetris/files/scores.txt"));
+            infile = new Scanner(new File("src/tetris/files/scores.txt"));
 
             String name = JOptionPane.showInputDialog("Which player do you want to load?(name is case-sensitive)" +
                     "\n*WARNING* THIS ACTION WILL RESET YOUR CURRENT SCORE TO 0");
@@ -173,18 +181,22 @@ public class ScorePanel extends JPanel {
                 }
             }
             if(h == -1){
-                threw = new RuntimeException("PlayerNotFoundException");
-                throw threw;
+                JOptionPane.showMessageDialog(null,"Specified Player was not found!");
             }else {
                 update(h, 0);
                 JOptionPane.showMessageDialog(null, "Game for player " + name + " was loaded successfully");
             }
 
         }catch (RuntimeException re){
+            re.printStackTrace();
             JOptionPane.showMessageDialog(null, "Specified Player was not found!");
         } catch(FileNotFoundException ex){
+            ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Uh-oh! Something went wrong, your file could not be saved!");
         }
+        buttonClicked = true;
+        repaint();
+        revalidate();
 
     }
 
@@ -200,10 +212,23 @@ public class ScorePanel extends JPanel {
         highscores.setText(
                 "<html>" +
                         "<ol>" +
-                        "   <li>Highscore: " + high + "</li>" +
-                        "   <li>Current Score: " + curr + "</li>"+
+                        "   <li><h1>Highscore: " + high + "</h1></li>" +
+                        "   <li><h1>Current Score: " + curr + "</h1></li>"+
                         "</ol>" +
                         "</html>"
         );
+        repaint();
+        revalidate();
+    }
+
+    public boolean isClicked(){
+        return buttonClicked;
+    }
+
+    public int getCScore() {
+        return curr;
+    }
+    public int getHScore(){
+        return high;
     }
 }

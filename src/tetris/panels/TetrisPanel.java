@@ -53,6 +53,14 @@ public class TetrisPanel extends JPanel{
     * Stores all the possible y positions for a new block
     */
    private int[] yPos;
+   /**
+    * Current score of the tetris game
+    */
+   private int curr;
+   /**
+    * High score for the current game
+    */
+   private int high;
 
    /**
     * Creates a new TetrisPanel
@@ -94,6 +102,14 @@ public class TetrisPanel extends JPanel{
       requestFocus();
       setFocusable(true);
 
+   }
+
+    public int getCScore() {
+      return curr;
+    }
+
+   public int getHScore() {
+      return high;
    }
 
    private class Key extends KeyAdapter {
