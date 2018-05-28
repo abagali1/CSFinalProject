@@ -124,17 +124,17 @@ public class Block implements Blockable{
             myWidth = 30;
             myHeight = 10;
             myX2 = myX + 20;
-            myY2 = myY + 10;
+            myY2 = myY - 10;
             myW2 = 10;
             myH2 = 10;
             myColor = Color.orange;
             break;
          case 3:
-            myWidth = 30;
+            myWidth = 10;
             myHeight = 10;
             myX2 = myX;
             myY2 = myY + 10;
-            myW2 = 10;
+            myW2 = 30;
             myH2 = 10;
             myColor = Color.blue;
             break;
@@ -160,7 +160,7 @@ public class Block implements Blockable{
             myWidth = 30;
             myHeight = 10;
             myX2 = myX + 10;
-            myY2 = myY + 10;
+            myY2 = myY - 10;
             myW2 = 10;
             myH2 = 10;
             myColor = Color.magenta;
@@ -685,47 +685,46 @@ public class Block implements Blockable{
 
                   if (myFlipState == 0) { //go to FS=1
                      myFlipState++;
-                     myY += 20;
+                     myY -= 20;
                      myWidth = 10;
-                     myHeight = 30;
-                     myX2 = myX;
+                     myHeight = 10;
+                     myX2 = myX+10;
                      myY2 = myY;
-                     myW2 = 20;
-                     myH2 = 10;
+                     myW2 = 10;
+                     myH2 = 30;
                      break;
                   }
                   if (myFlipState == 1) { //go to FS =2
                      myFlipState++;
-                     myY += 20;
-                     myWidth = 10;
-                     myHeight = 20;
+                     myY += 10;
+                     myWidth = 30;
+                     myHeight = 10;
                      myX2 = myX;
                      myY2 = myY + 10;
-                     myW2 = 30;
+                     myW2 = 10;
                      myH2 = 10;
                      break;
                   }
                   if (myFlipState == 2) { //go to FS = 3
                      myFlipState++;
-                     myY += 10;
-                     myWidth = 20;
-                     myHeight = 10;
+                     myY -= 10;
+                     myWidth = 10;
+                     myHeight = 30;
                      myX2 = myX + 10;
-                     myY2 = myY - 20;
+                     myY2 = myY + 20;
                      myW2 = 10;
-                     myH2 = 30;
+                     myH2 = 10;
                      break;
                   }
                   if (myFlipState == 3) {
                      myFlipState = 0;
-                     myX -= 10;
-                     myY -= 10;
+                     myY += 20;
                      myWidth = 30;
                      myHeight = 10;
                      myX2 = myX + 20;
-                     myY2 = myY;
+                     myY2 = myY-10;
                      myW2 = 10;
-                     myH2 = 20;
+                     myH2 = 10;
                      break;
                   }
                }
@@ -734,7 +733,7 @@ public class Block implements Blockable{
 
                   if (myFlipState == 0) { //go to FS == 1
                      myFlipState++;
-                     myY -= 10;
+                     myY += 10;
                      myHeight = 30;
                      myWidth = 10;
                      myX2 = myX + 10;
@@ -745,33 +744,33 @@ public class Block implements Blockable{
                   }
                   if (myFlipState == 1) { //go to FS == 2
                      myFlipState++;
-                     myY += 20;
+                     myY -= 10;
                      myHeight = 10;
                      myWidth = 30;
                      myX2 = myX + 20;
-                     myY2 = myY;
+                     myY2 = myY + 10;
                      myW2 = 10;
-                     myH2 = 20;
+                     myH2 = 10;
                      break;
                   }
                   if (myFlipState == 2) {//go to FS == 3
                      myFlipState++;
-                     myY -= 20;
-                     myWidth = 20;
+                     myY -= 10;
+                     myWidth = 10;
                      myHeight = 10;
                      myX2 = myX + 10;
-                     myY2 = myY;
+                     myY2 = myY - 20;
                      myH2 = 30;
                      myW2 = 10;
                      break;
                   }
                   if (myFlipState == 3) { //go to FS == 0
                      myFlipState = 0;
-                     myY += 10;
-                     myHeight = 20;
+                     myY -= 10;
+                     myHeight = 10;
                      myWidth = 10;
                      myX2 = myX;
-                     myY2 = myY;
+                     myY2 = myY+10;
                      myW2 = 30;
                      myH2 = 10;
                      break;
@@ -818,11 +817,10 @@ public class Block implements Blockable{
                   }
                   if (myFlipState == 1) {
                      myFlipState--;
-                     myY += 10;
                      myWidth = 20;
                      myHeight = 10;
                      myX2 = myX + 10;
-                     myY2 = myY - 10;
+                     myY2 = myY + 10;
                      myW2 = 20;
                      myH2 = 10;
                      break;
@@ -833,12 +831,12 @@ public class Block implements Blockable{
 
                   if (myFlipState == 0) {
                      myFlipState++;
-                     myY += 10;
+                     myY -= 20;
                      myWidth = 10;
-                     myHeight = 10;
+                     myHeight = 30;
                      myX2 = myX + 10;
-                     myY2 = myY - 10;
-                     myH2 = 30;
+                     myY2 = myY + 10;
+                     myH2 = 10;
                      myW2 = 10;
                      break;
                   }
@@ -855,13 +853,13 @@ public class Block implements Blockable{
                   }
                   if (myFlipState == 2) {
                      myFlipState++;
-                     myY -= 10;
-                     myHeight = 30;
+                     myY += 10;
+                     myHeight = 10;
                      myWidth = 10;
                      myX2 = myX + 10;
-                     myY2 = myY + 10;
+                     myY2 = myY - 10;
                      myW2 = 10;
-                     myH2 = 10;
+                     myH2 = 30;
                      break;
                   }
                   if (myFlipState == 3) {

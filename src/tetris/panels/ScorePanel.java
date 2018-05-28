@@ -150,7 +150,6 @@ public class ScorePanel extends JPanel {
 
             JOptionPane.showMessageDialog(null, "Save Successful!");
         } catch (Exception ex) {
-            ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Your scores were not able to save");
         }
         buttonClicked = true;
@@ -188,10 +187,8 @@ public class ScorePanel extends JPanel {
             }
 
         }catch (RuntimeException re){
-            re.printStackTrace();
             JOptionPane.showMessageDialog(null, "Specified Player was not found!");
         } catch(FileNotFoundException ex){
-            ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Uh-oh! Something went wrong, your file could not be saved!");
         }
         buttonClicked = true;
