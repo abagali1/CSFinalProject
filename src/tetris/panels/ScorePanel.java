@@ -221,13 +221,26 @@ public class ScorePanel extends JPanel {
         revalidate();
     }
 
+    /**
+     * Returns true if a button has been clicked
+     * @return whether a button has been clicked or not
+     */
     public boolean isClicked(){
         return buttonClicked;
     }
 
+    /**
+     * Returns the current score
+     * @return the current score
+     */
     public int getCScore() {
         return curr;
     }
+
+    /**
+     * Returns the current highscore
+     * @return the current highscore
+     */
     public int getHScore(){
         return high;
     }

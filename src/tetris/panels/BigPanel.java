@@ -121,7 +121,7 @@ public class BigPanel extends JPanel {
             logo = new JLabel(new ImageIcon(image));
             center.add(logo);
         }catch (IOException e){
-            e.addSuppressed(e);
+
         }
 
 

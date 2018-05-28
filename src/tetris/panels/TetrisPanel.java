@@ -94,7 +94,7 @@ public class TetrisPanel extends JPanel{
 
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                 Optional.of(((int) (Math.random() * 401))),  ((int) (Math.random() * 7))));
+                 Optional.of(((int) (Math.random() * 401))), 1/* ((int) (Math.random() * 7))*/));
 
       this.t.start();
 
@@ -104,10 +104,18 @@ public class TetrisPanel extends JPanel{
 
    }
 
-    public int getCScore() {
+   /**
+    * Returns the current score
+    * @return the current score
+    */
+   public int getCScore() {
       return curr;
-    }
+   }
 
+   /**
+    * Returns the current high score
+    * @return the current high score
+    */
    public int getHScore() {
       return high;
    }
@@ -247,8 +255,8 @@ public class TetrisPanel extends JPanel{
       for(Point p: tpoints)
          gameboard[(p.x)/10][(p.y)/10] = false;
 
-     // System.out.println(Arrays.deepToString(gameboard));
-     // System.out.println(Arrays.toString(tpoints));
+      // System.out.println(Arrays.deepToString(gameboard));
+      // System.out.println(Arrays.toString(tpoints));
    }
 
 

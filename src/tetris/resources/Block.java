@@ -142,7 +142,7 @@ public class Block implements Blockable{
             myWidth = 20;
             myHeight = 10;
             myX2 = myX + 10;
-            myY2 = myY + 10;
+            myY2 = myY - 10;
             myW2 = myWidth;
             myH2 = myHeight;
             myColor = Color.green;
@@ -151,7 +151,7 @@ public class Block implements Blockable{
             myWidth = 20;
             myHeight = 10;
             myX2 = myX + 10;
-            myY2 = myY - 10;
+            myY2 = myY + 10;
             myW2 = myWidth;
             myH2 = myHeight;
             myColor = Color.red;
@@ -405,6 +405,10 @@ public class Block implements Blockable{
          myY -= x;
          myY2 = (myY2 != null) ? myY2 - x:null;
       }
+      if(direction.toLowerCase().equals("left")){
+         myX += x;
+         myX2 = (myX2 != null) ? myX2-x : null;
+      }
    }
 
    /**
@@ -420,13 +424,16 @@ public class Block implements Blockable{
       if(getFall()){
          temp = blocks.get(count);
          temp.draw(myBuffer);
-         if(temp.canMove(board)){
-            temp.move(10, "down");
-         }
-         else{
-            constantBlocks.add(temp);
+         try {
+            if (temp.canMove(board)) {
+               temp.move(10, "down");
+            } else {
+               constantBlocks.add(temp);
 
-            count++;
+               count++;
+            }
+         }catch (Exception e){
+            temp.move(10, "left");
          }
          for(Block b: constantBlocks)
             b.draw(myBuffer);
@@ -438,7 +445,7 @@ public class Block implements Blockable{
     * @param board boolean[][] of available spaces
     * @return whether the block can move or not
     */
-   private boolean canMove(boolean[][] board) {
+   private boolean canMove(boolean[][] board) throws Exception{
       Point[] points = convertToPoints();
       int count = 0;
       for(Point p: points){
@@ -448,54 +455,6 @@ public class Block implements Blockable{
             return false;
       }
       return count==4;
-
-
-
-      /*
-      switch (getType()){
-         case 0:
-            return ((board[(((points[2].x)/10)+1)][(((points[2].y)/10)+1)]) || (board[(((points[3].x)/10)+1)][(((points[3].y)/10)+1)]));
-         case 1:
-            int count = 0;
-            int target = -1;
-            if(getFlipState() == 0){
-               target = 4;
-               for(Point p: points){
-                  if(board[((p.x)/10)+1][((p.y)/10)+1])
-                     count++;
-                  else
-                     return false;
-               }
-            }
-            if(getFlipState() == 1){
-               target = 1;
-               if(board[((points[3].x)/10)+1][((points[3].y)/10)+1])
-                  count++;
-               else
-                  return false;
-            }
-            return count == target;
-         case 2:
-            switch (getFlipState()){
-               case 0:
-                  return ((board[(((points[0].x)/10)+1)][(((points[0].y)/10)+1)]) || (board[(((points[1].x)/10)+1)][(((points[1].y)/10)+1)]))
-                          || (board[(((points[2].x)/10)+1)][(((points[2].y)/10)+1)]);
-               case 1:
-                  return ((board[(((points[2].x)/10)+1)][(((points[2].y)/10)+1)]) || (board[(((points[3].x)/10)+1)][(((points[3].y)/10)+1)]));
-               case 2:
-                  return
-
-            }
-
-            default:
-               return false;
-
-      }
-
-*/
-
-
-
    }
 
 
@@ -711,22 +670,15 @@ public class Block implements Blockable{
             case 0: //yellow
                break;
             case 1: //cyan
-               if(getX()+30 < 400-getWidth()) {
+               if(myFlipState == 0)
+                  myFlipState++;
+               else
+                  myFlipState--;
 
-                  if (myFlipState == 0) { //go to straight
-                     myFlipState++;
-                     myY += 30;
-                     myWidth = 10;
-                     myHeight = 40;
-                  }
+               int temp = myWidth;
+               myWidth = myHeight;
+               myHeight = temp;
 
-                  if (myFlipState == 1) { //go to normal
-                     myFlipState--;
-                     myY -= 30;
-                     myWidth = 40;
-                     myHeight = 10;
-                  }
-               }
                break;
             case 2:
                if(getY()+20 < 400-getHeight()) {
