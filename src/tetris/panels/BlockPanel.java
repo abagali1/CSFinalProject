@@ -95,30 +95,30 @@ public class BlockPanel extends JPanel {
 
 
         JPanel topButtons = new JPanel();
-        topButtons.setLayout(new GridLayout(1,4));
+        topButtons.setLayout(new FlowLayout());
         topButtons.setBackground(Color.BLACK);
         topButtons.add(new JLabel(""));
-        jb1 = new JLabel("a");
+        jb1 = new JLabel();
         topButtons.add(jb1);
         
         
-        jb2 = new JLabel("b");
+        jb2 = new JLabel();
         topButtons.add(jb2);
 
-        jb3 = new JLabel("c");
+        jb3 = new JLabel();
         topButtons.add(jb3);
 
         buttons.add(topButtons);
 
         JPanel botButtons = new JPanel();
-        botButtons.setLayout(new GridLayout(1,3));
+        botButtons.setLayout(new FlowLayout());
         botButtons.setBackground(Color.BLACK);
         botButtons.add(new JLabel(""));
 
-        jb4 = new JLabel("d");
+        jb4 = new JLabel();
         botButtons.add(jb4);
 
-        jb5 = new JLabel("e");
+        jb5 = new JLabel();
         botButtons.add(jb5);
 
         buttons.add(botButtons);
