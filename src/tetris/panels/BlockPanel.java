@@ -48,7 +48,9 @@ public class BlockPanel extends JPanel {
      * @see ImageIcon
      */
     private HashMap<Integer, String> images;
-
+    /**
+     * JLabels to show the upcoming block images
+     */
     private JLabel jb1,jb2,jb3,jb4,jb5;
 
     /**
@@ -56,7 +58,7 @@ public class BlockPanel extends JPanel {
      * @param nextBlocks upcoming 5 blocks in the <code>TetrisPanel</code> ArrayList block queue
      * @see TetrisPanel
      */
-    public BlockPanel(Block[] nextBlocks) throws  Exception{
+    public BlockPanel(Block[] nextBlocks){
         setLayout(new BorderLayout());
         myImage = new BufferedImage(768/3,401,1);
         this.myBuffer = (Graphics2D)myImage.getGraphics();
@@ -141,6 +143,11 @@ public class BlockPanel extends JPanel {
         new Timer(5, new Starter()).start();
 
     }
+
+    /**
+     * Updates nextblocks to adjust for any changes
+     * @param arr update block array
+     */
     public void updateNextBlocks(Block[] arr){
         this.nextBlocks = arr;
     }
@@ -199,6 +206,10 @@ public class BlockPanel extends JPanel {
         }
     }
 
+    /**
+     * Sets the icons of the JLabels to adjust to any changes in the next blocks
+     * @param nextBlocks array of the upcoming blocks
+     */
     private void setIcons(Block[] nextBlocks) {
         try {
             InputStream a1 = getClass().getClassLoader().getResourceAsStream(images.get(nextBlocks[0].getType()));
