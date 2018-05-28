@@ -115,7 +115,6 @@ public class leftPanel extends javax.swing.JPanel {
         myBuffer.setColor(Color.WHITE);
 
         blocks.get(count).draw(myBuffer);
-        blocks.get(count).move(10);
 
         Block.setFall(true);
         Block.prettyRain(blocks, myBuffer);
@@ -151,30 +150,30 @@ public class leftPanel extends javax.swing.JPanel {
                 "<html>" +
                 "<ol>" +
                 "   <li>Press Begin Game button on starting screen</li>\n" +
-                "   <li>Move blocks left, right using the arrow keys. The blocks move downward automatically</li>\n" +
-                "   <li>Moving the blocks left or right changes the horizontal placement of the block on the board</li>\n" +
-                "   <li>Moving the blocks down accelerates the process of placing a block on the board</li>\n" +
-                "   <li>Once a row is completely filled horizontally, the row will disappear</li>\n" +
-                "   <li>Press the spacebar to oriente the block in different ways</li>\n" +
+                "   <li>Move blocks left, right using the arrow keys. The blocks move downward automatically\n" +
+                "   <li>Moving the blocks left or right changes the horizontal placement of the block on the board\n" +
+                "   <li>Moving the blocks down accelerates the process of placing a block on the board\n" +
+                "   <li>Once a row is completely filled horizontally, the row will disappear\n" +
+                "   <li>Press the spacebar to oriente the block in different ways\n" +
                 "   <li>The objective of the game is to completely fill " +
                 "   as many rows as possible, and take as long as possible to reach the top of the board</li>\n" +
                 "   <li>Your score increases as you fill more rows</li>\n" +
                 "   <li>Once the top is reached, your game is over</li>\n");
         myBuffer.setColor(Color.WHITE);
         myBuffer.setFont(new Font("Arial",Font.ITALIC,10));
-        myBuffer.drawString("" +
-                "<html>" +
-                "<ol>" +
-                "   <li>Press Begin Game button on starting screen</li>\n" +
-                "   <li>Move blocks left, right using the arrow keys. The blocks move downward automatically</li>\n" +
-                "   <li>Moving the blocks left or right changes the horizontal placement of the block on the board</li>\n" +
-                "   <li>Moving the blocks down accelerates the process of placing a block on the board</li>\n" +
-                "   <li>Once a row is completely filled horizontally, the row will disappear</li>\n" +
-                "   <li>Press the spacebar to oriente the block in different ways</li>\n" +
-                "   <li>The objective of the game is to completely fill " +
-                "   as many rows as possible, and take as long as possible to reach the top of the board</li>\n" +
-                "   <li>Your score increases as you fill more rows</li>\n" +
-                "   <li>Once the top is reached, your game is over</li>\n",0,0);
+        myBuffer.drawString("1.Press Begin Game to begin a game of ",0,30);
+        myBuffer.drawString("tetris",0,50);
+        myBuffer.drawString("2. Move blocks left and right using ", 0,70);
+        myBuffer.drawString("arrow keys, blocks will move down", 0, 90);
+        myBuffer.drawString("3.Press the up arrow to flip blocks", 0, 110);
+        myBuffer.drawString("4.Find a way to manipulate the blocks ",0,130);
+        myBuffer.drawString("to complete an entire row", 0, 150);
+        myBuffer.drawString("5. Once a row is completed, 10 points", 0,170);
+        myBuffer.drawString("are rewarded",0,190);
+        myBuffer.drawString("6. Once the tower of blocks hits the ",0,210);
+        myBuffer.drawString("of the screen, the game is over", 0, 230);
+        ImageIcon pic = new ImageIcon("tetris/images/pic.gif");
+        myBuffer.drawImage(pic.getImage(),20,250, 100,100,null);
         repaint();
         revalidate();
     }

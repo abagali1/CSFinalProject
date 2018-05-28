@@ -392,31 +392,6 @@ public class Block implements Blockable{
    }
 
    /**
-    * Moves the block to the left or right
-    * @param x amount of spaces to be moved
-    */
-   public void move(int x, boolean[][] board){
-      if(racc && getX()+getWidth()<190 && board[(getX()/10)+1][(getY())/10]){
-         myX += x;
-         myX2 = (myX2!=null) ? myX2+x : null;
-      }
-      else if(lacc && getX()>0 && board[(getX()/10)-1][(getY())/10]){
-         myX -= x;
-         myX2 = (myX2 != null) ? myX2-x : null;
-      }
-   }
-
-   public void move(int x){
-      if(racc && getX()+getWidth()<190){
-         myX += x;
-         myX2 = (myX2!=null) ? myX2+x : null;
-      }
-      else if(lacc && getX()>0){
-         myX -= x;
-         myX2 = (myX2 != null) ? myX2-x : null;
-      }
-   }
-   /**
     * Moves the block down
     * @param x amount of spaces to be moved
     * @param direction Direction to move
@@ -436,6 +411,7 @@ public class Block implements Blockable{
     * Facilitates the automatic downward movement of the blocks during the Tetris game
     * @param blocks blocks to be rainfallen
     * @param myBuffer BufferedImage to be drawn on
+    * @param board boolean[][] of available spaces
     * @see java.awt.image.BufferedImage
     */
    public static void rain(ArrayList<Block> blocks, Graphics myBuffer, boolean[][] board) {
@@ -457,6 +433,11 @@ public class Block implements Blockable{
       }
    }
 
+   /**
+    * Determines if the block can move
+    * @param board boolean[][] of available spaces
+    * @return whether the block can move or not
+    */
    private boolean canMove(boolean[][] board) {
       Point[] points = convertToPoints();
       int count = 0;
@@ -947,6 +928,24 @@ public class Block implements Blockable{
                break;
          }
          draw(myBuffer);
+      }
+   }
+
+   /**
+    * Moves the block to the left or right
+    *
+    * @param x     amount of spaces to be moved
+    * @param board boolean[][] to be referenced for available spaces
+    */
+   @Override
+   public void move(int x, boolean[][] board) {
+      if(racc && getX()+getWidth()<190 && board[(getX()/10)+1][(getY())/10]){
+         myX += x;
+         myX2 = (myX2!=null) ? myX2+x : null;
+      }
+      else if(lacc && getX()>0 && board[(getX()/10)-1][(getY())/10]){
+         myX -= x;
+         myX2 = (myX2 != null) ? myX2-x : null;
       }
    }
 }
