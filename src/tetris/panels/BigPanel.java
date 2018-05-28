@@ -123,6 +123,12 @@ public class BigPanel extends JPanel {
         }catch (IOException e){ }
 
 
+         t = new Timer(5, e ->
+                check()
+        );
+
+
+
         myFrame = a;
 
 
@@ -168,10 +174,10 @@ public class BigPanel extends JPanel {
         tetris = new TetrisPanel();
         this.add(tetris);
 
-        block = new BlockPanel(tetris.getNext5Blocks());
+       try{ block = new BlockPanel(tetris.getNext5Blocks()); }catch (Exception e){}
         this.add(block);
 
-
+        t.start();
 
 
         myFrame.setContentPane(this);
@@ -185,6 +191,7 @@ public class BigPanel extends JPanel {
         if(!(java.util.Arrays.equals(nextBlocks,tetris.getNext5Blocks()))){
             block.updateNextBlocks(tetris.getNext5Blocks());
         }
+
     }
 
 }

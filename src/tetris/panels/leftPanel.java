@@ -1,7 +1,6 @@
 package tetris.panels;
 
 import tetris.resources.Block;
-import tetris.resources.ImageHolder;
 
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
@@ -181,7 +180,6 @@ public class leftPanel extends javax.swing.JPanel {
         myBuffer.drawString("github.com/abagali1/CSFinalProject",0,130);
         myBuffer.drawString("bigblockconstruction.sites.tjhsst.edu",0,150);
 
-        new ImageHolder("tetris/images/pic.gif", 20, 170,20,Color.WHITE).draw(myBuffer);
         repaint();
         revalidate();
     }

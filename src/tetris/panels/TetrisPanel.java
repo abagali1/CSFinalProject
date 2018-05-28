@@ -12,7 +12,6 @@ import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Optional;
 
 /**
@@ -87,7 +86,7 @@ public class TetrisPanel extends JPanel{
 
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                 Optional.of(((int) (Math.random() * 401))), 1/* ((int) (Math.random() * 7))*/));
+                 Optional.of(((int) (Math.random() * 401))),  ((int) (Math.random() * 7))));
 
       this.t.start();
 
@@ -232,8 +231,8 @@ public class TetrisPanel extends JPanel{
       for(Point p: tpoints)
          gameboard[(p.x)/10][(p.y)/10] = false;
 
-      System.out.println(Arrays.deepToString(gameboard));
-      System.out.println(Arrays.toString(tpoints));
+     // System.out.println(Arrays.deepToString(gameboard));
+     // System.out.println(Arrays.toString(tpoints));
    }
 
 
@@ -253,7 +252,7 @@ public class TetrisPanel extends JPanel{
     * Gets the next 5 blocks after the <code>blockCount</code> index in the <code>blocks</code> ArrayList
     * @return Array of the next 5 blocks
     */
-   public Block[] getNext5Blocks(){
+   public  Block[] getNext5Blocks(){
       Block[] temp = new Block[5];
       for(int i =0;i<=temp.length-1;i++){
          temp[i] = blocks.get(blockCount + i + 1);

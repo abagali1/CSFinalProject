@@ -2,12 +2,15 @@ package tetris.panels;
 
 import tetris.resources.Block;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.plaf.ComponentUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.InputStream;
 import java.util.HashMap;
 
 /**
@@ -44,14 +47,16 @@ public class BlockPanel extends JPanel {
      * Used to easily reference ImageIcons for the 7 Tetriminos
      * @see ImageIcon
      */
-    private HashMap<String, ImageIcon> images;
+    private HashMap<Integer, String> images;
+
+    private JLabel jb1,jb2,jb3,jb4,jb5;
 
     /**
      * Creates a new BlockPanel
      * @param nextBlocks upcoming 5 blocks in the <code>TetrisPanel</code> ArrayList block queue
      * @see TetrisPanel
      */
-    public BlockPanel(Block[] nextBlocks){
+    public BlockPanel(Block[] nextBlocks) throws  Exception{
         setLayout(new BorderLayout());
         myImage = new BufferedImage(768/3,401,1);
         this.myBuffer = (Graphics2D)myImage.getGraphics();
@@ -67,15 +72,71 @@ public class BlockPanel extends JPanel {
                 e ->  System.exit(0)
         );
 
+
         this.add(exit,BorderLayout.SOUTH);
 
-        images.put("cyan", new ImageIcon("tetris/images/cyan.png"));
-        images.put("blue", new ImageIcon("tetris/images/blue.png"));
-        images.put("red", new ImageIcon("tetris/images/red.png"));
-        images.put("purple", new ImageIcon("tetris/images/purple.png"));
-        images.put("green", new ImageIcon("tetris/images/green.png"));
-        images.put("orange", new ImageIcon("tetris/images/orange.png"));
-        images.put("yellow", new ImageIcon("tetris/images/yellow.png"));
+        JPanel buttons = new JPanel();
+        buttons.setLayout(new GridLayout(3,1));
+        buttons.setPreferredSize(new Dimension(500,500));
+        buttons.setBackground(Color.BLACK);
+        buttons.setBorder(new LineBorder(Color.WHITE,5));
+        add(buttons,BorderLayout.NORTH);
+
+        JPanel title = new JPanel();
+        title.setBackground(Color.BLACK);
+        title.setLayout(new BorderLayout());
+
+        JLabel label = new JLabel("     Next Blocks: ");
+        label.setFont(new Font("Arial",Font.BOLD,50));
+        label.setForeground(Color.WHITE);
+        title.add(label, BorderLayout.CENTER);
+
+        buttons.add(title);
+
+
+        JPanel topButtons = new JPanel();
+        topButtons.setLayout(new GridLayout(1,4));
+        topButtons.setBackground(Color.BLACK);
+        topButtons.add(new JLabel(""));
+        jb1 = new JLabel("a");
+        topButtons.add(jb1);
+        
+        
+        jb2 = new JLabel("b");
+        topButtons.add(jb2);
+
+        jb3 = new JLabel("c");
+        topButtons.add(jb3);
+
+        buttons.add(topButtons);
+
+        JPanel botButtons = new JPanel();
+        botButtons.setLayout(new GridLayout(1,3));
+        botButtons.setBackground(Color.BLACK);
+        botButtons.add(new JLabel(""));
+
+        jb4 = new JLabel("d");
+        botButtons.add(jb4);
+
+        jb5 = new JLabel("e");
+        botButtons.add(jb5);
+
+        buttons.add(botButtons);
+
+
+
+
+
+
+        images.put(1, "tetris/images/cyan.png");
+        images.put(3, "tetris/images/blue.png");
+        images.put(5, "tetris/images/red.png");
+        images.put(6, "tetris/images/purple.png");
+        images.put(4, "tetris/images/green.png");
+        images.put(2, "tetris/images/orange.png");
+        images.put(0, "tetris/images/yellow.png");
+
+
 
         new Timer(5, new Starter()).start();
 
@@ -115,6 +176,7 @@ public class BlockPanel extends JPanel {
      */
     @Override
     public void paintComponent(Graphics g){
+        super.paintComponents(g);
         g.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
     }
 
@@ -131,12 +193,36 @@ public class BlockPanel extends JPanel {
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-            myBuffer.setColor(Color.white);
-            myBuffer.drawRect(5,5,250,250);
-            myBuffer.setFont(new Font("Arial",Font.BOLD,25));
-            myBuffer.drawString("Next Blocks:", 50,35);
+            setIcons(nextBlocks);
             repaint();
             revalidate();
+        }
+    }
+
+    private void setIcons(Block[] nextBlocks) {
+        try {
+            InputStream a1 = getClass().getClassLoader().getResourceAsStream(images.get(nextBlocks[0].getType()));
+            BufferedImage b1 = ImageIO.read(a1);
+            jb1.setIcon(new ImageIcon(b1));
+
+            InputStream a2 = getClass().getClassLoader().getResourceAsStream(images.get(nextBlocks[1].getType()));
+            BufferedImage b2 = ImageIO.read(a2);
+            jb2.setIcon(new ImageIcon(b2));
+
+            InputStream a3 = getClass().getClassLoader().getResourceAsStream(images.get(nextBlocks[2].getType()));
+            BufferedImage b3 = ImageIO.read(a3);
+            jb3.setIcon(new ImageIcon(b3));
+
+            InputStream a4 = getClass().getClassLoader().getResourceAsStream(images.get(nextBlocks[3].getType()));
+            BufferedImage b4 = ImageIO.read(a4);
+            jb4.setIcon(new ImageIcon(b4));
+
+            InputStream a5 = getClass().getClassLoader().getResourceAsStream(images.get(nextBlocks[4].getType()));
+            BufferedImage b5 = ImageIO.read(a5);
+            jb5.setIcon(new ImageIcon(b5));
+
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
