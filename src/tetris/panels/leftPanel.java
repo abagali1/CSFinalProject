@@ -2,10 +2,12 @@ package tetris.panels;
 
 import tetris.resources.Block;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -179,6 +181,14 @@ public class leftPanel extends javax.swing.JPanel {
         myBuffer.drawString("Mrs. Kim, Period 4, VERSION 1",0,110);
         myBuffer.drawString("github.com/abagali1/CSFinalProject",0,130);
         myBuffer.drawString("bigblockconstruction.sites.tjhsst.edu",0,150);
+
+
+        InputStream a1 = getClass().getClassLoader().getResourceAsStream("tetris/images/pic.gif");
+        try{
+            BufferedImage b1 = ImageIO.read(a1);
+            myBuffer.drawImage(new ImageIcon(b1).getImage(),20,170,150,150,null);
+        }catch (Exception e){}
+
 
         repaint();
         revalidate();

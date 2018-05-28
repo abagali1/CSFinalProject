@@ -100,8 +100,8 @@ public class BlockPanel extends JPanel {
         topButtons.add(new JLabel(""));
         jb1 = new JLabel();
         topButtons.add(jb1);
-        
-        
+
+
         jb2 = new JLabel();
         topButtons.add(jb2);
 
