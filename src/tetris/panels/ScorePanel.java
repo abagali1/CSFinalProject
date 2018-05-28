@@ -138,10 +138,10 @@ public class ScorePanel extends JPanel {
     public void save(){
         String name;
         try {
-            Writer out = new FileWriter("src/tetris/files/scores.txt",true);
+            Writer out = new FileWriter("src\\tetris\\files\\scores.txt",true);
             do {
-                name = JOptionPane.showInputDialog("What is your name?(name is case-sensitive)");
-            } while (name.isEmpty());
+                name = JOptionPane.showInputDialog("What is your name?(name is case-sensitive, ONLY LETTERS)");
+            } while (name.isEmpty() || name.matches(".*\\d+.*"));
             out.write(name+"\n");
             out.write(String.valueOf(high)+"\n");
             out.write("------\n");
@@ -167,7 +167,7 @@ public class ScorePanel extends JPanel {
         try{
             int h = 0;
             RuntimeException threw;
-            infile = new Scanner(new File("src/tetris/files/scores.txt"));
+            infile = new Scanner(new File("src\\tetris\\files\\scores.txt"));
 
             String name = JOptionPane.showInputDialog("Which player do you want to load?(name is case-sensitive)" +
                     "\n*WARNING* THIS ACTION WILL RESET YOUR CURRENT SCORE TO 0");
