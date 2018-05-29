@@ -26,10 +26,6 @@ public class BigPanel extends JPanel {
      */
     private JButton begin;
     /**
-     * Displays the title logo
-     */
-    private JLabel title;
-    /**
      * JPanel for the actual tetris game
      */
     private TetrisPanel tetris;
@@ -54,10 +50,6 @@ public class BigPanel extends JPanel {
      * Calls the start() method which changes the introduction over to the game
      */
     private Timer t;
-    /**
-     * Called every 5 milliseconds to check if the next 5 blocks have changed
-     */
-    private Timer s;
     /**
      * Stores the next 5 blocks
      */

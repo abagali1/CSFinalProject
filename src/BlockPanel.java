@@ -29,10 +29,6 @@ public class BlockPanel extends JPanel {
      */
     private Graphics2D myBuffer;
     /**
-     * Displays the next blocks onto the JPanel
-     */
-    private Timer t;
-    /**
      * Constant background for the entire panel
      */
     private static final Color BACKGROUND = Color.BLACK;
