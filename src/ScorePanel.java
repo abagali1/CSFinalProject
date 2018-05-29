@@ -225,12 +225,6 @@ public class ScorePanel extends JPanel {
         return curr;
     }
 
-    /**
-     * Returns the current highscore
-     * @return the current highscore
-     */
-
-
     public void reset() {
         curr = 0;
     }

@@ -234,42 +234,15 @@ public class TetrisPanel extends JPanel{
             blockCount++;
          }
 
-         for(int i=0;i<=gameboard[0].length-1;i++){
-            if(checkBoard(i)){
-               System.out.println("row");
-               clearAndUpdate(i);
-            }
-         }
-         System.out.println(blocks.get(blockCount).toDeepString());
+
+         //System.out.println(blocks.get(blockCount).toDeepString());
 
          repaint();
          revalidate();
       }
    }
 
-   private void clearAndUpdate(int i) {
-      if( i != 0){
-         for(int x=0;x<=gameboard.length-1;x++)
-            gameboard[x][i] = gameboard[x][i-1];
 
-      }else{
-         for(int x=0;x<=gameboard.length-1;x++)
-            gameboard[x][i] = true;
-      }
-      fallColors(i);
-   }
-
-   private void fallColors(int i) {
-      Color[] temp = new Color[colorBoard.length];
-
-      if(i != 0){
-         for(int x=0;x<=colorBoard.length-1;x++)
-            colorBoard[x][i] = colorBoard[x][i-1];
-      }else{
-         for(int x=0;x<=colorBoard.length-1;x++)
-            colorBoard[x][i] = Color.BLACK;
-      }
-   }
 
    /**
     * Updates the gameboard to adjust to any final blocks
@@ -312,15 +285,6 @@ public class TetrisPanel extends JPanel{
          temp[i] = blocks.get(blockCount + i + 1);
       }
       return temp;
-   }
-
-   private boolean checkBoard(int col){
-      int count = 0;
-      for(int i=0;i<=gameboard.length-1;i++){
-         if(gameboard[i][col])
-            return false;
-      }
-      return true;
    }
 
 

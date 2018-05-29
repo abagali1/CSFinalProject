@@ -6,7 +6,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -115,7 +114,7 @@ public class BigPanel extends JPanel {
         center.add(credits, BorderLayout.EAST);
 
         try {
-            BufferedImage image = ImageIO.read(new File("tetris/images/logo-game.png"));
+            BufferedImage image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("logo-game.png"));
             logo = new JLabel(new ImageIcon(image));
             center.add(logo);
         }catch (IOException e){
