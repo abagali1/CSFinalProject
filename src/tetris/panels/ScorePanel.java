@@ -48,10 +48,6 @@ public class ScorePanel extends JPanel {
      */
     private JButton load;
     /**
-     * Stores the current highscore
-     */
-    private int high;
-    /**
      * Stores the current score
      */
     private int curr;
@@ -72,7 +68,6 @@ public class ScorePanel extends JPanel {
         highscores = new JLabel(
                 "<html>" +
                         "<ol>" +
-                        "   <li><h1>Highscore: " + high + "</h1></li>" +
                         "   <li><h1>Current Score: " + curr + "</h1></li>"+
                         "</ol>" +
                         "</html>"
@@ -143,7 +138,7 @@ public class ScorePanel extends JPanel {
                 name = JOptionPane.showInputDialog("What is your name?(name is case-sensitive, ONLY LETTERS)");
             } while (name.isEmpty() || name.matches(".*\\d+.*"));
             out.write(name+"\n");
-            out.write(String.valueOf(high)+"\n");
+            out.write(String.valueOf(curr)+"\n");
             out.write("------\n");
             out.flush();
             out.close();
@@ -182,7 +177,7 @@ public class ScorePanel extends JPanel {
             if(h == -1){
                 JOptionPane.showMessageDialog(null,"Specified Player was not found!");
             }else {
-                update(h, 0);
+                update(h);
                 JOptionPane.showMessageDialog(null, "Game for player " + name + " was loaded successfully");
             }
 
@@ -200,16 +195,14 @@ public class ScorePanel extends JPanel {
 
     /**
      * Updates the scores <code>JLabel</code> to adjust to any changes in scores
-     * @param hi new highscore
      * @param cu new current score
      */
-    public void update(int hi, int cu){
-        high = hi;
+    public void update( int cu){
+
         curr = cu;
         highscores.setText(
                 "<html>" +
                         "<ol>" +
-                        "   <li><h1>Highscore: " + high + "</h1></li>" +
                         "   <li><h1>Current Score: " + curr + "</h1></li>"+
                         "</ol>" +
                         "</html>"
@@ -238,7 +231,9 @@ public class ScorePanel extends JPanel {
      * Returns the current highscore
      * @return the current highscore
      */
-    public int getHScore(){
-        return high;
+
+
+    public void reset() {
+        curr = 0;
     }
 }

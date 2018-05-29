@@ -53,6 +53,8 @@ public class BlockPanel extends JPanel {
      */
     private JLabel jb1,jb2,jb3,jb4,jb5;
 
+    private boolean isReset;
+
     /**
      * Creates a new BlockPanel
      * @param nextBlocks upcoming 5 blocks in the <code>TetrisPanel</code> ArrayList block queue
@@ -73,9 +75,11 @@ public class BlockPanel extends JPanel {
         exit.addActionListener(
                 e ->  System.exit(0)
         );
-
-
         this.add(exit,BorderLayout.SOUTH);
+
+
+
+
 
         JPanel buttons = new JPanel();
         buttons.setLayout(new GridLayout(3,1));
@@ -143,6 +147,8 @@ public class BlockPanel extends JPanel {
         new Timer(5, new Starter()).start();
 
     }
+
+
 
     /**
      * Updates nextblocks to adjust for any changes

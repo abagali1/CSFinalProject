@@ -396,7 +396,7 @@ public class Block implements Blockable{
     * @param x amount of spaces to be moved
     * @param direction Direction to move
     */
-   private void move(int x, String direction) {
+   public void move(int x, String direction) {
       if (direction.toLowerCase().equals("down")) {
          myY += x;
          myY2 = (myY2 != null) ? myY2 + x : null;
@@ -406,9 +406,13 @@ public class Block implements Blockable{
          myY2 = (myY2 != null) ? myY2 - x:null;
       }
       if(direction.toLowerCase().equals("left")){
-         myX += x;
+         myX -= x;
          myX2 = (myX2 != null) ? myX2-x : null;
       }
+      /*if(direction.toLowerCase().equals("right")){
+         myX += x;
+         myX2 = (myX2!=null) ? myX2+x : null;
+      }*/
    }
 
    /**
@@ -433,7 +437,8 @@ public class Block implements Blockable{
                count++;
             }
          }catch (Exception e){
-            temp.move(10, "left");
+            e.printStackTrace();
+            //temp.move(10, "left");
          }
          for(Block b: constantBlocks)
             b.draw(myBuffer);
@@ -445,16 +450,44 @@ public class Block implements Blockable{
     * @param board boolean[][] of available spaces
     * @return whether the block can move or not
     */
-   private boolean canMove(boolean[][] board) throws Exception{
+   private boolean canMove(boolean[][] board) {
       Point[] points = convertToPoints();
       int count = 0;
-      for(Point p: points){
-         if( (board[((p.x)/10)][((p.y)/10)+1]) && (getY()+getHeight() < 400))
-            count++;
-         else
-            return false;
+      int target = -1;
+      for (Point p : points) {
+         if (getType() > 1) {
+            if ((board[((p.x) / 10)][((p.y) / 10) + 1]) && (myY2 + myH2 < getLimit()))//(getY() + getHeight() <= (( myFlipState != 1)?(400):(390))))
+               count++;
+            else
+               return false;
+         } else {
+            if ((board[((p.x) / 10)][((p.y) / 10) + 1]) && (getY() + getHeight() < 400))
+               count++;
+            else
+               return false;
+         }
       }
-      return count==4;
+      return count == 4;
+   }
+
+   private int getLimit() {
+      int limit = 400;
+      if(getType() == 2 && getFlipState() == 0)
+         limit = 390;
+
+      if(getType() == 3 && getFlipState() == 1)
+         limit = 380;
+
+      if(getType() == 4 && getFlipState() == 0)
+         limit = 390;
+
+      if(getType() == 5 && getFlipState() == 1)
+         limit = 390;
+
+      if(getType() == 6 && (getFlipState() == 0 || getFlipState() == 1))
+         limit = 390;
+
+      return limit;
    }
 
 
@@ -490,7 +523,8 @@ public class Block implements Blockable{
     */
    public String toDeepString(){
       return "Type: " + myType + " X: "+ myX + " X2: " +myX2 + " Y: " + myY + " Y2: " + myY2 + " Width: " + myWidth +
-              " Height: " + myHeight + " W2: " + myW2 + " myH2: " + myH2 + " FlipState: " + myFlipState  + " ";
+              " Height: " + myHeight + " W2: " + myW2 + " myH2: " + myH2 + " FlipState: " + myFlipState  + " Actual Height: " +
+              getHeight() + " Actual Width: " + getWidth() + " ";
 
    }
 
@@ -523,7 +557,7 @@ public class Block implements Blockable{
     * @return <code>Array</code> of <code>Points</code>
     * @see Point
     */
-   public Point[] convertToPoints() {
+   public Point[]    convertToPoints() {
       Point[] points = new Point[4];
 
       switch(getType()){
@@ -650,9 +684,9 @@ public class Block implements Blockable{
                   break;
                case 3:
                   points[0] = (new Point(getX(),getY()));
-                  points[1] = (new Point(getX()+10,getY()+10));
-                  points[2] = (new Point(getX(),getY()+10));
-                  points[3] = (new Point(getX(),getY()+20));
+                  points[1] = (new Point(getX()+10,getY()-10));
+                  points[2] = (new Point(getX()+10,getY()));
+                  points[3] = (new Point(getX()+10,getY()+10));
                   break;
             }
             break;
@@ -665,7 +699,7 @@ public class Block implements Blockable{
     * @param myBuffer Graphics object to be drawn onto
     */
    public void flip(Graphics myBuffer){
-      if(getY() < 400-getHeight()) {
+      if(canFlip()) {
          switch (getType()) {
             case 0: //yellow
                break;
@@ -889,7 +923,7 @@ public class Block implements Blockable{
     */
    @Override
    public void move(int x, boolean[][] board) {
-      if(racc && getX()+getWidth()<190 && board[(getX()/10)+1][(getY())/10]){
+      if(racc && getX()+getWidth()<200 && board[(getX()/10)][((getY())/10)+1]){
          myX += x;
          myX2 = (myX2!=null) ? myX2+x : null;
       }
@@ -897,5 +931,8 @@ public class Block implements Blockable{
          myX -= x;
          myX2 = (myX2 != null) ? myX2-x : null;
       }
+   }
+   private boolean canFlip(){
+      return (getX()+getWidth() < 195) && (getX() > 0);
    }
 }

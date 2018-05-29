@@ -121,11 +121,11 @@ public class BigPanel extends JPanel {
             logo = new JLabel(new ImageIcon(image));
             center.add(logo);
         }catch (IOException e){
-
+            new Exception().addSuppressed(e);
         }
 
 
-         t = new Timer(3, e ->
+        t = new Timer(3, e ->
                 check()
         );
 
@@ -176,7 +176,11 @@ public class BigPanel extends JPanel {
         tetris = new TetrisPanel();
         this.add(tetris);
 
-       try{ block = new BlockPanel(tetris.getNext5Blocks()); }catch (Exception e){}
+        try{
+            block = new BlockPanel(tetris.getNext5Blocks());
+        }catch (Exception e){
+            new Exception().addSuppressed(e);
+        }
         this.add(block);
 
         t.start();
@@ -197,16 +201,11 @@ public class BigPanel extends JPanel {
             tetris.requestFocus();
 
         if(score.getCScore() == tetris.getCScore())
-            score.update(tetris.getHScore(),tetris.getCScore());
+            score.update(tetris.getCScore());
 
-        if(updateHighScore(score.getHScore(),tetris.getHScore())){
-            score.update(tetris.getHScore(),tetris.getCScore());
-        }
+
 
     }
 
-    private boolean updateHighScore(int currentScore, int updatedScore) {
-        return updatedScore > currentScore;
-    }
 
 }

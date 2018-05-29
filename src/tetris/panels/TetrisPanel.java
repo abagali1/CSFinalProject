@@ -57,11 +57,10 @@ public class TetrisPanel extends JPanel{
     * Current score of the tetris game
     */
    private int curr;
-   /**
-    * High score for the current game
-    */
-   private int high;
 
+   private boolean[] trueArray = new boolean[41];
+
+   private Color[][] colorBoard;
    /**
     * Creates a new TetrisPanel
     * Initializes a new BufferedImage, and Graphics2D object
@@ -79,8 +78,17 @@ public class TetrisPanel extends JPanel{
       this.t = new Timer(100, new Listener());
 
 
+      for(boolean b: trueArray)
+         b = true;
 
-      gameboard = new boolean[21][41];
+
+      colorBoard = new Color[21][41];
+      for(int i=0;i<=colorBoard.length-1;i++)
+         for(int r=0;r<=colorBoard[0].length-1;r++)
+            colorBoard[i][r] = Color.BLACK;
+
+
+      gameboard = new boolean[22][42];
       for(int r=0;r<=gameboard.length-1;r++){
          for(int c=0;c<=gameboard[0].length-1;c++){
             gameboard[r][c] = true;
@@ -94,7 +102,7 @@ public class TetrisPanel extends JPanel{
 
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                 Optional.of(((int) (Math.random() * 401))), 0/* ((int) (Math.random() * 7))*/));
+                 Optional.of(((int) (Math.random() * 401))),0/* ((int) (Math.random() * 7))*/));
 
       this.t.start();
 
@@ -108,17 +116,10 @@ public class TetrisPanel extends JPanel{
     * Returns the current score
     * @return the current score
     */
-   public int getCScore() {
+   int getCScore() {
       return curr;
    }
 
-   /**
-    * Returns the current high score
-    * @return the current high score
-    */
-   public int getHScore() {
-      return high;
-   }
 
    private class Key extends KeyAdapter {
       /**
@@ -228,10 +229,6 @@ public class TetrisPanel extends JPanel{
          Block.setFall(true);
          Block.rain(blocks, myBuffer, gameboard);
 
-         //setKeyListener(blocks.get(blockCount));
-
-         //System.out.println(blocks.get(blockCount).toDeepString() + "fasdfa:" + blockCount+"\t" + getHeight());
-
          for(int i = Block.count-1; i>=blocks.size();i--)
             blocks.get(i).draw(myBuffer);
 
@@ -241,8 +238,40 @@ public class TetrisPanel extends JPanel{
             blockCount++;
          }
 
+         for(int i=0;i<=gameboard[0].length-1;i++){
+            if(checkBoard(i)){
+               System.out.println("row");
+               clearAndUpdate(i);
+            }
+         }
+         System.out.println(blocks.get(blockCount).toDeepString());
+
          repaint();
          revalidate();
+      }
+   }
+
+   private void clearAndUpdate(int i) {
+      if( i != 0){
+         for(int x=0;x<=gameboard.length-1;x++)
+            gameboard[x][i] = gameboard[x][i-1];
+
+      }else{
+         for(int x=0;x<=gameboard.length-1;x++)
+            gameboard[x][i] = true;
+      }
+      fallColors(i);
+   }
+
+   private void fallColors(int i) {
+      Color[] temp = new Color[colorBoard.length];
+
+      if(i != 0){
+         for(int x=0;x<=colorBoard.length-1;x++)
+            colorBoard[x][i] = colorBoard[x][i-1];
+      }else{
+         for(int x=0;x<=colorBoard.length-1;x++)
+            colorBoard[x][i] = Color.BLACK;
       }
    }
 
@@ -252,9 +281,14 @@ public class TetrisPanel extends JPanel{
     */
    private void updateGameboard(Block block) {
       Point[] tpoints = block.convertToPoints();
-      for(Point p: tpoints)
-         gameboard[(p.x)/10][(p.y)/10] = false;
-
+      try {
+         for (Point p : tpoints) {
+            gameboard[(p.x) / 10][(p.y) / 10] = false;
+            colorBoard[(p.x)/10][(p.y)/10] = block.getColor();
+         }
+      }catch (ArrayIndexOutOfBoundsException e){
+         block.move(10,"right");
+      }
       // System.out.println(Arrays.deepToString(gameboard));
       // System.out.println(Arrays.toString(tpoints));
    }
@@ -276,11 +310,23 @@ public class TetrisPanel extends JPanel{
     * Gets the next 5 blocks after the <code>blockCount</code> index in the <code>blocks</code> ArrayList
     * @return Array of the next 5 blocks
     */
-   public  Block[] getNext5Blocks(){
+   Block[] getNext5Blocks(){
       Block[] temp = new Block[5];
       for(int i =0;i<=temp.length-1;i++){
          temp[i] = blocks.get(blockCount + i + 1);
       }
       return temp;
    }
+
+   private boolean checkBoard(int col){
+      int count = 0;
+      for(int i=0;i<=gameboard.length-1;i++){
+         if(gameboard[i][col])
+            return false;
+      }
+      return true;
+   }
+
+
+
 }
