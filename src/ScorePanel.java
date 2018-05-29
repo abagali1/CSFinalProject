@@ -228,4 +228,8 @@ public class ScorePanel extends JPanel {
     public void reset() {
         curr = 0;
     }
+
+    public void setClicked(boolean b) {
+        buttonClicked = b;
+    }
 }

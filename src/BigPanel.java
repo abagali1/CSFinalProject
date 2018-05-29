@@ -186,8 +186,10 @@ public class BigPanel extends JPanel {
         if(!(java.util.Arrays.equals(nextBlocks,tetris.getNext5Blocks())))
             block.updateNextBlocks(tetris.getNext5Blocks());
 
-        if(score.isClicked())
+        if(score.isClicked()) {
             tetris.requestFocus();
+            score.setClicked(false);
+        }
 
         if(score.getCScore() == tetris.getCScore())
             score.update(tetris.getCScore());

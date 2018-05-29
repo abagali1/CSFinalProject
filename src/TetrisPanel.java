@@ -226,7 +226,7 @@ public class TetrisPanel extends JPanel{
        * @param e the event to be processed
        */
       @Override
-      public void actionPerformed(ActionEvent e) {
+      public synchronized void actionPerformed(ActionEvent e) {
 
          myBuffer.setColor(Color.black);
          myBuffer.fillRect(0, 0, getWidth(), getHeight());
@@ -247,10 +247,10 @@ public class TetrisPanel extends JPanel{
 
          Block.setFall(true);
          Block.rain(blocks, myBuffer, gameboard);
-
+/*
          for(int i = Block.count-1; i>=blocks.size();i--)
             blocks.get(i).draw(myBuffer);
-
+*/
          if(Block.constantBlocks.contains(blocks.get(blockCount))) {
             updateGameboard(blocks.get(blockCount));
             finished(blocks.get(blockCount));
@@ -264,6 +264,9 @@ public class TetrisPanel extends JPanel{
             }
          }
 
+         System.out.println(Block.constantBlocks.toString());
+         // myBuffer.setColor(Color.MAGENTA);
+         //  myBuffer.fillRect(0,390,10,10);
 //         System.out.println(blocks.get(blockCount).toDeepString());
 
          repaint();
@@ -275,11 +278,10 @@ public class TetrisPanel extends JPanel{
       if(i == 0){
          gameFinished(true);
       }else{
-         for(int x=0;x<=gameboard.length-1;x++){
-            gameboard[x][i] = gameboard[x][i-1];
-         }
-         shiftColors(colorBoard,i);
+
+         removeBlocks(i);
          shiftBoard(gameboard,i);
+         shiftColors(colorBoard,i);
          redraw(colorBoard);
          curr += 10;
 
@@ -288,15 +290,29 @@ public class TetrisPanel extends JPanel{
       }
    }
 
+   @SuppressWarnings("unchecked")
+   private synchronized void removeBlocks ( int i){
+      for (Block b : (ArrayList<Block>) Block.constantBlocks.clone()) {
+         try {
+            if ((b.getY() == i * 10) || (b.getY2() == i * 10)) {
+               Block.constantBlocks.remove(b);
+            }
+         } catch (NullPointerException e) {
+            continue;
+         }
+      }
+   }
+
+
    private void redraw(Color[][] colors) {
       for(int r=0;r<=19;r++){
          for(int c=0;c<=39;c++){
-            myBuffer.setColor(Color.BLACK);
+            myBuffer.setColor(colors[r][c]);
             myBuffer.fillRect(r*10,c*10,10,10);
+            repaint();
+            revalidate();
          }
       }
-      repaint();
-      revalidate();
    }
 
    private void shiftBoard(boolean[][] board, int i) {

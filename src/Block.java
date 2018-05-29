@@ -422,7 +422,7 @@ public class Block implements Blockable{
     * @param board boolean[][] of available spaces
     * @see java.awt.image.BufferedImage
     */
-   public static void rain(ArrayList<Block> blocks, Graphics myBuffer, boolean[][] board) {
+   public static synchronized void rain(ArrayList<Block> blocks, Graphics myBuffer, boolean[][] board) {
       Block temp;
       Point p;
       if(getFall()){
@@ -444,6 +444,7 @@ public class Block implements Blockable{
          }
          for(Block b: constantBlocks)
             b.draw(myBuffer);
+
       }
    }
 
@@ -936,5 +937,9 @@ public class Block implements Blockable{
    }
    private boolean canFlip(){
       return (getX()+getWidth() < 195) && (getX() > 0);
+   }
+
+   int getY2() {
+      return myY2;
    }
 }
