@@ -1,6 +1,4 @@
-package tetris.panels;
 
-import tetris.resources.Block;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

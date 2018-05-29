@@ -1,7 +1,3 @@
-package tetris.driver;
-
-import tetris.panels.BigPanel;
-
 import javax.swing.*;
 
 /**

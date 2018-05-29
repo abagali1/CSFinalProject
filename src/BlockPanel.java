@@ -1,6 +1,3 @@
-package tetris.panels;
-
-import tetris.resources.Block;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -134,13 +131,13 @@ public class BlockPanel extends JPanel {
 
 
 
-        images.put(1, "tetris/images/cyan.png");
-        images.put(3, "tetris/images/blue.png");
-        images.put(5, "tetris/images/red.png");
-        images.put(6, "tetris/images/purple.png");
-        images.put(4, "tetris/images/green.png");
-        images.put(2, "tetris/images/orange.png");
-        images.put(0, "tetris/images/yellow.png");
+        images.put(1, "cyan.png");
+        images.put(3, "blue.png");
+        images.put(5, "red.png");
+        images.put(6, "purple.png");
+        images.put(4, "green.png");
+        images.put(2, "orange.png");
+        images.put(0, "yellow.png");
 
 
 

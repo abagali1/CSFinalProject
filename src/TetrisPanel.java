@@ -1,7 +1,3 @@
-package tetris.panels;
-
-import tetris.resources.Block;
-
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
 import java.awt.*;

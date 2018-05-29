@@ -1,6 +1,3 @@
-package tetris.panels;
-
-import tetris.resources.Block;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -183,7 +180,7 @@ public class leftPanel extends javax.swing.JPanel {
         myBuffer.drawString("bigblockconstruction.sites.tjhsst.edu",0,150);
 
 
-        InputStream a1 = getClass().getClassLoader().getResourceAsStream("tetris/images/pic.gif");
+        InputStream a1 = getClass().getClassLoader().getResourceAsStream("pic.gif");
         try{
             BufferedImage b1 = ImageIO.read(a1);
             myBuffer.drawImage(new ImageIcon(b1).getImage(),20,170,150,150,null);

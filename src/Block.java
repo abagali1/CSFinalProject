@@ -1,6 +1,3 @@
-package tetris.resources;
-
-
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.io.File;
