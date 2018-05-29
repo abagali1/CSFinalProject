@@ -3,6 +3,9 @@ package tetris.resources;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -436,9 +439,11 @@ public class Block implements Blockable{
 
                count++;
             }
-         }catch (Exception e){
-            e.printStackTrace();
-            //temp.move(10, "left");
+         }catch (Exception e) {
+            try {
+               e.printStackTrace(new PrintWriter(new FileOutputStream(new File("things.txt"),true)));
+               //temp.move(10, "left");
+            }catch (Exception er){ Integer a = 5; }
          }
          for(Block b: constantBlocks)
             b.draw(myBuffer);
