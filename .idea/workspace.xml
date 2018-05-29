@@ -51,78 +51,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Block.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tetris/resources/Block.java">
+      <file leaf-file-name="Block.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Block.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="397" column="15" selection-start-line="397" selection-start-column="15" selection-end-line="397" selection-end-column="15" />
+            <state relative-caret-position="-623">
+              <caret line="460" column="37" selection-start-line="460" selection-start-column="37" selection-end-line="460" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TetDriver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tetris/driver/TetDriver.java">
+      <file leaf-file-name="TetrisPanel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/TetrisPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Blockable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tetris/resources/Blockable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TetrisPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="230" selection-start-line="230" selection-end-line="230" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlockPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tetris/panels/BlockPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="134" selection-start-line="134" selection-end-line="134" />
-              <folding>
-                <element signature="e#3858#3859#0" expanded="true" />
-                <element signature="e#3931#3932#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScorePanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tetris/panels/ScorePanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2941">
-              <caret line="183" selection-start-line="183" selection-end-line="183" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leftPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tetris/panels/leftPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BigPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tetris/panels/BigPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2924">
-              <caret line="183" column="1" selection-start-line="183" selection-start-column="1" selection-end-line="183" selection-end-column="1" />
+            <state relative-caret-position="337">
+              <caret line="214" column="22" selection-start-line="214" selection-start-column="22" selection-end-line="214" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -149,7 +91,14 @@
       <find>System.out.println</find>
       <find>System</find>
       <find>finished</find>
+      <find>?</find>
+      <find>new ImageIcon(</find>
+      <find>myFlipState</find>
+      <find>tetris/images/</find>
     </findStrings>
+    <replaceStrings>
+      <replace>getFlipState()</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -160,9 +109,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/BigPanel.java" />
         <option value="$PROJECT_DIR$/src/TetDriver.java" />
-        <option value="$PROJECT_DIR$/src/ScorePanel.java" />
         <option value="$PROJECT_DIR$/src/BlockPanel.java" />
         <option value="$PROJECT_DIR$/src/Block.java" />
         <option value="$PROJECT_DIR$/src/csproject/src/panels/TetrisPanel.java" />
@@ -171,7 +118,6 @@
         <option value="$PROJECT_DIR$/src/tetris/anup/resources/Block.java" />
         <option value="$PROJECT_DIR$/src/tetris/tetris/anupb/driver/TetDriver.java" />
         <option value="$PROJECT_DIR$/src/tetris/anupb/panels/TetrisPanel.java" />
-        <option value="$PROJECT_DIR$/src/TetrisPanel.java" />
         <option value="$PROJECT_DIR$/src/anupb/resources/Audio.java" />
         <option value="$PROJECT_DIR$/src/anupb/input/KeyInput.java" />
         <option value="$PROJECT_DIR$/src/anupb/input/KeyInput.java" />
@@ -187,22 +133,31 @@
         <option value="$PROJECT_DIR$/src/anupb/driver/TetDriver.java" />
         <option value="$PROJECT_DIR$/src/anupb/panels/BlockPanel.java" />
         <option value="$PROJECT_DIR$/src/tetris/input/KeyInput.java" />
-        <option value="$PROJECT_DIR$/src/tetris/files/scores.txt" />
-        <option value="$PROJECT_DIR$/src/tetris/driver/TetDriver.java" />
         <option value="$PROJECT_DIR$/src/tetris/resources/ImageLabel.java" />
         <option value="$PROJECT_DIR$/src/tetris/resources/BlockLabel.java" />
-        <option value="$PROJECT_DIR$/src/tetris/panels/leftPanel.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/BigPanelTest.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/test.java" />
         <option value="$PROJECT_DIR$/src/tetris/driver/test.java" />
-        <option value="$PROJECT_DIR$/src/tetris/panels/BigPanel.java" />
-        <option value="$PROJECT_DIR$/src/tetris/panels/BlockPanel.java" />
-        <option value="$PROJECT_DIR$/src/tetris/resources/Blockable.java" />
-        <option value="$PROJECT_DIR$/src/tetris/panels/ScorePanel.java" />
         <option value="$PROJECT_DIR$/src/tetris/resources/Rectangle2D/DoublePoints.java" />
         <option value="$PROJECT_DIR$/src/tetris/resources/PointedRectangle2D.java" />
-        <option value="$PROJECT_DIR$/src/tetris/resources/Block.java" />
+        <option value="$PROJECT_DIR$/src/tetris/resources/Ball.java" />
+        <option value="$PROJECT_DIR$/src/tetris/resources/Polkadot.java" />
+        <option value="$PROJECT_DIR$/src/tetris/resources/ImageHolder.java" />
+        <option value="$PROJECT_DIR$/src/tetris/resources/Audio.java" />
+        <option value="$PROJECT_DIR$/src/tetris/files/scores.txt" />
+        <option value="$PROJECT_DIR$/src/tetris/panels/things.txt" />
+        <option value="$PROJECT_DIR$/src/tetris/panels/BlockPanel.java" />
+        <option value="$PROJECT_DIR$/src/tetris/panels/BigPanel.java" />
+        <option value="$PROJECT_DIR$/src/tetris/panels/leftPanel.java" />
+        <option value="$PROJECT_DIR$/src/tetris/panels/ScorePanel.java" />
         <option value="$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java" />
+        <option value="$PROJECT_DIR$/src/tetris/resources/Blockable.java" />
+        <option value="$PROJECT_DIR$/src/tetris/resources/Block.java" />
+        <option value="$PROJECT_DIR$/src/tetris/driver/TetDriver.java" />
+        <option value="$PROJECT_DIR$/src/leftPanel.java" />
+        <option value="$PROJECT_DIR$/src/ScorePanel.java" />
+        <option value="$PROJECT_DIR$/src/BigPanel.java" />
+        <option value="$PROJECT_DIR$/src/TetrisPanel.java" />
       </list>
     </option>
   </component>
@@ -222,10 +177,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="637" />
-    <option name="y" value="-18" />
-    <option name="width" value="694" />
-    <option name="height" value="735" />
+    <option name="x" value="367" />
+    <option name="y" value="-8" />
+    <option name="width" value="784" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -233,6 +188,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -244,13 +200,17 @@
             </path>
             <path>
               <item name="CSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,7 +224,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -277,11 +237,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\anupb\Desktop\CSProject\src" />
+      <recent name="C:\Users\anupb\Desktop\CSProject\src\tetris\panels" />
       <recent name="C:\Users\anupb\Desktop\CSProject\src\anupb\audio" />
       <recent name="C:\Users\anupb\Desktop\CSProject\src\anupb\panels" />
       <recent name="C:\Users\anupb\Desktop\CSProject\src\anupb\resources" />
-      <recent name="C:\Users\anupb\Desktop\CSProject\src\anupb\images" />
-      <recent name="C:\Users\anupb\Desktop\CSProject\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -300,7 +260,7 @@
     <configuration name="TetDriver" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jre-10.0.1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="tetris.driver.TetDriver" />
+      <option name="MAIN_CLASS_NAME" value="TetDriver" />
       <module name="CSProject" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <method>
@@ -452,81 +412,95 @@
       <workItem from="1527180256355" duration="2551000" />
       <workItem from="1527183934282" duration="548000" />
       <workItem from="1527204043961" duration="1690000" />
-      <workItem from="1527205835826" duration="2457000" />
+      <workItem from="1527205835826" duration="3716000" />
+      <workItem from="1527211363305" duration="577000" />
+      <workItem from="1527279812549" duration="322000" />
+      <workItem from="1527285672387" duration="3177000" />
+      <workItem from="1527306672810" duration="2375000" />
+      <workItem from="1527388240870" duration="10821000" />
+      <workItem from="1527443922869" duration="1978000" />
+      <workItem from="1527477541662" duration="11612000" />
+      <workItem from="1527526867907" duration="735000" />
+      <workItem from="1527527921990" duration="15846000" />
+      <workItem from="1527554098558" duration="15433000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148598000" />
+    <option name="totallyTimeSpent" value="212733000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.330033" />
-      <window_info anchor="bottom" id="JRebel Console" order="9" side_tool="true" weight="0.3277027" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="JRebel Executor" order="9" weight="0.3293919" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info id="Designer" order="3" />
-      <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
-      <window_info id="Structure" order="1" sideWeight="0.809633" side_tool="true" visible="true" weight="0.22239032" />
-      <window_info anchor="right" id="Ant Build" order="5" weight="0.24962178" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.16216215" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.31925675" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49924356" weight="0.31518152" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.31518152" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.2635135" />
-      <window_info anchor="bottom" id="Floobits" order="12" weight="0.32838285" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.5844595" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.19036697" visible="true" weight="0.22239032" />
-      <window_info id="JRebel" order="5" sideWeight="0.88761467" side_tool="true" weight="0.20499243" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.6188119" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.5841584" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Designer" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5326087" visible="true" weight="0.2473525" />
+      <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
+      <window_info id="Structure" order="1" sideWeight="0.4673913" side_tool="true" weight="0.23938507" />
+      <window_info anchor="right" id="Ant Build" order="5" weight="0.24962178" />
+      <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="6" sideWeight="0.809633" side_tool="true" weight="0.22239032" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.518283" />
+      <window_info anchor="bottom" id="JRebel Executor" order="9" weight="0.3293919" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.5824508" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="JRebel" order="5" sideWeight="0.88761467" side_tool="true" weight="0.20499243" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
+      <window_info anchor="bottom" id="JRebel Console" order="9" side_tool="true" weight="0.3277027" />
+      <window_info anchor="bottom" id="Floobits" order="12" weight="0.32838285" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="2" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.2590759" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Floobits" order="12" weight="0.32838285" />
-      <window_info id="Structure" order="1" sideWeight="0.35634744" side_tool="true" weight="0.19288956" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="5" weight="0.24962178" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
+      <window_info anchor="right" id="Palette" order="2" />
+      <window_info id="JRebel" order="5" sideWeight="0.88761467" side_tool="true" weight="0.20499243" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.41494435" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.5824508" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.64365256" visible="true" weight="0.19288956" />
-      <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.5874587" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.47524753" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.330033" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32178217" />
+      <window_info id="Favorites" order="6" sideWeight="0.809633" side_tool="true" weight="0.22239032" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.5841584" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.31518152" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49924356" weight="0.31518152" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
-      <window_info id="Favorites" order="5" sideWeight="0.5033408" side_tool="true" weight="0.18154311" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
+      <window_info anchor="bottom" id="JRebel Executor" order="10" weight="0.3293919" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5326087" visible="true" weight="0.2473525" />
+      <window_info anchor="bottom" id="JRebel Console" order="11" side_tool="true" weight="0.3277027" />
+      <window_info anchor="right" id="Database" order="9" weight="0.32980332" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="bottom" id="Floobits" order="14" weight="0.32838285" />
+      <window_info id="Structure" order="1" sideWeight="0.4673913" side_tool="true" weight="0.23938507" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.518283" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,218 +516,30 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java</url>
-          <line>230</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="33" />
+      <option name="time" value="45" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>40</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="setValue">
+      <expression>
+        <expression-string>40</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="uml://JAVA/anupb.panels.ScorePanel">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>anupb.panels.ScorePanel</OriginalElement>
-          <nodes>
-            <node x="" y="">javax.swing.JComponent</node>
-            <node x="" y="">anupb.panels.ScorePanel</node>
-            <node x="" y="">java.beans.JavaBean</node>
-            <node x="" y="">java.awt.MenuContainer</node>
-            <node x="" y="">javax.swing.TransferHandler.HasGetTransferHandler</node>
-            <node x="" y="">java.awt.Container</node>
-            <node x="" y="">javax.accessibility.Accessible</node>
-            <node x="" y="">java.awt.Component</node>
-            <node x="" y="">java.awt.image.ImageObserver</node>
-            <node x="" y="">javax.swing.JPanel</node>
-            <node x="" y="">java.io.Serializable</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="258.0" y="215.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>public</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/anupb.panels.TetrisPanel">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>anupb.panels.TetrisPanel</OriginalElement>
-          <nodes>
-            <node x="" y="">javax.swing.JComponent</node>
-            <node x="" y="">anupb.panels.TetrisPanel</node>
-            <node x="" y="">java.beans.JavaBean</node>
-            <node x="" y="">java.awt.MenuContainer</node>
-            <node x="" y="">javax.swing.TransferHandler.HasGetTransferHandler</node>
-            <node x="" y="">java.awt.Container</node>
-            <node x="" y="">javax.accessibility.Accessible</node>
-            <node x="" y="">java.awt.Component</node>
-            <node x="" y="">java.awt.image.ImageObserver</node>
-            <node x="" y="">javax.swing.JPanel</node>
-            <node x="" y="">java.io.Serializable</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="258.0" y="215.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>public</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/anupb.resources.AddingListener">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>anupb.resources.AddingListener</OriginalElement>
-          <nodes>
-            <node x="" y="">java.util.EventListener</node>
-            <node x="" y="">anupb.resources.AddingListener</node>
-            <node x="" y="">java.awt.event.ActionListener</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-16.0" y="95.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>public</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/anupb.resources.Audio">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>anupb.resources.Audio</OriginalElement>
-          <nodes>
-            <node x="" y="">anupb.resources.Audio</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-40.0" y="15.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>public</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/anupb.resources.Block">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>anupb.resources.Block</OriginalElement>
-          <nodes>
-            <node x="" y="">anupb.resources.Block</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-41.0" y="15.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>public</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/anupb.resources.BlockTimer">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>anupb.resources.BlockTimer</OriginalElement>
-          <nodes>
-            <node x="0.0" y="160.0">anupb.resources.BlockTimer</node>
-            <node x="14.5" y="80.0">javax.swing.Timer</node>
-            <node x="1.0" y="0.0">java.io.Serializable</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="anupb.resources.BlockTimer" target="javax.swing.Timer">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="javax.swing.Timer" target="java.io.Serializable">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-26.0" y="95.0" />
-          <SelectedNodes>
-            <node>anupb.resources.BlockTimer</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>public</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/resources/BlockTimer.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/input/KeyInput.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/java/awt/image/BufferStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="125" column="11" lean-forward="true" selection-start-line="125" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/leftPanel.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/resources/AddingListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/BigPanel.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/ScorePanel.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/resources/Block.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/TetrisPanel.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/driver/TetDriver.java" />
-    <entry file="file://$PROJECT_DIR$/src/anupb/panels/BlockPanel.java" />
-    <entry file="file://$PROJECT_DIR$/src/tetris/files/scores.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jrt://C:/Program Files/Java/jdk-10.0.1!/jdk.hotspot.agent/sun/jvm/hotspot/ui/SourceCodePanel.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/java/awt/event/KeyListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/java/awt/event/KeyAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/java/awt/Component.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="7506" column="68" lean-forward="true" selection-start-line="7506" selection-start-column="68" selection-end-line="7506" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="71" column="33" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/input/KeyInput.java" />
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/javax/swing/text/DefaultEditorKit.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -761,9 +547,6 @@
           <caret line="1603" column="20" selection-start-line="1603" selection-start-column="20" selection-end-line="1603" selection-end-column="20" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/images/orange.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/resources/BlockTimer.java" />
     <entry file="file://$PROJECT_DIR$/.floo">
@@ -784,16 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/java/awt/event/ActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="39" column="58" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/images/green.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/panels/BigPanelTest.java" />
     <entry file="file://$PROJECT_DIR$/src/tetris/panels/test.java" />
     <entry file="file://$PROJECT_DIR$/src/tetris/driver/test.java" />
@@ -804,65 +577,194 @@
     <entry file="file://$PROJECT_DIR$/CSProject.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/panels/BigPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/tetris/resources/Rectangle2D/DoublePoints.java" />
+    <entry file="file://$PROJECT_DIR$/src/tetris/resources/PointedRectangle2D.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2924">
-          <caret line="183" column="1" selection-start-line="183" selection-start-column="1" selection-end-line="183" selection-end-column="1" />
+        <state relative-caret-position="236">
+          <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/panels/ScorePanel.java">
+    <entry file="file://$PROJECT_DIR$/src/tetris/resources/Ball.java" />
+    <entry file="file://$PROJECT_DIR$/src/tetris/resources/Polkadot.java" />
+    <entry file="file://$PROJECT_DIR$/src/tetris/images/cyan.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/resources/ImageHolder.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/java/awt/event/ActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2941">
-          <caret line="183" selection-start-line="183" selection-end-line="183" />
+        <state relative-caret-position="428">
+          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/images/pic.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/io/Serializable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="168" column="17" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Throwable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="783" column="34" selection-start-line="783" selection-start-column="34" selection-end-line="783" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="44" column="35" lean-forward="true" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/io/IOException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-122">
+          <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/java/awt/image/BufferedImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/resources/Audio.java" />
+    <entry file="file://$PROJECT_DIR$/src/tetris/panels/scores.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/images/orange.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/images/blue.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/images/red.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/images/green.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/images/purple.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/panels/things.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/panels/BlockPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/panels/BigPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/panels/leftPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/resources/Rectangle2D/DoublePoints.java" />
-    <entry file="file://$PROJECT_DIR$/src/tetris/resources/PointedRectangle2D.java" />
-    <entry file="file://$PROJECT_DIR$/src/tetris/driver/TetDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/resources/Blockable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tetris/panels/BlockPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="134" selection-start-line="134" selection-end-line="134" />
+        <state>
           <folding>
-            <element signature="e#3858#3859#0" expanded="true" />
-            <element signature="e#3931#3932#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/panels/ScorePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/panels/TetrisPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="230" selection-start-line="230" selection-end-line="230" />
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3188#3189#0" expanded="true" />
+            <element signature="e#3212#3213#0" expanded="true" />
+            <element signature="e#5922#5923#0" expanded="true" />
+            <element signature="e#5992#5993#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/resources/Blockable.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tetris/resources/Block.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="397" column="15" selection-start-line="397" selection-start-column="15" selection-end-line="397" selection-end-column="15" />
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tetris/driver/TetDriver.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlockPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1741">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BigPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1057">
+          <caret line="116" column="111" selection-start-line="116" selection-start-column="111" selection-end-line="116" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ScorePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="226" selection-start-line="226" selection-end-line="226" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/leftPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="182" column="74" selection-start-line="182" selection-start-column="74" selection-end-line="182" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-623">
+          <caret line="460" column="37" selection-start-line="460" selection-start-column="37" selection-end-line="460" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TetrisPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="214" column="22" selection-start-line="214" selection-start-column="22" selection-end-line="214" selection-end-column="22" />
         </state>
       </provider>
     </entry>

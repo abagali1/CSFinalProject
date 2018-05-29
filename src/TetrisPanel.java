@@ -57,6 +57,8 @@ public class TetrisPanel extends JPanel{
    private boolean[] trueArray = new boolean[41];
 
    private Color[][] colorBoard;
+
+   private Timer f;
    /**
     * Creates a new TetrisPanel
     * Initializes a new BufferedImage, and Graphics2D object
@@ -72,7 +74,7 @@ public class TetrisPanel extends JPanel{
 
 
       this.t = new Timer(100, new Listener());
-
+      this.f = new Timer(5, new Finisher());
 
       for(boolean b: trueArray)
          b = true;
@@ -100,8 +102,8 @@ public class TetrisPanel extends JPanel{
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
                  Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
 
-      this.t.start();
-
+     // this.t.start();
+      this.f.start();
       addKeyListener(new Key());
       requestFocus();
       setFocusable(true);
@@ -192,6 +194,28 @@ public class TetrisPanel extends JPanel{
       g.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
    }
 
+   private class Finisher implements ActionListener{
+
+      /**
+       * Invoked when an action occurs.
+       *
+       * @param e the event to be processed
+       */
+      @Override
+      public void actionPerformed(ActionEvent e) {
+         myBuffer.setColor(Color.WHITE);
+         myBuffer.fillRect(0,0,getWidth(),getHeight());
+         myBuffer.setColor(Color.red);
+         myBuffer.setFont(new Font("Arial", Font.BOLD,30));
+         myBuffer.drawString("GAME OVER", 10,100);
+         myBuffer.setFont(new Font("Monospaced",Font.ITALIC,20));
+         myBuffer.drawString("Score: " + curr, 50,120);
+
+         repaint();
+         revalidate();
+      }
+   }
+
    /**
     * Neseted <code>ActionListener</code> class to actually run the Tetris game
     */
@@ -235,13 +259,37 @@ public class TetrisPanel extends JPanel{
          }
 
 
-         //System.out.println(blocks.get(blockCount).toDeepString());
+         for(int i=39;i<=0;i--){
+            if(checkRow(i)){
+               clear(i);
+            }
+         }
+
+         System.out.println(blocks.get(blockCount).toDeepString());
 
          repaint();
          revalidate();
       }
    }
 
+   private void clear(int i) {
+      if(i == 0){
+         gameFinished(true);
+      }else{
+         for(int x=0;x<=gameboard.length-1;x++){
+            gameboard[x][i] = gameboard[x][i-1];
+            gameboard[x][i-1] = gameboard[x][i-x-1];
+         }
+
+      }
+   }
+
+   private void gameFinished(boolean b) {
+      if(b){
+         t.stop();
+         f.start();
+      }
+   }
 
 
    /**
@@ -258,8 +306,7 @@ public class TetrisPanel extends JPanel{
       }catch (ArrayIndexOutOfBoundsException e){
          block.move(10,"right");
       }
-      // System.out.println(Arrays.deepToString(gameboard));
-      // System.out.println(Arrays.toString(tpoints));
+
    }
 
 
@@ -287,6 +334,13 @@ public class TetrisPanel extends JPanel{
       return temp;
    }
 
+   private boolean checkRow(int i){
+      for(int x=0;x<=gameboard.length-1;x++) {
+         if (!gameboard[x][i])
+            return true;
+      }
+      return false;
+   }
 
 
 }
