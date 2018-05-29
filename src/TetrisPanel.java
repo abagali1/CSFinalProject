@@ -100,7 +100,7 @@ public class TetrisPanel extends JPanel{
 
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                 Optional.of(((int) (Math.random() * 401))),1/* ((int) (Math.random() * 7))*/));
+                 Optional.of(((int) (Math.random() * 401))), 1/*((int) (Math.random() * 7))*/));
 
       this.t.start();
       addKeyListener(new Key());
@@ -257,14 +257,14 @@ public class TetrisPanel extends JPanel{
             blockCount++;
          }
 
-
-         for(int i=39;i>=0;i--){
-            if(checkRow(i)){
+         for(int i=39;i>=0;i--) {
+            if (checkRow(i)) {
+               System.out.println("ROw");
                clear(i);
             }
          }
 
-         System.out.println(blocks.get(blockCount).toDeepString());
+//         System.out.println(blocks.get(blockCount).toDeepString());
 
          repaint();
          revalidate();
@@ -275,12 +275,43 @@ public class TetrisPanel extends JPanel{
       if(i == 0){
          gameFinished(true);
       }else{
-         /*for(int x=0;x<=gameboard.length-1;x++){
+         for(int x=0;x<=gameboard.length-1;x++){
             gameboard[x][i] = gameboard[x][i-1];
-         }*/
-         //shiftColors(i);
-         //shiftBoard(i);
+         }
+         shiftColors(colorBoard,i);
+         shiftBoard(gameboard,i);
+         redraw(colorBoard);
          curr += 10;
+
+         repaint();
+         revalidate();
+      }
+   }
+
+   private void redraw(Color[][] colors) {
+      for(int r=0;r<=19;r++){
+         for(int c=0;c<=39;c++){
+            myBuffer.setColor(Color.BLACK);
+            myBuffer.fillRect(r*10,c*10,10,10);
+         }
+      }
+      repaint();
+      revalidate();
+   }
+
+   private void shiftBoard(boolean[][] board, int i) {
+      for(int r=0;r<=19;r++){
+         for(int c=1;c<=i;c++){
+            board[r][40-c] = board[r][i-c];
+         }
+      }
+   }
+
+   private void shiftColors(Color[][] colors, int i) {
+      for(int r=0;r<=19;r++){
+         for(int c=1;c<=i;c++){
+            colors[r][40-c] = colors[r][i-c];
+         }
       }
    }
 
@@ -335,11 +366,11 @@ public class TetrisPanel extends JPanel{
    }
 
    private boolean checkRow(int i){
-      for(int x=0;x<=gameboard.length-1;x++) {
-         if (!gameboard[x][i])
-            return true;
+      for(int x=0;x<=19;x++) {
+         if (gameboard[x][i])
+            return false;
       }
-      return false;
+      return true;
    }
 
 
