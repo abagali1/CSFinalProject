@@ -100,10 +100,9 @@ public class TetrisPanel extends JPanel{
 
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                 Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
+                 Optional.of(((int) (Math.random() * 401))),1/* ((int) (Math.random() * 7))*/));
 
-     // this.t.start();
-      this.f.start();
+      this.t.start();
       addKeyListener(new Key());
       requestFocus();
       setFocusable(true);
@@ -259,7 +258,7 @@ public class TetrisPanel extends JPanel{
          }
 
 
-         for(int i=39;i<=0;i--){
+         for(int i=39;i>=0;i--){
             if(checkRow(i)){
                clear(i);
             }
@@ -276,11 +275,12 @@ public class TetrisPanel extends JPanel{
       if(i == 0){
          gameFinished(true);
       }else{
-         for(int x=0;x<=gameboard.length-1;x++){
+         /*for(int x=0;x<=gameboard.length-1;x++){
             gameboard[x][i] = gameboard[x][i-1];
-            gameboard[x][i-1] = gameboard[x][i-x-1];
-         }
-
+         }*/
+         //shiftColors(i);
+         //shiftBoard(i);
+         curr += 10;
       }
    }
 
