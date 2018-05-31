@@ -22,10 +22,6 @@ public class ScorePanel extends JPanel {
      */
     private BufferedImage myImage;
     /**
-     * Graphics2D object which draws onto myImage
-     */
-    private Graphics2D myBuffer;
-    /**
      * Constant background for the entire panel
      */
     private static final Color BACKGROUND = Color.BLACK;
@@ -33,18 +29,6 @@ public class ScorePanel extends JPanel {
      * Displays the scores
      */
     private JLabel highscores;
-    /**
-     * Displays the Tetris logo
-     */
-    private JLabel logo;
-    /**
-     * When pressed the current highscore, along with a name is saved to a txt file
-     */
-    private JButton save;
-    /**
-     * When pressed, a previous game can be referenced by name and loaded to the current game
-     */
-    private JButton load;
     /**
      * Stores the current score
      */
@@ -58,7 +42,10 @@ public class ScorePanel extends JPanel {
      */
     public ScorePanel(){
         myImage = new BufferedImage(768/3,401,1);
-        myBuffer = (Graphics2D) myImage.getGraphics();
+        /*
+      Graphics2D object which draws onto myImage
+     */
+        Graphics2D myBuffer = (Graphics2D) myImage.getGraphics();
         myBuffer.setBackground(BACKGROUND);
 
         setLayout(new GridLayout(4,1));
@@ -74,18 +61,27 @@ public class ScorePanel extends JPanel {
         highscores.setBackground(Color.BLACK);
         add(highscores);
 
-        logo = new JLabel();
+        /*
+      Displays the Tetris logo
+     */
+        JLabel logo = new JLabel();
         logo.setIcon(new ImageIcon("src/anupb/images/logo-game.png"));
         logo.setHorizontalAlignment(0);
         add(logo);
 
-        save = new JButton("Save Current Game");
+        /*
+      When pressed the current highscore, along with a name is saved to a txt file
+     */
+        JButton save = new JButton("Save Current Game");
         save.setBackground(Color.BLACK);
         save.setForeground(Color.white);
         save.addActionListener(e -> save());
         add(save);
 
-        load = new JButton("Load Previous Game");
+        /*
+      When pressed, a previous game can be referenced by name and loaded to the current game
+     */
+        JButton load = new JButton("Load Previous Game");
         load.setBackground(Color.BLACK);
         load.setForeground(Color.white);
         load.addActionListener(e -> load());
@@ -213,7 +209,7 @@ public class ScorePanel extends JPanel {
      * Returns true if a button has been clicked
      * @return whether a button has been clicked or not
      */
-    public boolean isClicked(){
+    boolean isClicked(){
         return buttonClicked;
     }
 
@@ -221,7 +217,7 @@ public class ScorePanel extends JPanel {
      * Returns the current score
      * @return the current score
      */
-    public int getCScore() {
+    int getCScore() {
         return curr;
     }
 
@@ -229,7 +225,7 @@ public class ScorePanel extends JPanel {
         curr = 0;
     }
 
-    public void setClicked(boolean b) {
+    void setClicked(boolean b) {
         buttonClicked = b;
     }
 }

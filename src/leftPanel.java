@@ -41,10 +41,6 @@ public class leftPanel extends javax.swing.JPanel {
      */
     private int count = 0;
     /**
-     * Used to rainfall blocks
-     */
-    private Block temp;
-    /**
      * Stores all possible y positions for new blocks
      */
     private int[] yPos = new int[] {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 0};
@@ -103,8 +99,8 @@ public class leftPanel extends javax.swing.JPanel {
     /**
      * Shows the decorations onto the panel
      */
-    public void decorate(){
-        temp = new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
+    private void decorate(){
+        Block temp = new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
                 Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7)));
 
         blocks.add(temp);
@@ -143,7 +139,7 @@ public class leftPanel extends javax.swing.JPanel {
     /**
      * Stops the decorations and displays the instructions on how to play tetris
      */
-    public void showInstructions(){
+    void showInstructions(){
         stop();
 
         myBuffer.setColor(Color.WHITE);
@@ -167,7 +163,7 @@ public class leftPanel extends javax.swing.JPanel {
     /**
      * Displays the credits for the construction of this game
      */
-    public void rollCredits(){
+    void rollCredits(){
         stop();
         myBuffer.setColor(Color.WHITE);
         myBuffer.setFont(new Font("Arial",Font.BOLD,10));
@@ -184,7 +180,7 @@ public class leftPanel extends javax.swing.JPanel {
         try{
             BufferedImage b1 = ImageIO.read(a1);
             myBuffer.drawImage(new ImageIcon(b1).getImage(),20,170,150,150,null);
-        }catch (Exception e){}
+        }catch (Exception ignored){}
 
 
         repaint();

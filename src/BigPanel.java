@@ -22,10 +22,6 @@ import java.io.IOException;
 public class BigPanel extends JPanel {
 
     /**
-     * Facilitates the transition from introduction panels to game panels
-     */
-    private JButton begin;
-    /**
      * JPanel for the actual tetris game
      */
     private TetrisPanel tetris;
@@ -58,18 +54,6 @@ public class BigPanel extends JPanel {
      * JFrame to be displayed onto
      */
     private JFrame myFrame;
-    /**
-     * Shows the instructions once pressed
-     */
-    private JButton instructions = new JButton("Instructions");
-    /**
-     * Shows the credits once pressed
-     */
-    private JButton credits = new JButton("Credits     ");
-    /**
-     * Displays the tetris logo
-     */
-    private JLabel logo;
 
     /**
      * Creates a new BigPanel
@@ -89,16 +73,27 @@ public class BigPanel extends JPanel {
         this.add(right);
 
         center.setLayout(new BorderLayout());
-        begin = new JButton("Begin Game");
+        /*
+      Facilitates the transition from introduction panels to game panels
+     */
+        JButton begin = new JButton("Begin Game");
         begin.addActionListener(new Starter());
         center.add(begin, BorderLayout.SOUTH);
 
+        /*
+      Shows the instructions once pressed
+     */
+        JButton instructions = new JButton("Instructions");
         instructions.addActionListener(
                 e ->  left.showInstructions()
         );
         instructions.setSize(new Dimension(100,100));
         center.add(instructions, BorderLayout.WEST);
 
+        /*
+      Shows the credits once pressed
+     */
+        JButton credits = new JButton("Credits     ");
         credits.addActionListener(
                 e -> right.rollCredits()
         );
@@ -107,7 +102,10 @@ public class BigPanel extends JPanel {
 
         try {
             BufferedImage image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("logo-game.png"));
-            logo = new JLabel(new ImageIcon(image));
+            /*
+      Displays the tetris logo
+     */
+            JLabel logo = new JLabel(new ImageIcon(image));
             center.add(logo);
         }catch (IOException e){
             new Exception().addSuppressed(e);

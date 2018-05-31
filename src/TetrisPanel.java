@@ -46,15 +46,9 @@ public class TetrisPanel extends JPanel{
     */
    private int blockCount = 0;
    /**
-    * Stores all the possible y positions for a new block
-    */
-   private int[] yPos;
-   /**
     * Current score of the tetris game
     */
    private int curr;
-
-   private boolean[] trueArray = new boolean[41];
 
    private Color[][] colorBoard;
 
@@ -76,6 +70,7 @@ public class TetrisPanel extends JPanel{
       this.t = new Timer(100, new Listener());
       this.f = new Timer(5, new Finisher());
 
+      boolean[] trueArray = new boolean[41];
       for(boolean b: trueArray)
          b = true;
 
@@ -93,14 +88,17 @@ public class TetrisPanel extends JPanel{
          }
       }
 
-      yPos = new int[19];
+      /*
+     Stores all the possible y positions for a new block
+    */
+      int[] yPos = new int[19];
       for(int r=0;r<=200-30;r+=10)
          yPos[r/10] = r;
 
 
       for(int i=0;i<=Integer.MAX_VALUE/1000;i++)
          blocks.add(new Block(yPos[((int) (Math.random() * 19))], 0, Optional.of(yPos[((int) (Math.random() * 19))]),
-                 Optional.of(((int) (Math.random() * 401))), 1/*((int) (Math.random() * 7))*/));
+                 Optional.of(((int) (Math.random() * 401))), ((int) (Math.random() * 7))));
 
       this.t.start();
       addKeyListener(new Key());

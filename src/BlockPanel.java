@@ -25,10 +25,6 @@ public class BlockPanel extends JPanel {
      */
     private BufferedImage myImage;
     /**
-     * Graphics2D object which draws onto myImage
-     */
-    private Graphics2D myBuffer;
-    /**
      * Constant background for the entire panel
      */
     private static final Color BACKGROUND = Color.BLACK;
@@ -56,7 +52,10 @@ public class BlockPanel extends JPanel {
     public BlockPanel(Block[] nextBlocks){
         setLayout(new BorderLayout());
         myImage = new BufferedImage(768/3,401,1);
-        this.myBuffer = (Graphics2D)myImage.getGraphics();
+        /*
+      Graphics2D object which draws onto myImage
+     */
+        Graphics2D myBuffer = (Graphics2D) myImage.getGraphics();
 
         myBuffer.setBackground(BACKGROUND);
 
@@ -147,7 +146,7 @@ public class BlockPanel extends JPanel {
      * Updates nextblocks to adjust for any changes
      * @param arr update block array
      */
-    public void updateNextBlocks(Block[] arr){
+    void updateNextBlocks(Block[] arr){
         this.nextBlocks = arr;
     }
 

@@ -86,7 +86,7 @@ public class Block implements Blockable{
    /**
     * Stores all the blocks in the finished state
     */
-   public static ArrayList<Block> constantBlocks = new ArrayList<>();
+   static ArrayList<Block> constantBlocks = new ArrayList<>();
 
    /**
     * Constructor for a block.
@@ -237,13 +237,13 @@ public class Block implements Blockable{
     * Modifier method for the right acceleration
     * @param a desired right acceleration
     */
-   public void setRAcc(boolean a){ racc = a;}
+   void setRAcc(boolean a){ racc = a;}
 
    /**
     * Modifier method for the left acceleration
     * @param a desired left acceleration
     */
-   public void setLAcc(boolean a){ lacc = a; }
+   void setLAcc(boolean a){ lacc = a; }
 
    /**
     * Accessor method for the type
@@ -422,7 +422,7 @@ public class Block implements Blockable{
     * @param board boolean[][] of available spaces
     * @see java.awt.image.BufferedImage
     */
-   public static synchronized void rain(ArrayList<Block> blocks, Graphics myBuffer, boolean[][] board) {
+   static synchronized void rain(ArrayList<Block> blocks, Graphics myBuffer, boolean[][] board) {
       Block temp;
       Point p;
       if(getFall()){
@@ -500,7 +500,7 @@ public class Block implements Blockable{
     * @param myBuffer BufferedImage to be drawn on
     * @see java.awt.image.BufferedImage
     */
-   public static void prettyRain(ArrayList<Block> blocks, Graphics myBuffer) {
+   static void prettyRain(ArrayList<Block> blocks, Graphics myBuffer) {
       if (getFall()) {
          Block temp;
          for (Block b : blocks) {
@@ -535,7 +535,7 @@ public class Block implements Blockable{
     * Returns the current flip state of the block
     * @return current flip state
     */
-   public int getFlipState(){
+   private int getFlipState(){
       return  myFlipState;
    }
 
@@ -560,7 +560,7 @@ public class Block implements Blockable{
     * @return <code>Array</code> of <code>Points</code>
     * @see Point
     */
-   public Point[]    convertToPoints() {
+   Point[] convertToPoints() {
       Point[] points = new Point[4];
 
       switch(getType()){
