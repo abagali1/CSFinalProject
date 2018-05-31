@@ -189,7 +189,7 @@ public class BigPanel extends JPanel {
             score.setClicked(false);
         }
 
-        if(score.getCScore() == tetris.getCScore())
+        if(score.getCScore() != tetris.getCScore())
             score.update(tetris.getCScore());
 
 
