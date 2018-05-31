@@ -301,12 +301,9 @@ public class TetrisPanel extends JPanel{
    @SuppressWarnings("unchecked")
    private synchronized void removeBlocks ( int i){
       for (Block b : (ArrayList<Block>) Block.constantBlocks.clone()) {
-         try {
-            if ((b.getY() == i * 10) || (b.getY2() == i * 10)) {
+         for(Point p: b.convertToPoints()){
+            if(!gameboard[(p.x)/10][i])
                Block.constantBlocks.remove(b);
-            }
-         } catch (NullPointerException e) {
-            continue;
          }
       }
    }
