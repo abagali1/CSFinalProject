@@ -52,26 +52,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TetrisPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TetrisPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TetrisPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="263" column="17" selection-start-line="263" selection-start-column="17" selection-end-line="263" selection-end-column="17" />
-              <folding>
-                <element signature="e#3174#3175#0" expanded="true" />
-                <element signature="e#3198#3199#0" expanded="true" />
-                <element signature="e#5908#5909#0" expanded="true" />
-                <element signature="e#5978#5979#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="210" column="82" lean-forward="true" selection-start-line="210" selection-start-column="82" selection-end-line="210" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BigPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BigPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BigPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="120" column="12" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
+            <state relative-caret-position="-458">
+              <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
             </state>
           </provider>
         </entry>
@@ -99,11 +93,12 @@
       <find>System</find>
       <find>finished</find>
       <find>?</find>
-      <find>new ImageIcon(</find>
+      <find />
       <find>myFlipState</find>
       <find>tetris/images/</find>
       <find>myBuffer</find>
       <find>temp</find>
+      <find />
     </findStrings>
     <replaceStrings>
       <replace>getFlipState()</replace>
@@ -166,8 +161,8 @@
         <option value="$PROJECT_DIR$/src/leftPanel.java" />
         <option value="$PROJECT_DIR$/src/ScorePanel.java" />
         <option value="$PROJECT_DIR$/src/scores.txt" />
-        <option value="$PROJECT_DIR$/src/TetrisPanel.java" />
         <option value="$PROJECT_DIR$/src/BigPanel.java" />
+        <option value="$PROJECT_DIR$/src/TetrisPanel.java" />
       </list>
     </option>
   </component>
@@ -186,7 +181,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -438,12 +433,13 @@
       <workItem from="1527633507911" duration="3835000" />
       <workItem from="1527639528385" duration="156000" />
       <workItem from="1527643443940" duration="842000" />
-      <workItem from="1527730104024" duration="4070000" />
+      <workItem from="1527730104024" duration="4305000" />
+      <workItem from="1527742384008" duration="533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230351000" />
+    <option name="totallyTimeSpent" value="231119000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="676" y="0" width="697" height="735" extended-state="0" />
@@ -460,12 +456,11 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.2562814" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.5841584" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.5829146" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8278146" weight="0.403177" />
       <window_info anchor="right" id="Database" order="7" weight="0.32980332" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
       <window_info id="Structure" order="1" sideWeight="0.17218544" side_tool="true" weight="0.19440243" />
       <window_info anchor="right" id="Ant Build" order="5" weight="0.24962178" />
       <window_info id="UI Designer" order="4" />
@@ -483,9 +478,9 @@
       <window_info id="JRebel" order="5" sideWeight="0.88761467" side_tool="true" weight="0.20499243" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="bottom" id="JRebel Console" order="9" side_tool="true" weight="0.3277027" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" id="Ant Build" order="5" weight="0.24962178" />
       <window_info id="Designer" order="3" />
       <window_info anchor="bottom" id="REST Client" order="14" weight="0.5214521" />
       <window_info anchor="right" id="Palette" order="2" />
@@ -493,7 +488,7 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.25247526" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.5824508" />
+      <window_info anchor="right" id="Ant Build" order="5" weight="0.24962178" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="6" sideWeight="0.6056338" side_tool="true" weight="0.25113463" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.5841584" />
@@ -506,7 +501,6 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32980332" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
       <window_info anchor="bottom" id="JRebel Executor" order="10" weight="0.3293919" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8278146" visible="true" weight="0.19440243" />
       <window_info anchor="bottom" id="JRebel Console" order="11" side_tool="true" weight="0.3277027" />
@@ -518,6 +512,8 @@
       <window_info anchor="bottom" id="Floobits" order="15" weight="0.32838285" />
       <window_info id="Structure" order="1" sideWeight="0.17218544" side_tool="true" visible="true" weight="0.19440243" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.5824508" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.35478547" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5759076" />
     </layout-to-restore>
   </component>
@@ -537,7 +533,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/TetrisPanel.java</url>
-          <line>314</line>
+          <line>316</line>
           <properties />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
@@ -776,23 +772,17 @@
     <entry file="file://$PROJECT_DIR$/src/scores.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TetrisPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/BigPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="263" column="17" selection-start-line="263" selection-start-column="17" selection-end-line="263" selection-end-column="17" />
-          <folding>
-            <element signature="e#3174#3175#0" expanded="true" />
-            <element signature="e#3198#3199#0" expanded="true" />
-            <element signature="e#5908#5909#0" expanded="true" />
-            <element signature="e#5978#5979#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-458">
+          <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BigPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/TetrisPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="120" column="12" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
+        <state relative-caret-position="187">
+          <caret line="210" column="82" lean-forward="true" selection-start-line="210" selection-start-column="82" selection-end-line="210" selection-end-column="82" />
         </state>
       </provider>
     </entry>
