@@ -208,6 +208,8 @@ public class TetrisPanel extends JPanel{
          myBuffer.setFont(new Font("Monospaced",Font.ITALIC,20));
          myBuffer.drawString("Score: " + curr, 50,120);
 
+         myBuffer.fill(new Polygon(new int[]{0,33,33}, new int[]{245,212,278},3));
+
          repaint();
          revalidate();
       }
@@ -261,7 +263,7 @@ public class TetrisPanel extends JPanel{
          }
 
          for(int i=0;i<=19;i++) {
-            if (!gameboard[i][0])
+            if (gameboard[i][0])
                gameFinished(true);
          }
 

@@ -1,8 +1,6 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
@@ -71,16 +69,14 @@ public class BigPanel extends JPanel {
         this.add(right);
 
         center.setLayout(new BorderLayout());
-        /*
-      Facilitates the transition from introduction panels to game panels
-     */
+
         JButton begin = new JButton("Begin Game");
-        begin.addActionListener(new Starter());
+        begin.addActionListener(
+                e -> start()
+        );
         center.add(begin, BorderLayout.SOUTH);
 
-        /*
-      Shows the instructions once pressed
-     */
+
         JButton instructions = new JButton("Instructions");
         instructions.addActionListener(
                 e -> left.showInstructions()
@@ -88,9 +84,7 @@ public class BigPanel extends JPanel {
         instructions.setSize(new Dimension(100, 100));
         center.add(instructions, BorderLayout.WEST);
 
-        /*
-      Shows the credits once pressed
-     */
+
         JButton credits = new JButton("Credits     ");
         credits.addActionListener(
                 e -> right.rollCredits()
@@ -104,43 +98,16 @@ public class BigPanel extends JPanel {
             JLabel logo = new JLabel(new ImageIcon(image));
             center.add(logo);
 
-        } catch (IOException e) {
-            new Exception().addSuppressed(e);
+        } catch (IOException ignored) {
         }
-
-
-
 
         t = new Timer(3, e ->
                 check()
         );
 
-
-
         myFrame = a;
 
 
-
-
-//        Audio song = new Audio();
-
-    }
-
-    /**
-     * Nested <code>ActionListener</code> class. Switches from home panel to Tetris game
-     */
-    private class Starter implements ActionListener{
-
-
-        /**
-         * Invoked when an action occurs.
-         *
-         * @param e the event to be processed
-         */
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            start();
-        }
     }
 
     /**
