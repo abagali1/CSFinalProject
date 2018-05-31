@@ -274,6 +274,10 @@ public class TetrisPanel extends JPanel{
       }
    }
 
+   /**
+    * Clears a filled row
+    * @param i row to be cleared
+    */
    private void clear(int i) {
       if(i == 0){
          gameFinished(true);
@@ -290,6 +294,10 @@ public class TetrisPanel extends JPanel{
       }
    }
 
+   /**
+    * Removes any blocks that are in a filled row
+    * @param i row to be referenced
+    */
    @SuppressWarnings("unchecked")
    private synchronized void removeBlocks ( int i){
       for (Block b : (ArrayList<Block>) Block.constantBlocks.clone()) {
@@ -303,7 +311,10 @@ public class TetrisPanel extends JPanel{
       }
    }
 
-
+   /**
+    * Redraws the entire board adjusting to any changes
+    * @param colors respective colors for each cell
+    */
    private void redraw(Color[][] colors) {
       for(int r=0;r<=19;r++){
          for(int c=0;c<=39;c++){
@@ -315,6 +326,11 @@ public class TetrisPanel extends JPanel{
       }
    }
 
+   /**
+    * Shifts the gameboard down one row respective to the starting row
+    * @param board gameboard
+    * @param i starting row
+    */
    private void shiftBoard(boolean[][] board, int i) {
       for(int r=0;r<=19;r++){
          for(int c=1;c<=i;c++){
@@ -323,6 +339,11 @@ public class TetrisPanel extends JPanel{
       }
    }
 
+   /**
+    * Shifts the colorboard down one row respective to the starting row
+    * @param colors colorboard
+    * @param i starting row
+    */
    private void shiftColors(Color[][] colors, int i) {
       for(int r=0;r<=19;r++){
          for(int c=1;c<=i;c++){
@@ -331,6 +352,10 @@ public class TetrisPanel extends JPanel{
       }
    }
 
+   /**
+    * Executes once the game has ended
+    * @param b whether the game is finished or not
+    */
    private void gameFinished(boolean b) {
       if(b){
          t.stop();
@@ -381,6 +406,11 @@ public class TetrisPanel extends JPanel{
       return temp;
    }
 
+   /**
+    * Determines whether a row is filled or not
+    * @param i row to be checked
+    * @return whether the row is filled or not
+    */
    private boolean checkRow(int i){
       for(int x=0;x<=19;x++) {
          if (gameboard[x][i])
