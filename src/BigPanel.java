@@ -1,5 +1,3 @@
-
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -60,8 +58,8 @@ public class BigPanel extends JPanel {
      * @param a JFrame to be displayed onto
      * @see JFrame
      */
-    public BigPanel(JFrame a){
-        setLayout(new GridLayout(1,3));
+    public BigPanel(JFrame a) {
+        setLayout(new GridLayout(1, 3));
 
         left = new leftPanel();
         this.add(left);
@@ -85,9 +83,9 @@ public class BigPanel extends JPanel {
      */
         JButton instructions = new JButton("Instructions");
         instructions.addActionListener(
-                e ->  left.showInstructions()
+                e -> left.showInstructions()
         );
-        instructions.setSize(new Dimension(100,100));
+        instructions.setSize(new Dimension(100, 100));
         center.add(instructions, BorderLayout.WEST);
 
         /*
@@ -97,19 +95,20 @@ public class BigPanel extends JPanel {
         credits.addActionListener(
                 e -> right.rollCredits()
         );
-        credits.setSize(new Dimension(100,100));
+        credits.setSize(new Dimension(100, 100));
         center.add(credits, BorderLayout.EAST);
 
         try {
             BufferedImage image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("logo-game.png"));
-            /*
-      Displays the tetris logo
-     */
+
             JLabel logo = new JLabel(new ImageIcon(image));
             center.add(logo);
-        }catch (IOException e){
+
+        } catch (IOException e) {
             new Exception().addSuppressed(e);
         }
+
+
 
 
         t = new Timer(3, e ->
