@@ -55,8 +55,8 @@
       <file leaf-file-name="TetrisPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TetrisPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="210" column="82" lean-forward="true" selection-start-line="210" selection-start-column="82" selection-end-line="210" selection-end-column="82" />
+            <state relative-caret-position="178">
+              <caret line="333" column="53" selection-start-line="333" selection-start-column="53" selection-end-line="333" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -64,8 +64,8 @@
       <file leaf-file-name="BigPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BigPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-458">
-              <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
+            <state relative-caret-position="1819">
+              <caret line="111" selection-start-line="111" selection-end-line="111" />
             </state>
           </provider>
         </entry>
@@ -93,12 +93,12 @@
       <find>System</find>
       <find>finished</find>
       <find>?</find>
-      <find />
+      <find>new ImageIcon(</find>
       <find>myFlipState</find>
       <find>tetris/images/</find>
       <find>myBuffer</find>
       <find>temp</find>
-      <find />
+      <find>new Starter</find>
     </findStrings>
     <replaceStrings>
       <replace>getFlipState()</replace>
@@ -181,7 +181,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -192,6 +192,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,9 +214,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -224,7 +224,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/workspace.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -434,20 +434,23 @@
       <workItem from="1527639528385" duration="156000" />
       <workItem from="1527643443940" duration="842000" />
       <workItem from="1527730104024" duration="4305000" />
-      <workItem from="1527742384008" duration="533000" />
+      <workItem from="1527742384008" duration="2272000" />
+      <workItem from="1527779641411" duration="1250000" />
+      <workItem from="1527793169457" duration="138000" />
+      <workItem from="1528084211924" duration="5000" />
+      <workItem from="1528597413840" duration="106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231119000" />
+    <option name="totallyTimeSpent" value="234357000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="676" y="0" width="697" height="735" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49924356" weight="0.31518152" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -455,11 +458,11 @@
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.2562814" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.25577557" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.5829146" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8278146" weight="0.403177" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8278146" weight="0.4160363" />
       <window_info anchor="right" id="Database" order="7" weight="0.32980332" />
       <window_info id="Structure" order="1" sideWeight="0.17218544" side_tool="true" weight="0.19440243" />
       <window_info anchor="right" id="Ant Build" order="5" weight="0.24962178" />
@@ -468,6 +471,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.6056338" side_tool="true" weight="0.25113463" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5759076" />
       <window_info anchor="bottom" id="JRebel Executor" order="9" weight="0.3293919" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49924356" weight="0.31518152" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Floobits" order="12" weight="0.32838285" />
@@ -725,13 +729,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TetDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TetDriver.java" />
     <entry file="file://$PROJECT_DIR$/src/Block.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -757,12 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="694">
           <caret line="227" column="4" selection-start-line="227" selection-start-column="4" selection-end-line="227" selection-end-column="4" />
-          <folding>
-            <element signature="e#7148#7149#0" expanded="true" />
-            <element signature="e#7175#7176#0" expanded="true" />
-            <element signature="e#7267#7268#0" expanded="true" />
-            <element signature="e#7300#7301#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -774,15 +766,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BigPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-458">
-          <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
+        <state relative-caret-position="1819">
+          <caret line="111" selection-start-line="111" selection-end-line="111" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TetrisPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="210" column="82" lean-forward="true" selection-start-line="210" selection-start-column="82" selection-end-line="210" selection-end-column="82" />
+        <state relative-caret-position="178">
+          <caret line="333" column="53" selection-start-line="333" selection-start-column="53" selection-end-line="333" selection-end-column="53" />
         </state>
       </provider>
     </entry>

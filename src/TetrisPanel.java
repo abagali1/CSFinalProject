@@ -263,7 +263,7 @@ public class TetrisPanel extends JPanel{
          }
 
          for(int i=0;i<=19;i++) {
-            if (gameboard[i][0])
+            if (!gameboard[i][0])
                gameFinished(true);
          }
 
@@ -312,8 +312,8 @@ public class TetrisPanel extends JPanel{
     * @param colors respective colors for each cell
     */
    private void redraw(Color[][] colors) {
-      for(int r=0;r<=19;r++){
-         for(int c=0;c<=39;c++){
+      for(int r=0;r<=colors.length-1;r++){
+         for(int c=0;c<=colors[0].length-1;c++){
             myBuffer.setColor(colors[r][c]);
             myBuffer.fillRect(r*10,c*10,10,10);
             repaint();
@@ -331,6 +331,7 @@ public class TetrisPanel extends JPanel{
       for(int r=0;r<=19;r++){
          for(int c=1;c<=i;c++){
             board[r][40-c] = board[r][i-c];
+            colorBoard[r][40-c] = colorBoard[r][i-c];
          }
       }
    }
